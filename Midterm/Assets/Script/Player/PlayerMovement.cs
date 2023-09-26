@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        PlayerJump();
+     //   PlayerJump();
     }
 
     void FixedUpdate()
@@ -29,15 +29,9 @@ public class PlayerMovement : MonoBehaviour
     void CharacterMovement()
     {  
         var vx = Input.GetAxisRaw("Horizontal");
-        _rb.velocity = new Vector3(vx * playerStat.speed * Time.deltaTime, _rb.velocity.y, 0) ;
+        var vy = Input.GetAxisRaw("Vertical");
+        _rb.velocity = new Vector3(vx, vy, 0).normalized * (playerStat.speed * Time.deltaTime);
     }
 
-    void PlayerJump()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("is jumping a the heigh of : " + playerStat.jumpHeight);
-            _rb.velocity= new Vector2(_rb.velocity.x ,playerStat.jumpHeight ) ; 
-        }
-    }
+   
 }
