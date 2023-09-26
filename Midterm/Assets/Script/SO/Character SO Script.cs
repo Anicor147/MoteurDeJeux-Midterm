@@ -7,7 +7,8 @@ using UnityEngine;
 public class CharacterSOScript : ScriptableObject
 {
     public float lifePoint;
-    public float attackDamage;
+    public float meleeDamage;
     public float manaPoint;
     public float speed;
+    public float jumpHeight;
 }
