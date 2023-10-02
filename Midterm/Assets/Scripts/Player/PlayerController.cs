@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]private CharacterSOScript playerStat;
+    [SerializeField] private CharacterSOScript playerStat;
     private float maxHealth;
-    void Start()
+    private void Start()
     {
         maxHealth = playerStat.lifePoint;
     }
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     
     
-    private void playerDeath()
+    private void PlayerDeath()
     {
         Destroy(gameObject);
     }
