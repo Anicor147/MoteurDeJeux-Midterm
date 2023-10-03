@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour, IFlipSprite
     private CharacterSOScript playerStat;
     private float _vx , _vy;
     private float moveSpeed;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private Vector3 mousePosition;
    
@@ -45,11 +46,11 @@ public class PlayerMovement : MonoBehaviour, IFlipSprite
         var mouseOffset = mousePosition - characterPosition;
         if (mouseOffset.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            _spriteRenderer.flipX = true;
         }
         else if (mouseOffset.x > 0 )
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            _spriteRenderer.flipX = false;
         }
     }
     

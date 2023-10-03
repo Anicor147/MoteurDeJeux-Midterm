@@ -1,23 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        Cursor.visible = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float angle = Mathf.Atan2(mousePos.y , mousePos.x) * Mathf.Rad2Deg -90 ;  
+        LineOfActionPosition();
+    }
 
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = rotation;
+    void LineOfActionPosition()
+    {
 
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0f; 
+
+        // Calculate the direction from the object to the mouse position
+        Vector3 direction = mousePosition - transform.position;
+
+        // Calculate the angle in radians
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Rotate the object to face the mouse position
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        
     }
 }
