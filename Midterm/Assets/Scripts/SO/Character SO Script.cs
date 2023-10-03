@@ -11,4 +11,5 @@ public class CharacterSOScript : ScriptableObject
     public float manaPoint;
     public float speed;
     public float jumpHeight;
+    public float dashSpeed;
 }

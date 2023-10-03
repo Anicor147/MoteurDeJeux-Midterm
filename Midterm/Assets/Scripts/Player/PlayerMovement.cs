@@ -4,34 +4,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IFlipSprite
 {
     private Rigidbody2D _rb; 
-    [SerializeField]private CharacterSOScript playerStat;
+    [SerializeField] 
+    private CharacterSOScript playerStat;
+    private float _vx , _vy;
+    private float moveSpeed;
+
+    private Vector3 mousePosition;
    
-    // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
-
-
-    void Update()
-    {
-     //   PlayerJump();
-    }
-
+    
     void FixedUpdate()
     {
+       GetInput();
        CharacterMovement();
+       FlipSprite();
     }
 
-    void CharacterMovement()
+    private void GetInput()
+    {
+        _vx = Input.GetAxisRaw("Horizontal");
+        _vy = Input.GetAxisRaw("Vertical");
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0f;
+    }
+
+    private void CharacterMovement()
     {  
-        var vx = Input.GetAxisRaw("Horizontal");
-        var vy = Input.GetAxisRaw("Vertical");
-        _rb.velocity = new Vector3(vx, vy, 0).normalized * (playerStat.speed * Time.deltaTime);
+        _rb.velocity = new Vector3(_vx, _vy, 0).normalized * (playerStat.speed * Time.deltaTime);
     }
-
-   
+    
+    public void FlipSprite()
+    {
+        var characterPosition = transform.position;
+        var mouseOffset = mousePosition - characterPosition;
+        if (mouseOffset.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (mouseOffset.x > 0 )
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
+    
 }

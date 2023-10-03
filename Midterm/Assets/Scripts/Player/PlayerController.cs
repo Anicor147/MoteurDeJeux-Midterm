@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour , IBaseCharacter
 {
     [SerializeField] private CharacterSOScript playerStat;
     private float maxHealth;
@@ -11,16 +11,14 @@ public class PlayerController : MonoBehaviour
         maxHealth = playerStat.lifePoint;
     }
 
-    // public void TakeDamage(float damageReceived)
-    // {
-    //     maxHealth -= damageReceived;
-    //     Debug.Log("current health: "+ maxHealth);
-    //     if (maxHealth <= 0) playerDeath();
-    // }
-
+    public void TakeDamage(float damageReceived)
+    {
+        maxHealth -= damageReceived;
+        Debug.Log("current health: "+ maxHealth);
+        if (maxHealth <= 0) OnDeath();
+    }
     
-    
-    private void PlayerDeath()
+    public void OnDeath()
     {
         Destroy(gameObject);
     }
