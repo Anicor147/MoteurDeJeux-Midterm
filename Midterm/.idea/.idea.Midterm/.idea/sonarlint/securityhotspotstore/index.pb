@@ -11,3 +11,5 @@ X
 (Assets/Scripts/SO/Character SO Script.cs,6\3\630cd3935662ec429bcdcb5748f6db402c44c443
 Y
 )Assets/Scripts/Player/WeaponController.cs,8\7\87d25ab1c6193e30d3611f5cc3c61f2ff359da35
+b
+2Assets/Scripts/Player/PlayerAnimationController.cs,5\d\5d2d65fa5bbe20d257b12509deecaca0d31f4f3e
