@@ -48,10 +48,11 @@ public class WeaponController : MonoBehaviour
     
     public void PlayerAttack()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q))
         {
              attackStartTime = Time.time;
              _playerAnimationController.PlayerIsAttackingIcePicks();
+             _playerAnimationController.PlayerIsAttackingFireMelee();
         }
     }
     

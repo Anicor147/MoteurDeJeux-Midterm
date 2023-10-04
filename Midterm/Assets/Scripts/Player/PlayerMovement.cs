@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -39,15 +40,22 @@ public class PlayerMovement : MonoBehaviour, IFlipSprite
 
     private void CharacterMovement()
     {
-        _rb.velocity = new Vector3(_vx, _vy, 0).normalized * (playerStat.speed * Time.deltaTime);
-
-        if (_rb.velocity.magnitude > 0)
+        if (!Input.GetKey(KeyCode.Q))
         {
-            _animationController.PlayerIsMoving(true);
+            _rb.velocity = new Vector3(_vx, _vy, 0).normalized * (playerStat.speed * Time.deltaTime);
+
+            if (_rb.velocity.magnitude > 0)
+            {
+                _animationController.PlayerIsMoving(true);
+            }
+            else
+            {
+                _animationController.PlayerIsMoving(false);
+            }
         }
         else
         {
-            _animationController.PlayerIsMoving(false);
+            _rb.velocity = new Vector3(0, 0, 0);
         }
     }
 

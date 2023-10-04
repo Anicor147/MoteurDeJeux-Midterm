@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour , IBaseCharacter
 {
     [SerializeField] private CharacterSOScript playerStat;
+   [SerializeField] private PlayerAnimationController _playerAnimationController;
     private float maxHealth;
     private void Start()
     {
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
 
     private void Update()
     {
+        PlayerIsCharging();
     }
 
     public void TakeDamage(float damageReceived)
@@ -23,10 +25,16 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         if (maxHealth <= 0) OnDeath();
     }
 
+    public void PlayerIsCharging()
+    {
+        if(Input.GetKey(KeyCode.Q))  _playerAnimationController.PlayerIsCharging(true);
+        else if(!Input.GetKey(KeyCode.Q)) _playerAnimationController.PlayerIsCharging(false);
+    }
 
     public void OnDeath()
     {
-        Destroy(gameObject);
+        _playerAnimationController.PlayerIsDead();
+        //Destroy(gameObject);
     }
     
     
