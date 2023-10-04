@@ -15,13 +15,11 @@ public class PlayerAnimationController : MonoBehaviour
         playerAnimator.SetBool("isWalking", boolValue);
     }
 
-    public void PlayerIsAttacking()
+    public void PlayerIsAttackingIcePicks()
     {
+        playerAnimator.SetTrigger("isAttacking");
         weaponAnimator.SetTrigger("isAttacking");
     }
 
-    void Update()
-    {
-        
-    }
+
 }

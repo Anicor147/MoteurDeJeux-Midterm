@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 927505352}
   - component: {fileID: 927505354}
   m_Layer: 0
-  m_Name: Weapons
+  m_Name: IcePicks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,7 +526,7 @@ Transform:
   m_GameObject: {fileID: 927505350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.15, z: -0.03}
+  m_LocalPosition: {x: -0, y: -0.09, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -545,6 +545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 927505353}
+  _playerAnimationController: {fileID: 1119987233}
+  attackCooldown: 0.5
 --- !u!212 &927505353
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -861,7 +863,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStat: {fileID: 11400000, guid: 97f5cbf0c5f1ffc418bbde7fb7eda441, type: 2}
-  _playerAnimationController: {fileID: 1119987233}
 --- !u!114 &1119987233
 MonoBehaviour:
   m_ObjectHideFlags: 0
