@@ -13,3 +13,9 @@ Y
 )Assets/Scripts/Player/WeaponController.cs,8\7\87d25ab1c6193e30d3611f5cc3c61f2ff359da35
 b
 2Assets/Scripts/Player/PlayerAnimationController.cs,5\d\5d2d65fa5bbe20d257b12509deecaca0d31f4f3e
+W
+'Assets/Scripts/Player/CameraMovement.cs,2\a\2a071546d4063b1eb78999d134e57d16fc6dccf4
+L
+Assets/Scripts/Enemy/Test.cs,d\2\d2b4451b4a7381bb99563fce1f2884575bdedac7
+S
+#Assets/Scripts/Player/Projectile.cs,0\c\0cafd30ae48a4e99e3952d5ae76715a164de6bb6

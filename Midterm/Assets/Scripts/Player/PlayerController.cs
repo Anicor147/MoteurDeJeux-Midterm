@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         if(Input.GetKey(KeyCode.Q))  _playerAnimationController.PlayerIsCharging(true);
         else if(!Input.GetKey(KeyCode.Q)) _playerAnimationController.PlayerIsCharging(false);
     }
-
+    
     public void OnDeath()
     {
         _playerAnimationController.PlayerIsDead();

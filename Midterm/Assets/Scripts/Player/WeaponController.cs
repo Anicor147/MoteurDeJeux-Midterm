@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject projectile;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerAnimationController _playerAnimationController;
     private Vector3 mousePosition;
     private float attackStartTime;
     public float attackCooldown = 0.5f;
+    private float angle;
+    private Vector3 direction;
 
     private bool isAttacking = false;
 
@@ -28,8 +30,8 @@ public class WeaponController : MonoBehaviour
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0f; 
 
-            Vector3 direction = mousePosition - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+             direction = mousePosition - transform.position;
+             angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
@@ -53,7 +55,13 @@ public class WeaponController : MonoBehaviour
              attackStartTime = Time.time;
              _playerAnimationController.PlayerIsAttackingIcePicks();
              _playerAnimationController.PlayerIsAttackingFireMelee();
+             LightningProjectile();
         }
     }
-    
+
+    public void LightningProjectile()
+    {
+            Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, angle));
+    }
+
 }
