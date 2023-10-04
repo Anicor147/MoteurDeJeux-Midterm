@@ -13,9 +13,13 @@ public class PlayerAnimationController : MonoBehaviour
     public void PlayerIsMoving(bool boolValue)
     {
         playerAnimator.SetBool("isWalking", boolValue);
-    }   
+    }
 
-    // Update is called once per frame
+    public void PlayerIsAttacking()
+    {
+        weaponAnimator.SetTrigger("isAttacking");
+    }
+
     void Update()
     {
         

@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+    
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    private Vector3 mousePosition;
     private void Start()
     {
         Cursor.visible = false;
@@ -13,22 +16,29 @@ public class WeaponController : MonoBehaviour
     private void LateUpdate()
     {
         LineOfActionPosition();
+        WeaponSpriteFlip();
     }
 
     void LineOfActionPosition()
     {
 
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f; 
 
-        // Calculate the direction from the object to the mouse position
         Vector3 direction = mousePosition - transform.position;
-
-        // Calculate the angle in radians
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // Rotate the object to face the mouse position
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        
+    }
+
+    private void WeaponSpriteFlip()
+    {
+        if (mousePosition.x < transform.position.x)
+        {
+            _spriteRenderer.flipY = true;
+        }
+        else
+        {
+            _spriteRenderer.flipY = false;
+        }
     }
 }
