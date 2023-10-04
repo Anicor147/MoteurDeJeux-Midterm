@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour, IFlipSprite
 {
+    private PlayerAnimationController _animationController;
     private Rigidbody2D _rb; 
     [SerializeField] 
     private CharacterSOScript playerStat;
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour, IFlipSprite
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _animationController = FindObjectOfType<PlayerAnimationController>();
     }
     
     void FixedUpdate()
@@ -36,10 +38,20 @@ public class PlayerMovement : MonoBehaviour, IFlipSprite
     }
 
     private void CharacterMovement()
-    {  
+    {
         _rb.velocity = new Vector3(_vx, _vy, 0).normalized * (playerStat.speed * Time.deltaTime);
+
+        // if (_rb.velocity.magnitude > 0)
+        // {
+        //     _animationController.PlayerIsMoving(true);
+        // }
+        // else
+        // {
+        //     _animationController.PlayerIsMoving(false);
+        // }
     }
-    
+
+
     public void FlipSprite()
     {
         var characterPosition = transform.position;
