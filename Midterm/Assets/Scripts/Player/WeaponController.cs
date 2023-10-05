@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponController : MonoBehaviour
+public class WeaponController : MonoBehaviour ,IFlipSprite
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -13,6 +13,7 @@ public class WeaponController : MonoBehaviour
     public float attackCooldown = 0.5f;
     private float angle;
     private Vector3 direction;
+    private bool canAttack = true;
 
     private bool isAttacking = false;
 
@@ -20,7 +21,7 @@ public class WeaponController : MonoBehaviour
     {
         PlayerAttack();
         LineOfActionPosition();
-        WeaponSpriteFlip();
+        FlipSprite();
     }
 
     void LineOfActionPosition()
@@ -35,8 +36,38 @@ public class WeaponController : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
-
-    private void WeaponSpriteFlip()
+    
+    public void PlayerAttack()
+    {
+        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q))
+        {
+            Debug.Log(PlayerController.isLightning);
+             attackStartTime = Time.time;
+             _playerAnimationController.PlayerIsAttackingIcePicks();
+             _playerAnimationController.PlayerIsAttackingFireMelee();
+             if (PlayerController.isLightning == true && canAttack )
+             {
+                 StartCoroutine(LightningWeaponWithDelay()); 
+             }
+        }
+    }
+    private IEnumerator LightningWeaponWithDelay()
+    {
+        try
+        {
+            canAttack = false; // Prevent further attacks until the delay is over
+            Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, angle));
+            yield return new WaitForSeconds(1f);
+        }
+        finally
+        {
+            canAttack = true;
+        }
+    }
+    
+    
+    
+    public void FlipSprite()
     {
         if (mousePosition.x < transform.position.x)
         {
@@ -47,21 +78,4 @@ public class WeaponController : MonoBehaviour
             _spriteRenderer.flipY = false;
         }
     }
-    
-    public void PlayerAttack()
-    {
-        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q))
-        {
-             attackStartTime = Time.time;
-             _playerAnimationController.PlayerIsAttackingIcePicks();
-             _playerAnimationController.PlayerIsAttackingFireMelee();
-             LightningProjectile();
-        }
-    }
-
-    public void LightningProjectile()
-    {
-            Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, angle));
-    }
-
 }

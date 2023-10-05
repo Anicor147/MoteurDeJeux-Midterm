@@ -5,9 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapons Data", menuName = "Weapons/Weapons Data")]
 public class WeaponsSO : ScriptableObject
 {
-
-        public float meleeDamage;
-        public float attackSpeed;
-        public float attackRange;
-
+        public float WeaponDamage;
 }

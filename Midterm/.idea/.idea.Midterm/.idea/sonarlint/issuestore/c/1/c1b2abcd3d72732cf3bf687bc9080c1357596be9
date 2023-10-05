@@ -1,5 +1,9 @@
 
 Kcsharpsquid:S3903"/Move 'PlayerController' into a named namespace.(Š§§
 
-tcsharpsquid:S927"QRename parameter 'damageReceived' to 'damage' to match the interface declaration.(©ÍïŠ8›åË¯1
-Bcsharpsquid:S125%"Remove this commented out code.(”ŸğÔ8âš¹Ü¯1
+gcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(é‰‡x8¿¦æã¯1
+Vcsharpsquid:S3267:"2Loops should be simplified with "LINQ" expressions(±ğ¿©8Àó¸ƒ°1
+tcsharpsquid:S927"QRename parameter 'damageReceived' to 'damage' to match the interface declaration.(©ÍïŠ8›åË¯1
+kcsharpsquid:S2223"HChange the visibility of 'isLightning' or make it 'const' or 'readonly'.(é‰‡x8Ï™üã¯1
+ycsharpsquid:S2696J"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ÃÿÂ’8–şÒƒ°1
+Bcsharpsquid:S125S"Remove this commented out code.(”ŸğÔ8âš¹Ü¯1

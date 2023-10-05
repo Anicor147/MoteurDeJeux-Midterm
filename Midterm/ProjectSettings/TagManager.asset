@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sprite
+  - IceAttack
+  - FireAttack
+  - LightingAttack
   layers:
   - Default
   - TransparentFX

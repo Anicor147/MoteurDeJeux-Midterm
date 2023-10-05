@@ -1,5 +1,6 @@
 
-Lcsharpsquid:S3903"/Move 'WeaponController' into a named namespace.(šÃÒİ
-Bcsharpsquid:S2933"Make 'isAttacking' 'readonly'.(îØ¹“8‰“œÙ¯1
+Ncsharpsquid:S11250"*Remove the unnecessary Boolean literal(s).(¿«šÈ8ÒÇ«ê¯1
+Lcsharpsquid:S3903"/Move 'WeaponController' into a named namespace.(ú‹óş
+Bcsharpsquid:S2933"Make 'isAttacking' 'readonly'.(îØ¹“8‰“œÙ¯1
 mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ÎùÊ¿ÿÿÿÿÿ8’ğŒÙ¯1
 csharpsquid:S1450"XRemove the field 'direction' and declare it as a local variable in the relevant methods.(¥³…˜ùÿÿÿÿ8™ƒá¯1
