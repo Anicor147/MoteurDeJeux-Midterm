@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     [SerializeField] private GameObject lightingWeaponObject;
     private Dictionary<KeyCode, GameObject> weaponDictionary;
     private float maxHealth;
-    public static bool isLightning ;
+    public static bool isLightning;
+    private WeaponController coroutineWeaponController;
     private void Start()
     {
         maxHealth = playerStat.lifePoint;
@@ -66,15 +67,20 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
 
     private void ActiveWeapon(GameObject gameObject)
     {
+       
         iceWeaponObject.SetActive(false);
         fireWeaponObject.SetActive(false);
         lightingWeaponObject.SetActive(false);
         
         gameObject.SetActive(true);
+        
         if (gameObject == lightingWeaponObject) isLightning = true;
         else isLightning = false;
-
-
+        
+        if (gameObject ==iceWeaponObject || gameObject == fireWeaponObject) 
+        {
+            WeaponController.canAttack = true;
+        }
     }
 
     public void OnDeath()

@@ -13,9 +13,9 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     public float attackCooldown = 0.5f;
     private float angle;
     private Vector3 direction;
-    private bool canAttack = true;
-
-    private bool isAttacking = false;
+    public Coroutine attackCouroutine;
+    public static bool canAttack;
+    
 
     private void LateUpdate()
     {
@@ -39,30 +39,25 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     
     public void PlayerAttack()
     {
-        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q))
+        
+        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) )
         {
-            Debug.Log(PlayerController.isLightning);
              attackStartTime = Time.time;
              _playerAnimationController.PlayerIsAttackingIcePicks();
              _playerAnimationController.PlayerIsAttackingFireMelee();
+             Debug.Log($"is lighting ={PlayerController.isLightning} canAttack is {canAttack}");
              if (PlayerController.isLightning == true && canAttack )
              {
                  StartCoroutine(LightningWeaponWithDelay()); 
              }
         }
     }
-    private IEnumerator LightningWeaponWithDelay()
-    {
-        try
-        {
-            canAttack = false; // Prevent further attacks until the delay is over
-            Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, angle));
-            yield return new WaitForSeconds(1f);
-        }
-        finally
-        {
-            canAttack = true;
-        }
+    public IEnumerator LightningWeaponWithDelay()
+    { 
+        canAttack = false;
+        Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, angle)); 
+        yield return new WaitForSeconds(1f);
+        canAttack = true;
     }
     
     
