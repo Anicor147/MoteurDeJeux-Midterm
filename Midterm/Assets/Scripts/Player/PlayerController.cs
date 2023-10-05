@@ -77,8 +77,9 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         if (gameObject == lightingWeaponObject) isLightning = true;
         else isLightning = false;
         
-        if (gameObject ==iceWeaponObject || gameObject == fireWeaponObject) 
+        if (gameObject != lightingWeaponObject) 
         {
+            Debug.Log($"not light");
             WeaponController.canAttack = true;
         }
     }

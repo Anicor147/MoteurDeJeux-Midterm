@@ -13,7 +13,6 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     public float attackCooldown = 0.5f;
     private float angle;
     private Vector3 direction;
-    public Coroutine attackCouroutine;
     public static bool canAttack;
     
 
@@ -45,7 +44,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
              attackStartTime = Time.time;
              _playerAnimationController.PlayerIsAttackingIcePicks();
              _playerAnimationController.PlayerIsAttackingFireMelee();
-             Debug.Log($"is lighting ={PlayerController.isLightning} canAttack is {canAttack}");
+             
              if (PlayerController.isLightning == true && canAttack )
              {
                  StartCoroutine(LightningWeaponWithDelay()); 

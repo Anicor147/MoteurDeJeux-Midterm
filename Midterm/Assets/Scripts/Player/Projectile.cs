@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
         Invoke("DestroyProjectile",5f);
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         ProjectileMovement();
     }
