@@ -7,8 +7,8 @@ using UnityEngine.Serialization;
 public class PlayerAnimationController : MonoBehaviour
 {
     [SerializeField] private Animator playerAnimator;
-    [SerializeField] private Animator IceAnimator;
-    [SerializeField] private Animator FireAnimator;
+    [SerializeField] private Animator iceAnimator;
+    [SerializeField] private Animator fireAnimator;
     private Rigidbody2D _rb; 
     
     
@@ -20,13 +20,13 @@ public class PlayerAnimationController : MonoBehaviour
     public void PlayerIsAttackingIcePicks()
     {
         playerAnimator.SetTrigger("isAttacking");
-        IceAnimator.SetTrigger("isAttacking");
+        iceAnimator.SetTrigger("isAttacking");
     } 
     
     public void PlayerIsAttackingFireMelee()
     {
         playerAnimator.SetTrigger("isAttacking");
-        FireAnimator.SetTrigger("isAttacking");
+        fireAnimator.SetTrigger("isAttacking");
     }
 
     public void PlayerIsCharging(bool value)

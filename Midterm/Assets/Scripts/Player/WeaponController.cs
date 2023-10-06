@@ -13,7 +13,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     public float attackCooldown = 0.5f;
     private float angle;
     private Vector3 direction;
-    public static bool canAttack;
+    public static bool canAttack = true;
     
 
     private void LateUpdate()

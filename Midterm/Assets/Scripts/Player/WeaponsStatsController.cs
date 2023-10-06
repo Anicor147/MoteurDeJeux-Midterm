@@ -11,7 +11,7 @@ public class WeaponsStatsController : MonoBehaviour
   {
       if (!other.CompareTag("Player"))
       {
-          other.gameObject.GetComponent<EnemyController>().TakeDamage(_weaponsSo.WeaponDamage);
+          other.gameObject.GetComponent<SlimeController>().TakeDamage(_weaponsSo.WeaponDamage);
       }
   }
 }
