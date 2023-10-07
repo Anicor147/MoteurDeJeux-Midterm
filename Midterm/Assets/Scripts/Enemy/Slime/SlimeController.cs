@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using Vector3 = System.Numerics.Vector3;
 
@@ -8,6 +9,7 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
 {
     [SerializeField] private EnemySO _enemyStats;
     [SerializeField] private SlimeAnimationControler slimeAnimation;
+    [SerializeField] private GameObject item;
     private float maxHealth;
     public bool isDead;
     public bool isAttacking;
@@ -48,6 +50,7 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
     }
     public void OnDeath()
     {
+        Instantiate(item, transform.position, quaternion.identity);
         Destroy(gameObject);
     }
 
