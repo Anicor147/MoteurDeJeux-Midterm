@@ -11,3 +11,15 @@ X
 (Assets/Scripts/SO/Character SO Script.cs,6\3\630cd3935662ec429bcdcb5748f6db402c44c443
 Y
 )Assets/Scripts/Player/WeaponController.cs,8\7\87d25ab1c6193e30d3611f5cc3c61f2ff359da35
+b
+2Assets/Scripts/Player/PlayerAnimationController.cs,5\d\5d2d65fa5bbe20d257b12509deecaca0d31f4f3e
+W
+'Assets/Scripts/Player/CameraMovement.cs,2\a\2a071546d4063b1eb78999d134e57d16fc6dccf4
+S
+#Assets/Scripts/Player/Projectile.cs,0\c\0cafd30ae48a4e99e3952d5ae76715a164de6bb6
+L
+Assets/Scripts/SO/EnemySO.cs,5\a\5a2d78f201179aab7e4c9dac107362cf7e790d30
+_
+/Assets/Scripts/Player/WeaponsStatsController.cs,b\4\b46b36a07affbf6a04d24b8da0907d070c3991ce
+N
+Assets/Scripts/SO/WeaponsSO.cs,a\b\abfd52c4c7ed4b4a8e9b84fb5acbc26b0ba4396b
