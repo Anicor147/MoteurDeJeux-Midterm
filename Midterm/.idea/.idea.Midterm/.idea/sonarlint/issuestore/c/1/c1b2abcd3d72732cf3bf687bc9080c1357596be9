@@ -6,5 +6,5 @@ Vcsharpsquid:S3267;"2Loops should be simplified with "LINQ" expressions(±ğ¿©
 tcsharpsquid:S927"QRename parameter 'damageReceived' to 'damage' to match the interface declaration.(©ÍïŠ8›åË¯1
 kcsharpsquid:S2223"HChange the visibility of 'isLightning' or make it 'const' or 'readonly'.(é‰‡x8Ï™üã¯1
 ycsharpsquid:S2696M"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ÃÿÂ’8–şÒƒ°1
-~csharpsquid:S2696S"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(…¦¶›øÿÿÿÿ8¡‡•‰°1
-Bcsharpsquid:S125Z"Remove this commented out code.(”ŸğÔ8âš¹Ü¯1
+~csharpsquid:S2696S"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(…¦¶›øÿÿÿÿ8®ˆÿ»°1
+Bcsharpsquid:S125b"Remove this commented out code.(”ŸğÔ8œÒ¦Û°1

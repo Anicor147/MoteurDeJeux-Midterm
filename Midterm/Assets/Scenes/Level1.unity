@@ -369,9 +369,9 @@ GameObject:
   - component: {fileID: 927505356}
   - component: {fileID: 927505354}
   - component: {fileID: 927505355}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IcePicks
-  m_TagString: IceAttack
+  m_TagString: Weapons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -658,9 +658,9 @@ GameObject:
   - component: {fileID: 1017317055}
   - component: {fileID: 1017317051}
   - component: {fileID: 1017317054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireAttack
-  m_TagString: FireAttack
+  m_TagString: Weapons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -985,6 +985,29 @@ MonoBehaviour:
   playerAnimator: {fileID: 961161495}
   iceAnimator: {fileID: 927505354}
   fireAnimator: {fileID: 1017317051}
+--- !u!1 &1561364346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 722676860891445831, guid: 43f4cf00e0795104eb70e305b15278fa, type: 3}
+  m_PrefabInstance: {fileID: 5350774159517801006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1561364355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561364346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2913e27967eb69948851d39e806c2a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemPrefab: {fileID: 5464138273574454434, guid: 8125640e5962d054eb53923055fcb301, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: c3174cd2a09ce6f42991e4a9375b3db0, type: 2}
+  - {fileID: 11400000, guid: 1d4987e28e0dd404db4895584936d5c3, type: 2}
+  - {fileID: 11400000, guid: 9eb8eb8b332df0d478b94747e5c86014, type: 2}
+  - {fileID: 11400000, guid: d87be8e2716278e469c0a35db6a182c8, type: 2}
 --- !u!1 &1653010335
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,9 +1020,9 @@ GameObject:
   - component: {fileID: 1653010339}
   - component: {fileID: 1653010338}
   - component: {fileID: 1653010337}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LightningAttack
-  m_TagString: LightingAttack
+  m_TagString: Weapons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1354,7 +1377,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 722676860891445831, guid: 43f4cf00e0795104eb70e305b15278fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1561364355}
   m_SourcePrefab: {fileID: 100100000, guid: 43f4cf00e0795104eb70e305b15278fa, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

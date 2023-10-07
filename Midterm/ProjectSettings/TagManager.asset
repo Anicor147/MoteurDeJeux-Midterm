@@ -9,6 +9,7 @@ TagManager:
   - FireAttack
   - LightingAttack
   - Slime
+  - Weapons
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Loot
+  - Weapons
   - 
   - 
   - 

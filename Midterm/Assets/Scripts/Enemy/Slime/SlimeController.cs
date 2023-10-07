@@ -9,7 +9,7 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
 {
     [SerializeField] private EnemySO _enemyStats;
     [SerializeField] private SlimeAnimationControler slimeAnimation;
-    [SerializeField] private GameObject item;
+   // [SerializeField] private GameObject item;
     private float maxHealth;
     public bool isDead;
     public bool isAttacking;
@@ -50,7 +50,7 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
     }
     public void OnDeath()
     {
-        Instantiate(item, transform.position, quaternion.identity);
+      GetComponent<LootTable>().InstantiateLoot(transform.position);
         Destroy(gameObject);
     }
 

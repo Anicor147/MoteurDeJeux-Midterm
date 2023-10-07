@@ -84,6 +84,14 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Money")
+        {
+            Debug.Log($"This is Money");
+        }
+    }
+
     public void OnDeath()
     {
         _playerAnimationController.PlayerIsDead();

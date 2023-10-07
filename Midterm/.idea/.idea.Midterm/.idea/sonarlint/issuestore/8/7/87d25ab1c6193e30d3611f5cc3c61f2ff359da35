@@ -5,4 +5,4 @@ mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'publi
 mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(‡«Ôæÿÿÿÿÿ8¼ù«‰°1
 csharpsquid:S1450"XRemove the field 'direction' and declare it as a local variable in the relevant methods.(¥³…˜ùÿÿÿÿ8™ƒá¯1
 ocsharpsquid:S2223"FChange the visibility of 'canAttack' or make it 'const' or 'readonly'.(‡«Ôæÿÿÿÿÿ8¼ù«‰°1
-~csharpsquid:S26968"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ˆÎîÿÿÿÿÿ8×«¯‰°1
+~csharpsquid:S26968"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ˆÎîÿÿÿÿÿ8÷§ô»°1

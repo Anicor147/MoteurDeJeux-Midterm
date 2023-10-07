@@ -23,3 +23,13 @@ _
 /Assets/Scripts/Player/WeaponsStatsController.cs,b\4\b46b36a07affbf6a04d24b8da0907d070c3991ce
 N
 Assets/Scripts/SO/WeaponsSO.cs,a\b\abfd52c4c7ed4b4a8e9b84fb5acbc26b0ba4396b
+e
+5Assets/Scripts/Enemy/Slime/SlimeAnimationControler.cs,5\c\5cfcb4b6a175b61d439e861315d4b95279f22bb2
+[
++Assets/Scripts/Enemy/Slime/SlimeMovement.cs,c\a\ca0352e0cbffb4ee71ccecea7bb11be1731eb096
+]
+-Assets/Scripts/Enemy/Slime/SlimeController.cs,c\6\c683e8f341a1a029988887204f3ab71cc018e1ff
+K
+Assets/Scripts/SO/LootSO.cs,1\0\10e03260d01984ee203183dcba67ad4b218394e1
+P
+ Assets/Scripts/Loot/LootTable.cs,e\9\e93ba1893563c7dcb1de247f3892eb255edb08ff
