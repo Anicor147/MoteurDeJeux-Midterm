@@ -12,11 +12,15 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     [SerializeField] private GameObject lightingWeaponObject;
     private Dictionary<KeyCode, GameObject> weaponDictionary;
     private float maxHealth;
+    private float maxMana;
     public static bool isLightning;
     private WeaponController coroutineWeaponController;
+    private int money;
     private void Start()
     {
         maxHealth = playerStat.lifePoint;
+        maxMana = playerStat.manaPoint;
+        
         AddToDictionary();
         DefaultEquipedWeapon();
     }
@@ -30,7 +34,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     public void TakeDamage(float damageReceived)
     {
         maxHealth -= damageReceived;
-        Debug.Log("current health: "+ maxHealth);
+        Debug.Log("Player current health: "+ maxHealth);
         if (maxHealth <= 0) OnDeath();
     }
 
@@ -86,12 +90,25 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Money")
+        switch (other.gameObject.name)
         {
-            Debug.Log($"This is Money");
+            case "Money":
+                money += 5;
+                Debug.Log($"How much money : {money}");
+                Destroy(other.gameObject);
+                break;
+            case "HealthPotion":
+                Debug.Log($"This is HealthPotion");
+                break;
+            case "ManaPotion":
+                Debug.Log($"This is ManaPotion");
+                break;
+            case "MoneyCase":
+                Debug.Log($"This is MoneyCase");
+                break;
         }
     }
-
+    
     public void OnDeath()
     {
         _playerAnimationController.PlayerIsDead();

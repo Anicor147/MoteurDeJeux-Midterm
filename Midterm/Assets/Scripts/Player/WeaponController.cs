@@ -22,7 +22,6 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
         LineOfActionPosition();
         FlipSprite();
     }
-
     void LineOfActionPosition()
     {
         if (Time.time - attackStartTime >= attackCooldown)
@@ -35,7 +34,6 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
-    
     public void PlayerAttack()
     {
         
@@ -45,7 +43,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
              _playerAnimationController.PlayerIsAttackingIcePicks();
              _playerAnimationController.PlayerIsAttackingFireMelee();
              
-             if (PlayerController.isLightning == true && canAttack )
+             if (PlayerController.isLightning && canAttack )
              {
                  StartCoroutine(LightningWeaponWithDelay()); 
              }
@@ -58,9 +56,6 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
         yield return new WaitForSeconds(1f);
         canAttack = true;
     }
-    
-    
-    
     public void FlipSprite()
     {
         if (mousePosition.x < transform.position.x)
