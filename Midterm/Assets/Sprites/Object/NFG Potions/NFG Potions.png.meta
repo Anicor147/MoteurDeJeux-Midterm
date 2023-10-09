@@ -168,7 +168,7 @@ TextureImporter:
       name: NFG Potions_2
       rect:
         serializedVersion: 2
-        x: 70
+        x: 71
         y: 226
         width: 20
         height: 28
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFG Potions_3
+      name: FullRecovery
       rect:
         serializedVersion: 2
         x: 102
@@ -973,6 +973,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      FullRecovery: -1525379419
       HealthPotion: -401703779
       ManaPotion: -890425634
       NFG Potions_10: 980499109
@@ -996,7 +997,6 @@ TextureImporter:
       NFG Potions_27: 1152388995
       NFG Potions_28: 1752109368
       NFG Potions_29: -737769077
-      NFG Potions_3: -1525379419
       NFG Potions_30: 1711547697
       NFG Potions_31: -789223945
       NFG Potions_32: 364349205

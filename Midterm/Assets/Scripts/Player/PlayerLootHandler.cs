@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLootHandler : MonoBehaviour
 {
     private int money;
-    private PlayerController _playerController;
+   [SerializeField] private PlayerController _playerController;
     private void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.gameObject.name)
@@ -16,12 +16,16 @@ public class PlayerLootHandler : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
             case "HealthPotion":
-                _playerController.MaxHealth += 15;
-                Debug.Log($"This is HealthPotion");
+                HealthPotionLogic();
+                Destroy(other.gameObject);
                 break;
             case "ManaPotion":
-                Debug.Log($"This is ManaPotion");
-                _playerController.MaxMana += 20;
+                ManaPotionLogic();
+                Destroy(other.gameObject);
+                break;
+            case "FullRecoveryPotion":
+                FullRecoveryPotionLogic();
+                Destroy(other.gameObject);
                 break;
             case "MoneyCase":
                 Debug.Log($"This is MoneyCase");
@@ -32,5 +36,26 @@ public class PlayerLootHandler : MonoBehaviour
 
     public void MoneyCaseEffect()
     {
+        
+    }
+
+    public void ManaPotionLogic()
+    {
+        if (_playerController.MaxMana >= 100) _playerController.MaxMana = 100;
+        else _playerController.MaxMana += 20;    
+    }
+
+    public void HealthPotionLogic()
+    {
+        if (_playerController.MaxHealth >= 100) _playerController.MaxHealth = 100;
+        else _playerController.MaxHealth += 15;    
+    }
+
+    public void FullRecoveryPotionLogic()
+    {
+        _playerController.MaxHealth = 1000;
+        _playerController.MaxMana = 1000;
+        if (_playerController.MaxHealth >= 100 )_playerController.MaxHealth = 100;
+        if (_playerController.MaxMana >= 100) _playerController.MaxMana = 100;
     }
 }

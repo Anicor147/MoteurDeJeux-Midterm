@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b34c24477747ca0488533a7ff3918672, type: 3}
-  m_Name: LightningWeaponStat
+  m_Script: {fileID: 11500000, guid: 59e7309922120174da578764f0dd38ed, type: 3}
+  m_Name: FullRecoveryPotion
   m_EditorClassIdentifier: 
-  WeaponDamage: 100
+  lootSprite: {fileID: -1525379419, guid: 158033accefe0c440b5a56afe0a13816, type: 3}
+  lootName: FullRecoveryPotion
+  dropRate: 10

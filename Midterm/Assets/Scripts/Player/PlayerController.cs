@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     private WeaponController coroutineWeaponController;
     private int currency;
 
+  
     public int Currency
     {
         get => currency;
@@ -51,7 +52,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     public void TakeDamage(float damageReceived)
     {
         maxHealth -= damageReceived;
-        Debug.Log("Player current health: "+ MaxHealth);
         if (MaxHealth <= 0) OnDeath();
     }
 
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
                 MaxMana += (20 * Time.deltaTime);
                 Debug.Log(MaxMana);
             }
-            else if (!Input.GetKey(KeyCode.Q))
+            else if (!Input.GetKey(KeyCode.Q)) 
             {
                 _playerAnimationController.PlayerIsCharging(false);
             }

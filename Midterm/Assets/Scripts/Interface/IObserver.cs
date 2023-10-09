@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IObserver
 {
-    void Update(float MaxHealth, float MaxMana);
+    void HealthChanged(float health);
+    void ManaChanged(float mana);
 }

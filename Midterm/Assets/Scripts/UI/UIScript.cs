@@ -6,25 +6,23 @@ using UnityEngine;
 using UnityEngine.LowLevel;
 using UnityEngine.UI;
 
-public class UIScript : MonoBehaviour
+public class UIScript : MonoBehaviour 
 {
-    private GameObject player;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider manaSlider;
     [SerializeField] private PlayerController _playerController;
 
-    
     public void Update()
     {
-        HealthBar();
+        PlayerBars();
     }
 
-    public void HealthBar()
+    public void PlayerBars()
     {
-        healthSlider.value = _playerController.MaxHealth;
         manaSlider.value = _playerController.MaxMana;
+        healthSlider.value = _playerController.MaxHealth;
     }
 
-
+    
 }
 
