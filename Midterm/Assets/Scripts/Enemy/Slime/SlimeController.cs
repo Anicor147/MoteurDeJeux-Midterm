@@ -34,7 +34,6 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
         if (other.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerController>().TakeDamage(_slimeStats.attackDamage);
-           
         }
     }
     public void OnDeath()

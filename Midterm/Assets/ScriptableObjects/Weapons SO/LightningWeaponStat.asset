@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34c24477747ca0488533a7ff3918672, type: 3}
   m_Name: LightningWeaponStat
   m_EditorClassIdentifier: 
-  WeaponDamage: 10
+  WeaponDamage: 100

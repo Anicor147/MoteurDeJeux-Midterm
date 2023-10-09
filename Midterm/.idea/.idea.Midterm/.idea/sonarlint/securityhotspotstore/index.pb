@@ -41,3 +41,9 @@ h
 -Assets/Scripts/Enemy/Hunter/HunterMovement.cs,3\9\39a58d92936545cfbd28d6bd6687c8dfc611f5d0
 _
 /Assets/Scripts/Enemy/Hunter/HunterController.cs,2\7\27041227a1c85731d63aae89eb654fe78dc47055
+Z
+*Assets/Scripts/Player/PlayerLootHandler.cs,3\2\32cd45436317c9812dc48dd6a88afee435d97828
+U
+%Assets/Scripts/Interface/IObserver.cs,7\b\7b97ab2d2728255112908b8a08c4120929370a40
+M
+Assets/Scripts/UI/UIScript.cs,7\6\760c170c5b0bd5088cd0f386c6dac8a808cfd5a0
