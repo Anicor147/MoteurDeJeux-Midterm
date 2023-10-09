@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3337094510582336569}
   - component: {fileID: 3745776186500456118}
   - component: {fileID: 3389026280216340462}
+  - component: {fileID: 425447480256771892}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Slime
@@ -119,7 +120,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0026465058, y: 0}
@@ -198,7 +199,6 @@ MonoBehaviour:
   _enemyStats: {fileID: 11400000, guid: 6f497de6ca40c474baa1705702f0682d, type: 2}
   slimeAnimation: {fileID: 3745776186500456118}
   isDead: 0
-  isAttacking: 0
 --- !u!114 &3745776186500456118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,5 +224,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452adc0f7e1d5544588147824e83e289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyStats: {fileID: 11400000, guid: 6f497de6ca40c474baa1705702f0682d, type: 2}
+  _slimeStats: {fileID: 11400000, guid: 6f497de6ca40c474baa1705702f0682d, type: 2}
   slimeControllerChecks: {fileID: 3337094510582336569}
+  slimeAnimation: {fileID: 3745776186500456118}
+--- !u!114 &425447480256771892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722676860891445831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2913e27967eb69948851d39e806c2a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemPrefab: {fileID: 5464138273574454434, guid: 8125640e5962d054eb53923055fcb301, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: c3174cd2a09ce6f42991e4a9375b3db0, type: 2}
+  - {fileID: 11400000, guid: 1d4987e28e0dd404db4895584936d5c3, type: 2}
+  - {fileID: 11400000, guid: 9eb8eb8b332df0d478b94747e5c86014, type: 2}
+  - {fileID: 11400000, guid: d87be8e2716278e469c0a35db6a182c8, type: 2}

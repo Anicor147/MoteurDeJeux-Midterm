@@ -7,23 +7,20 @@ using Vector3 = System.Numerics.Vector3;
 
 public class SlimeController : MonoBehaviour ,IBaseCharacter
 {
-    [SerializeField] private EnemySO _enemyStats;
+    [SerializeField] private EnemySO _slimeStats;
     [SerializeField] private SlimeAnimationControler slimeAnimation;
-    [SerializeField] private GameObject item;
     private float maxHealth;
     public bool isDead;
-    public bool isAttacking;
-    private Rigidbody2D rb;
+  
     private void Start()
     {
-        maxHealth = _enemyStats.lifePoint;
-        rb = GetComponent<Rigidbody2D>();
+        maxHealth = _slimeStats.lifePoint;
     }
 
     public void TakeDamage(float damage)
     {
         maxHealth -= damage;
-        Debug.Log($"current health: {maxHealth}");
+        Debug.Log($"Slime current health: {maxHealth}");
         slimeAnimation.SlimeIsHurted();
         if (maxHealth <= 0)
         {
@@ -31,26 +28,18 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
             StartCoroutine(SlimeDeathDelay());
         }
     }
-
-    public void SlimeAttack()
-    {
-        isAttacking = true;
-        slimeAnimation.SlimeIsAttacking();
-        isAttacking = false; 
-    }
     
-
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerController>().TakeDamage(_enemyStats.attackDamage);
+            other.gameObject.GetComponent<PlayerController>().TakeDamage(_slimeStats.attackDamage);
            
         }
     }
     public void OnDeath()
     {
-        Instantiate(item, transform.position, quaternion.identity);
+      GetComponent<LootTable>().InstantiateLoot(transform.position);
         Destroy(gameObject);
     }
 

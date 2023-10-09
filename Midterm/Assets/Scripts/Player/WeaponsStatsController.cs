@@ -9,9 +9,13 @@ public class WeaponsStatsController : MonoBehaviour
 
   private void OnTriggerEnter2D(Collider2D other)
   {
-      if (!other.CompareTag("Player"))
+      if (other.CompareTag("Slime"))
       {
           other.gameObject.GetComponent<SlimeController>().TakeDamage(_weaponsSo.WeaponDamage);
+      }
+      if (other.CompareTag("Hunter"))
+      {
+          other.gameObject.GetComponent<HunterController>().TakeDamage(_weaponsSo.WeaponDamage);
       }
   }
 }

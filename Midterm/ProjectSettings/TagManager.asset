@@ -9,6 +9,9 @@ TagManager:
   - FireAttack
   - LightingAttack
   - Slime
+  - Weapons
+  - Hunter
+  - HunterArrow
   layers:
   - Default
   - TransparentFX
@@ -16,9 +19,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Loot
+  - Weapons
+  - Player
   - 
   - 
   - 

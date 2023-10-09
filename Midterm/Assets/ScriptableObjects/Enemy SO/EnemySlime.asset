@@ -15,4 +15,4 @@ MonoBehaviour:
   lifePoint: 100
   attackDamage: 0.5
   speed: 100
-  range: 0
+  range: 10

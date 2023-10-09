@@ -5,34 +5,55 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class SlimeMovement : MonoBehaviour , IFlipSprite
+public class SlimeMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
 {
-    [SerializeField] private EnemySO _enemyStats;
+    [SerializeField] private EnemySO _slimeStats;
+    [SerializeField] private SlimeAnimationControler slimeAnimation;
+    [SerializeField] private SlimeController _slimeChecController;
     private GameObject player;
     private Vector3 distance;
     private Rigidbody2D _rb;
-    [SerializeField] private SlimeController slimeControllerChecks;
-    
+    private int layerMask;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         _rb = GetComponent<Rigidbody2D>();
+        layerMask = LayerMask.GetMask("Player");
     }
 
     private void FixedUpdate()
     {
         FlipSprite();
-        MoveTowardPlayer();
+        RaycastHitPlayer();
     }
 
-    private void MoveTowardPlayer()
+    public void RaycastHitPlayer()
     {
-        var towardPlayer = player.transform.position - transform.position;
-        _rb.velocity = towardPlayer.normalized * (_enemyStats.speed * Time.deltaTime);
-        if (slimeControllerChecks.isDead || slimeControllerChecks.isAttacking )
+        var distance = player.transform.position - transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, distance , _slimeStats.range, layerMask);
+        if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
+            MoveTowardPlayer(distance);
+            if (distance.magnitude <=0.5)
+            {
                 _rb.velocity = Vector2.zero;
+                slimeAnimation.SlimeIsAttacking();
+            }
+            if (_slimeChecController.isDead)
+            {
+                _rb.velocity = Vector2.zero;
+            }
         }
+        else 
+        {
+            _rb.velocity = Vector2.zero;
+        }
+    }
+
+    public void MoveTowardPlayer(Vector3 distance)
+    {
+        _rb.velocity = distance.normalized * (_slimeStats.speed * Time.deltaTime);
     }
 
     public void FlipSprite()

@@ -12,11 +12,32 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     [SerializeField] private GameObject lightingWeaponObject;
     private Dictionary<KeyCode, GameObject> weaponDictionary;
     private float maxHealth;
+    private float maxMana;
     public static bool isLightning;
     private WeaponController coroutineWeaponController;
+    private int currency;
+
+    public int Currency
+    {
+        get => currency;
+        set => currency = value;
+    }
+    public float MaxMana
+    {
+        get => maxMana;
+        set => maxMana = value;
+    }
+    public float MaxHealth
+    {
+        get => maxHealth;
+        set => maxHealth = value;
+    }
+    
     private void Start()
     {
-        maxHealth = playerStat.lifePoint;
+        MaxHealth = playerStat.lifePoint;
+        MaxMana = playerStat.manaPoint;
+        
         AddToDictionary();
         DefaultEquipedWeapon();
     }
@@ -30,16 +51,31 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     public void TakeDamage(float damageReceived)
     {
         maxHealth -= damageReceived;
-        Debug.Log("current health: "+ maxHealth);
-        if (maxHealth <= 0) OnDeath();
+        Debug.Log("Player current health: "+ MaxHealth);
+        if (MaxHealth <= 0) OnDeath();
     }
 
     public void PlayerIsCharging()
     {
-        if(Input.GetKey(KeyCode.Q))  _playerAnimationController.PlayerIsCharging(true);
-        else if(!Input.GetKey(KeyCode.Q)) _playerAnimationController.PlayerIsCharging(false);
+        if (MaxMana <= playerStat.manaPoint)
+        {
+            if (Input.GetKey(KeyCode.Q))
+            {
+                _playerAnimationController.PlayerIsCharging(true);
+                MaxMana += (20 * Time.deltaTime);
+                Debug.Log(MaxMana);
+            }
+            else if (!Input.GetKey(KeyCode.Q))
+            {
+                _playerAnimationController.PlayerIsCharging(false);
+            }
+        }
+        else
+        {
+            _playerAnimationController.PlayerIsCharging(false);
+        }
     }
-
+    
     public void DefaultEquipedWeapon()
     {
         fireWeaponObject.SetActive(true);
@@ -55,7 +91,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
 
     public void WeaponsDictionnary()
     {
-
         foreach (var key in weaponDictionary)
         {
             if (Input.GetKeyDown(key.Key))
@@ -83,7 +118,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
             WeaponController.canAttack = true;
         }
     }
-
     public void OnDeath()
     {
         _playerAnimationController.PlayerIsDead();

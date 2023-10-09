@@ -8,6 +8,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     [SerializeField] private GameObject projectile;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerAnimationController _playerAnimationController;
+    [SerializeField] private PlayerController _playerController;
     private Vector3 mousePosition;
     private float attackStartTime;
     public float attackCooldown = 0.5f;
@@ -22,7 +23,6 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
         LineOfActionPosition();
         FlipSprite();
     }
-
     void LineOfActionPosition()
     {
         if (Time.time - attackStartTime >= attackCooldown)
@@ -35,17 +35,18 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
-    
     public void PlayerAttack()
     {
         
-        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) )
+        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.MaxMana > 0 )
         {
+            _playerController.MaxMana -= 5;   
+            Debug.Log($"Remaining mana { _playerController.MaxMana}");
              attackStartTime = Time.time;
              _playerAnimationController.PlayerIsAttackingIcePicks();
              _playerAnimationController.PlayerIsAttackingFireMelee();
              
-             if (PlayerController.isLightning == true && canAttack )
+             if (PlayerController.isLightning && canAttack )
              {
                  StartCoroutine(LightningWeaponWithDelay()); 
              }
@@ -58,9 +59,6 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
         yield return new WaitForSeconds(1f);
         canAttack = true;
     }
-    
-    
-    
     public void FlipSprite()
     {
         if (mousePosition.x < transform.position.x)
