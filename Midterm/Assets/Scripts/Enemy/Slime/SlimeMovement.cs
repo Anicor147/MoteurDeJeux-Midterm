@@ -13,13 +13,15 @@ public class SlimeMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
     private GameObject player;
     private Vector3 distance;
     private Rigidbody2D _rb;
-    private int layerMask;
+    private int layerMaskPlayer;
+    private int layerMaskEnemy;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         _rb = GetComponent<Rigidbody2D>();
-        layerMask = LayerMask.GetMask("Player");
+        layerMaskPlayer = LayerMask.GetMask("Player");
+        layerMaskEnemy = LayerMask.GetMask("Enemy");
     }
 
     private void FixedUpdate()
@@ -31,7 +33,7 @@ public class SlimeMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
     public void RaycastHitPlayer()
     {
         var distance = player.transform.position - transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, distance , _slimeStats.range, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, distance , _slimeStats.range, layerMaskPlayer );
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
             MoveTowardPlayer(distance);
