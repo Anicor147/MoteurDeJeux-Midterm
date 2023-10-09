@@ -11,10 +11,12 @@ public class UIScript : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider manaSlider;
     [SerializeField] private PlayerController _playerController;
+    [SerializeField] private TMP_Text moneyCounter;
 
     public void Update()
     {
         PlayerBars();
+        PlayerCurrency();
     }
 
     public void PlayerBars()
@@ -23,6 +25,11 @@ public class UIScript : MonoBehaviour
         healthSlider.value = _playerController.MaxHealth;
     }
 
-    
+    public void PlayerCurrency()
+    {
+        moneyCounter.text = _playerController.Currency.ToString();
+    }
+
+
 }
 
