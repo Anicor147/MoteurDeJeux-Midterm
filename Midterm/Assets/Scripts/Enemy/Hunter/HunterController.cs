@@ -18,13 +18,15 @@ public class HunterController : MonoBehaviour , IBaseCharacter
    public void TakeDamage(float damage)
    {
       maxHealth -= damage;
+      Debug.Log($"Current Hunter health {maxHealth}");
       if (maxHealth <= 0)
       {
          hunterIsDead = true;
+         _hunterAnimationController.HunterIsDead(true);
         StartCoroutine(HunterDeathDelay());
       }
    }
-
+ 
    public void OnDeath()
    {
       GetComponent<LootTable>().InstantiateLoot(transform.position);
@@ -32,7 +34,6 @@ public class HunterController : MonoBehaviour , IBaseCharacter
    }
    public IEnumerator HunterDeathDelay()
    {
-      _hunterAnimationController.HunterIsDead(true);
       yield return new WaitForSeconds(3);
       OnDeath();
    }

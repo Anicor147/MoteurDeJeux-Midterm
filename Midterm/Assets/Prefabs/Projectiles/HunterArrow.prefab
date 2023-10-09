@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6049736861077976550}
   m_Layer: 0
   m_Name: HunterArrow
-  m_TagString: Untagged
+  m_TagString: HunterArrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 600
+  _hunterStats: {fileID: 11400000, guid: 83bac2004f48e2d499d51200ab12ccc4, type: 2}
 --- !u!61 &6049736861077976550
 BoxCollider2D:
   m_ObjectHideFlags: 0

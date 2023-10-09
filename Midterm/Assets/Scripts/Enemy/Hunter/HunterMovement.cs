@@ -65,13 +65,16 @@ public class HunterMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
 
     public void MoveTowardPlayer(Vector3 distance)
     {
-        rb.velocity = distance.normalized * (_hunterStats.speed * Time.deltaTime);
-        hunterAnimation.HunterIsRunning(true);
+        if(!_hunterController.hunterIsDead)
+        { 
+            rb.velocity = distance.normalized * (_hunterStats.speed * Time.deltaTime);
+            hunterAnimation.HunterIsRunning(true);
+        }
     }
 
     public void AttackPlayer(Vector3 distance)
     {
-        if (Time.time - timer >= cooldown)
+        if (Time.time - timer >= cooldown && !_hunterController.hunterIsDead)
         {
             var angle = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg;
             hunterAnimation.HunterIsAttacking();
@@ -79,11 +82,6 @@ public class HunterMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
             timer = Time.time;
         }
     }
-
-    public void MoveTowardPlayer()
-    {
-    }
-
     public void FlipSprite()
     {
         if (transform.position.x > player.transform.position.x)

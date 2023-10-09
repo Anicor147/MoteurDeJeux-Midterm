@@ -7,14 +7,14 @@ using Vector3 = System.Numerics.Vector3;
 
 public class SlimeController : MonoBehaviour ,IBaseCharacter
 {
-    [SerializeField] private EnemySO _enemyStats;
+    [SerializeField] private EnemySO _slimeStats;
     [SerializeField] private SlimeAnimationControler slimeAnimation;
     private float maxHealth;
     public bool isDead;
   
     private void Start()
     {
-        maxHealth = _enemyStats.lifePoint;
+        maxHealth = _slimeStats.lifePoint;
     }
 
     public void TakeDamage(float damage)
@@ -33,7 +33,7 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerController>().TakeDamage(_enemyStats.attackDamage);
+            other.gameObject.GetComponent<PlayerController>().TakeDamage(_slimeStats.attackDamage);
            
         }
     }

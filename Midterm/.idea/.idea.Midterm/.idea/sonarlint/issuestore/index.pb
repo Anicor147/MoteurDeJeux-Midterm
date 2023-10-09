@@ -33,3 +33,11 @@ K
 Assets/Scripts/SO/LootSO.cs,1\0\10e03260d01984ee203183dcba67ad4b218394e1
 P
  Assets/Scripts/Loot/LootTable.cs,e\9\e93ba1893563c7dcb1de247f3892eb255edb08ff
+V
+&Assets/Scripts/Interface/IMoveEnemy.cs,e\3\e35b9fcb6b6e40017cc2fa9ed43d4d3aee48c6cd
+]
+-Assets/Scripts/Enemy/Hunter/HunterMovement.cs,3\9\39a58d92936545cfbd28d6bd6687c8dfc611f5d0
+_
+/Assets/Scripts/Enemy/Hunter/HunterController.cs,2\7\27041227a1c85731d63aae89eb654fe78dc47055
+h
+8Assets/Scripts/Enemy/Hunter/HunterAnimationController.cs,3\4\349748acdeb983bd12224e7fa41baa1bca6d141e

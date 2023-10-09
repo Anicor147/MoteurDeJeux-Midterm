@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     private GameObject playerPosition;
+    [SerializeField] private float zoomOut = -10f;
 
     private void Start()
     {
@@ -13,6 +14,6 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = playerPosition.transform.position + new Vector3(0, 0, -10);
+        transform.position = playerPosition.transform.position + new Vector3(0, 0, zoomOut);
     }
 }

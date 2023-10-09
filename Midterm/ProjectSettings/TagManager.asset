@@ -10,6 +10,8 @@ TagManager:
   - LightingAttack
   - Slime
   - Weapons
+  - Hunter
+  - HunterArrow
   layers:
   - Default
   - TransparentFX

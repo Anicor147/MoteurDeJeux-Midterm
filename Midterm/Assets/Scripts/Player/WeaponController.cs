@@ -8,6 +8,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     [SerializeField] private GameObject projectile;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerAnimationController _playerAnimationController;
+    [SerializeField] private PlayerController _playerController;
     private Vector3 mousePosition;
     private float attackStartTime;
     public float attackCooldown = 0.5f;
@@ -37,8 +38,10 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     public void PlayerAttack()
     {
         
-        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) )
+        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.MaxMana > 0 )
         {
+            _playerController.MaxMana -= 5;   
+            Debug.Log($"Remaining mana { _playerController.MaxMana}");
              attackStartTime = Time.time;
              _playerAnimationController.PlayerIsAttackingIcePicks();
              _playerAnimationController.PlayerIsAttackingFireMelee();

@@ -13,5 +13,9 @@ public class WeaponsStatsController : MonoBehaviour
       {
           other.gameObject.GetComponent<SlimeController>().TakeDamage(_weaponsSo.WeaponDamage);
       }
+      if (other.CompareTag("Hunter"))
+      {
+          other.gameObject.GetComponent<HunterController>().TakeDamage(_weaponsSo.WeaponDamage);
+      }
   }
 }

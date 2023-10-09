@@ -13,7 +13,7 @@ public class HunterAnimationController : MonoBehaviour
 
     public void HunterIsDead(bool value)
     {
-        _hunterAnimator.SetBool("isDeath" , value);
+        _hunterAnimator.SetBool("isDead" , value);
     }
     
     public void HunterIsRunning(bool value)
