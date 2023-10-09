@@ -12,6 +12,7 @@ TagManager:
   - Weapons
   - Hunter
   - HunterArrow
+  - Item
   layers:
   - Default
   - TransparentFX

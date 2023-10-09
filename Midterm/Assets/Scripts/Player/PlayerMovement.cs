@@ -58,8 +58,7 @@ public class PlayerMovement : MonoBehaviour, IFlipSprite
             _rb.velocity = new Vector3(0, 0, 0);
         }
     }
-
-
+    
     public void FlipSprite()
     {
         var characterPosition = transform.position;
