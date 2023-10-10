@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootSprite: {fileID: 1826603823, guid: c9a6f960791802b488b69b4f9d184bb2, type: 3}
   lootName: MoneyCase
-  dropRate: 10
+  dropRate: 30

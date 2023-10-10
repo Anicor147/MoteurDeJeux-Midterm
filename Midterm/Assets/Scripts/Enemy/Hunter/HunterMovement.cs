@@ -52,6 +52,7 @@ public class HunterMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
 
                 if (_hunterController.hunterIsDead)
                 { 
+                    hunterAnimation.HunterIsRunning(false);
                     rb.velocity = Vector2.zero;
                 }
             }

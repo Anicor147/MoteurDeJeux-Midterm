@@ -1,3 +1,4 @@
 
 Rcsharpsquid:S3903"0Move 'PlayerLootHandler' into a named namespace.(­Œ©ôþÿÿÿÿ
-¢csharpsquid:S1186%"yAdd a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.(Ž¿¹àüÿÿÿÿ8ŽÊÜˆ±1
+mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Â½ó·ÿÿÿÿÿ8Àæïµ±1
+acsharpsquid:S1117+"8Rename 'money' which hides the field with the same name.(•Æâ‡þÿÿÿÿ8‡Àª¶±1

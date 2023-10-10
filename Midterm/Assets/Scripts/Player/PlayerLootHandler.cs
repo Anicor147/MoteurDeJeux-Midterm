@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLootHandler : MonoBehaviour
 {
     private int money;
-    public string itemMoney = "Money";
+  
    [SerializeField] private PlayerController _playerController;
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -39,13 +39,12 @@ public class PlayerLootHandler : MonoBehaviour
     public void MoneyCaseEffect()
     {
         GameObject[] moneyArray = GameObject.FindGameObjectsWithTag("Item");
-
-        foreach (var money in moneyArray)
+        foreach (var moneyObject in moneyArray)
         {
-            if (money.gameObject.name == "Money")
+            if (moneyObject.name == "Money")
             {
-                Rigidbody2D rb = money.GetComponent<Rigidbody2D>();
-                Vector2 direction = (transform.position - money.transform.position).normalized;
+                Rigidbody2D rb = moneyObject.GetComponent<Rigidbody2D>();
+                Vector2 direction = (transform.position - moneyObject.transform.position).normalized;
                 rb.velocity = direction * 10f;
             }
         }
