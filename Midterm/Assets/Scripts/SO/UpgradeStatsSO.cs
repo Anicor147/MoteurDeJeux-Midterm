@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 public class UpgradeStatsSO : ScriptableObject
 {
   public float lifePointUpgrade;
-  public float ManaPointUpgrade;
+  public float manaPointUpgrade;
   public float weaponDamageUpgrade;
+  public int index;
 }

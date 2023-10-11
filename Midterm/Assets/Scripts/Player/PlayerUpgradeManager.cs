@@ -5,19 +5,22 @@ using UnityEngine.Serialization;
 
 public class PlayerUpgradeManager : MonoBehaviour
 {
-    public UpgradeStatsSO statsUpgrade;
+    public UpgradeListSO listOfUpgrade;
     public PlayerController playerController;
 
-
-    public void UpgradeStats()
+    public void UpgradeStats(int index)
     {
-        playerController.MaxHealth = statsUpgrade.lifePointUpgrade;
-        playerController.MaxMana = statsUpgrade.ManaPointUpgrade;
+        foreach (var upgrade in listOfUpgrade.listOfUpgrade)
+        {
+            if (index == upgrade.index)
+            {
+                playerController.MaxHealth = upgrade.lifePointUpgrade;
+                playerController.MaxMana = upgrade.manaPointUpgrade;
+            }
+        }
+        
+        Debug.Log($"Current Character Max Health is = {playerController.MaxHealth}");
+        Debug.Log($"Current Character Max Mana is = {playerController.MaxMana}");
     }
-
-
-
-
-
-
+    
 }
