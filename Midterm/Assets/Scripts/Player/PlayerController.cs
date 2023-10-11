@@ -11,18 +11,13 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     [SerializeField] private GameObject fireWeaponObject;
     [SerializeField] private GameObject lightingWeaponObject;
     private Dictionary<KeyCode, GameObject> weaponDictionary;
+    private WeaponController coroutineWeaponController;
+    public static bool isLightning;
+    private int currency;
     private float maxHealth;
     private float maxMana;
-    public static bool isLightning;
-    private WeaponController coroutineWeaponController;
-    private int currency;
 
-  
-    public int Currency
-    {
-        get => currency;
-        set => currency = value;
-    }
+
     public float MaxMana
     {
         get => maxMana;
@@ -33,7 +28,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         get => maxHealth;
         set => maxHealth = value;
     }
-    
+
     private void Start()
     {
         MaxHealth = playerStat.lifePoint;
@@ -41,6 +36,12 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         
         AddToDictionary();
         DefaultEquipedWeapon();
+    }
+
+    public int Currency
+    {
+        get => currency;
+        set => currency = value;
     }
 
     private void Update()
