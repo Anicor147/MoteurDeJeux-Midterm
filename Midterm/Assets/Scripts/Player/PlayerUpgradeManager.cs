@@ -14,13 +14,27 @@ public class PlayerUpgradeManager : MonoBehaviour
         {
             if (index == upgrade.index)
             {
-                playerController.MaxHealth = upgrade.lifePointUpgrade;
-                playerController.MaxMana = upgrade.manaPointUpgrade;
+                playerController.MaxHealth += upgrade.lifePointUpgrade;
+                playerController.MaxMana += upgrade.manaPointUpgrade;
             }
         }
         
         Debug.Log($"Current Character Max Health is = {playerController.MaxHealth}");
         Debug.Log($"Current Character Max Mana is = {playerController.MaxMana}");
     }
+
+    // Not official
     
+    public void FirstUpgrade()
+    {
+        UpgradeStats(1);
+    }
+    public void SecondUpgrade()
+    {
+        UpgradeStats(2);
+    }
+    public void ThirdUpgrade()
+    {
+        UpgradeStats(3);
+    }
 }
