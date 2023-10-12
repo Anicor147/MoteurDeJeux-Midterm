@@ -27,14 +27,37 @@ public class PlayerUpgradeManager : MonoBehaviour
     
     public void FirstUpgrade()
     {
-        UpgradeStats(1);
+        if (playerController.Currency >= 200)
+        {
+            playerController.Currency -= 200;    
+            UpgradeStats(1);
+        }
     }
     public void SecondUpgrade()
     {
-        UpgradeStats(2);
+        if (playerController.Currency >= 400)
+        {
+            playerController.Currency -= 400;    
+            UpgradeStats(2);
+        }   
     }
     public void ThirdUpgrade()
     {
-        UpgradeStats(3);
+        if (playerController.Currency >= 600)
+        {
+            playerController.Currency -= 600;    
+            UpgradeStats(3);
+        }
+    }
+
+    public void UnlockIce()
+    {
+        playerController.UnlockIceWeapon = true;
+    }
+
+
+    public void UnlockLightning()
+    {
+        playerController.UnlockLightningWeapon = true;
     }
 }

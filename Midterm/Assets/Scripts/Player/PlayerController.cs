@@ -11,8 +11,10 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     [SerializeField] private GameObject fireWeaponObject;
     [SerializeField] private GameObject lightingWeaponObject;
     private Dictionary<KeyCode, GameObject> weaponDictionary;
-    private WeaponController coroutineWeaponController;
+    [SerializeField]  private WeaponController WeaponController;
     public static bool isLightning;
+    private bool unlockIceWeapon;
+    private bool unlockLightningWeapon ;
     private int currency;
     private float maxHealth;
     private float maxMana;
@@ -29,11 +31,30 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         set => maxHealth = value;
     }
 
+    public bool UnlockIceWeapon
+    {
+        get => unlockIceWeapon;
+        set => unlockIceWeapon = value;
+    }
+    public bool UnlockLightningWeapon
+    {
+        get => unlockLightningWeapon;
+        set => unlockLightningWeapon = value;
+    }
+
     private void Start()
     {
         MaxHealth = playerStat.lifePoint;
         MaxMana = playerStat.manaPoint;
         
+        //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
+        UnlockLightningWeapon = true;
+        UnlockIceWeapon = true;
+        //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
+        
+        
+        
+        Debug.Log($"ice {UnlockIceWeapon}  lightning {UnlockLightningWeapon}");
         AddToDictionary();
         DefaultEquipedWeapon();
     }
@@ -107,16 +128,21 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         iceWeaponObject.SetActive(false);
         fireWeaponObject.SetActive(false);
         lightingWeaponObject.SetActive(false);
-        
+        isLightning = (gameObject == lightingWeaponObject);
         gameObject.SetActive(true);
-        
-        if (gameObject == lightingWeaponObject) isLightning = true;
-        else isLightning = false;
-        
-        if (gameObject != lightingWeaponObject) 
+
+        if (gameObject == lightingWeaponObject && !UnlockLightningWeapon)
         {
-            Debug.Log($"not light");
-            WeaponController.canAttack = true;
+            lightingWeaponObject.SetActive(false);
+        }
+        else if (gameObject == iceWeaponObject && !UnlockIceWeapon)
+        {
+            iceWeaponObject.SetActive(false);
+        }
+        else
+        {
+          WeaponController.CanAttack = true;
+          Debug.Log($"can attack {WeaponController.CanAttack}");
         }
     }
     public void OnDeath()

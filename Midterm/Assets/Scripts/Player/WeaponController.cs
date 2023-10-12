@@ -14,8 +14,15 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     public float attackCooldown = 0.5f;
     private float angle;
     private Vector3 direction;
-    public static bool canAttack = true;
-    
+    //public static bool canAttack = true;
+    private bool canAttack;
+
+    public bool CanAttack
+    {
+        get => canAttack;
+        set => canAttack = value;
+    }
+
 
     private void LateUpdate()
     {
@@ -49,7 +56,8 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
         }
         else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.MaxMana > 0 && PlayerController.isLightning )
         {
-            if (canAttack)
+            Debug.Log($"Can attack from Weapon Controller {CanAttack}");
+            if (CanAttack)
             {
                 StartCoroutine(LightningWeaponWithDelay());  
             }
@@ -57,11 +65,11 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     }
     public IEnumerator LightningWeaponWithDelay()
     { 
-        canAttack = false;
+        CanAttack = false;
         Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, angle)); 
         _playerController.MaxMana -= 5; 
         yield return new WaitForSeconds(1f);
-        canAttack = true;
+        CanAttack = true;
     }
     public void FlipSprite()
     {
