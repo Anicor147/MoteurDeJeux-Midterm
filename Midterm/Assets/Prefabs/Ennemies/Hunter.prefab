@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8867640110819565693}
   - component: {fileID: 1494811176304916162}
   - component: {fileID: 3163759984874719224}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hunter
   m_TagString: Hunter
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 876049319, guid: d498cbeff8ef7604abd54d0d970f3c6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

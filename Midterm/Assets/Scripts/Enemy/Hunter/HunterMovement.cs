@@ -31,8 +31,7 @@ public class HunterMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
         RaycastHitPlayer();
         FlipSprite();
     }
-
-
+    
     public void RaycastHitPlayer()
     {
         distance = player.transform.position - transform.position;
@@ -52,6 +51,7 @@ public class HunterMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
 
                 if (_hunterController.hunterIsDead)
                 { 
+                    hunterAnimation.HunterIsRunning(false);
                     rb.velocity = Vector2.zero;
                 }
             }

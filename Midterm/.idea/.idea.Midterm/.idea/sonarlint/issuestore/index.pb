@@ -47,3 +47,9 @@ U
 %Assets/Scripts/Interface/IObserver.cs,7\b\7b97ab2d2728255112908b8a08c4120929370a40
 M
 Assets/Scripts/UI/UIScript.cs,7\6\760c170c5b0bd5088cd0f386c6dac8a808cfd5a0
+S
+#Assets/Scripts/SO/UpgradeStatsSO.cs,9\9\99cb80930f73fe159841088ee55d87b7a0599e80
+]
+-Assets/Scripts/Player/PlayerUpgradeManager.cs,c\d\cd048473cda526646ab06407a8d13ffd2a140110
+R
+"Assets/Scripts/SO/UpgradeListSO.cs,1\5\159f020d8634c40d97d25695aa65cc96757218f4
