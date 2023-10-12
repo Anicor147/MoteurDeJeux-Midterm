@@ -1766,7 +1766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &419265322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5338,7 +5338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 64.900024, y: -197.4}
+  m_AnchoredPosition: {x: 64.8999, y: -197.40002}
   m_SizeDelta: {x: 63.489502, y: 63.48938}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1277654362
@@ -6611,6 +6611,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3602910397153780935, guid: 5c32caca785f0f646a2bfef2cf28cb43, type: 3}
   m_PrefabInstance: {fileID: 4341155532539521884}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1659182466 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3669992152531180540, guid: 5c32caca785f0f646a2bfef2cf28cb43, type: 3}
+  m_PrefabInstance: {fileID: 4341155532539521884}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659182464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230a81a1d6bb81b4ca4d36935701db01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1661909031
 GameObject:
   m_ObjectHideFlags: 0
@@ -30212,6 +30223,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3135678759737045555, guid: 5c32caca785f0f646a2bfef2cf28cb43, type: 3}
+      propertyPath: WeaponController
+      value: 
+      objectReference: {fileID: 1659182466}
     - target: {fileID: 3602910397153780935, guid: 5c32caca785f0f646a2bfef2cf28cb43, type: 3}
       propertyPath: m_IsActive
       value: 0

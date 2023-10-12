@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class PlayerLootHandler : MonoBehaviour
 {
     private int money;
+    private bool getmoney = false;
   
    [SerializeField] private PlayerController _playerController;
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,14 +32,19 @@ public class PlayerLootHandler : MonoBehaviour
                 break;
             case "MoneyCase":
                 Debug.Log($"This is MoneyCase");
-                MoneyCaseEffect();
+                getmoney = true;
                 Destroy(other.gameObject);
                 break;
         }
     }
 
+    private void FixedUpdate()
+    {
+        MoneyCaseEffect();
+    }
     public void MoneyCaseEffect()
     {
+        if (!getmoney) return;
         GameObject[] moneyArray = GameObject.FindGameObjectsWithTag("Item");
         foreach (var moneyObject in moneyArray)
         {
@@ -48,6 +55,12 @@ public class PlayerLootHandler : MonoBehaviour
                 rb.velocity = direction * 10f;
             }
         }
+        Invoke("StopMoneyCaseEffect" , 2f);
+    }
+
+    private void StopMoneyCaseEffect()
+    {
+        getmoney = false;
     }
 
     public void ManaPotionLogic()

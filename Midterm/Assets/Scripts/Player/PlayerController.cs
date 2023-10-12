@@ -49,10 +49,8 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
         UnlockLightningWeapon = true;
-        UnlockIceWeapon = true;
+      //UnlockIceWeapon = true;
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
-        
-        
         
         Debug.Log($"ice {UnlockIceWeapon}  lightning {UnlockLightningWeapon}");
         AddToDictionary();

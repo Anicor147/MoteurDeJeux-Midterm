@@ -31,8 +31,7 @@ public class HunterMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
         RaycastHitPlayer();
         FlipSprite();
     }
-
-
+    
     public void RaycastHitPlayer()
     {
         distance = player.transform.position - transform.position;
