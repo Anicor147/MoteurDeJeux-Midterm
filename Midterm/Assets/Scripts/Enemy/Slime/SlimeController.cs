@@ -37,6 +37,14 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
             Debug.Log($"should freeze");
            weaponEffect.FreezeOnTouch(this.gameObject);
         }
+        else if (gameObject.tag == "FireAttack")
+        {
+            Debug.Log($"burned? {weaponEffect.IsBurned}");
+            if (!weaponEffect.IsBurned)
+            {
+                weaponEffect.FireDamageOverTime(this.gameObject);
+            }
+        }
     }
     
     private void OnTriggerStay2D(Collider2D other)

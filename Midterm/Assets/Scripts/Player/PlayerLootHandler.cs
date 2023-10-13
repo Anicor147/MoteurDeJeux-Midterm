@@ -31,7 +31,6 @@ public class PlayerLootHandler : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
             case "MoneyCase":
-                Debug.Log($"This is MoneyCase");
                 getmoney = true;
                 Destroy(other.gameObject);
                 break;

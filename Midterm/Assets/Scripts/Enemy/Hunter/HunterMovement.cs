@@ -13,6 +13,7 @@ public class HunterMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
     [SerializeField] private HunterAnimationController hunterAnimation;
     [SerializeField] private GameObject hunterArrows;
     [SerializeField] private HunterController _hunterController;
+    private WeaponStatus _weaponStatus;
     private GameObject player;
     private Rigidbody2D rb;
     private Vector3 distance;
@@ -21,6 +22,7 @@ public class HunterMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
     private float timer;
     void Start()
     {
+        _weaponStatus = GetComponent<WeaponStatus>();
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         layerMask = LayerMask.GetMask("Player");
@@ -44,12 +46,12 @@ public class HunterMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
             {
                 rb.velocity = Vector2.zero;
                 hunterAnimation.HunterIsRunning(false);
-                AttackPlayer(distance);
+               if(!_weaponStatus.IsFreezed) AttackPlayer(distance);
                 if (distance.magnitude <= 4)
                 {
                     MoveTowardPlayer(-distance);
                 }
-                else if (_hunterController.hunterIsDead)
+                 if (_hunterController.hunterIsDead)
                 { 
                     hunterAnimation.HunterIsRunning(false);
                     rb.velocity = Vector2.zero;
@@ -65,7 +67,7 @@ public class HunterMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
 
     public void MoveTowardPlayer(Vector3 distance)
     {
-        if(!_hunterController.hunterIsDead)
+        if(!_weaponStatus.IsFreezed)
         { 
             rb.velocity = distance.normalized * (_hunterStats.speed * Time.deltaTime);
             hunterAnimation.HunterIsRunning(true);

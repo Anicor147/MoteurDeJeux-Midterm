@@ -58,7 +58,7 @@ public class SlimeMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
 
     public void MoveTowardPlayer(Vector3 distance)
     {
-        if (!_weaponStatus.Isfreezed)
+        if (!_weaponStatus.IsFreezed)
         {
             _rb.velocity = distance.normalized * (_slimeStats.speed * Time.deltaTime);    
         }

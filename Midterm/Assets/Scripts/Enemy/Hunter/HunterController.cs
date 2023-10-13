@@ -8,23 +8,38 @@ public class HunterController : MonoBehaviour , IBaseCharacter
 {
    [SerializeField] private EnemySO _hunterStats;
    [SerializeField] private HunterAnimationController _hunterAnimationController;
-   private float maxHealth;
+   private WeaponStatus _weaponStatus;
+   public float MaxHealth { get; set; }
    public bool hunterIsDead;
 
    private void Start()
    {
-      maxHealth = _hunterStats.lifePoint;
+      MaxHealth = _hunterStats.lifePoint;
+      _weaponStatus = GetComponent<WeaponStatus>();
    }
    
-   public void TakeDamage(float damage , GameObject gameObject)
+   public void TakeDamage(float damage , GameObject gameObjectH)
    {
-      maxHealth -= damage;
-      Debug.Log($"Current Hunter health {maxHealth}");
-      if (maxHealth <= 0)
+      MaxHealth -= damage;
+      Debug.Log($"Current Hunter health {MaxHealth}");
+      if (MaxHealth <= 0)
       {
          hunterIsDead = true;
          _hunterAnimationController.HunterIsDead(true);
         StartCoroutine(HunterDeathDelay());
+      }
+      if (gameObjectH.CompareTag("IceAttack"))
+      {
+         Debug.Log($"Before");
+         _weaponStatus.FreezeOnTouch(gameObject);
+         Debug.Log($"After");
+      }
+      else if (gameObjectH.CompareTag("FireAttack"))
+      {
+         if (!_weaponStatus.IsBurned)
+         {
+            _weaponStatus.FireDamageOverTime(gameObject);
+         }
       }
    }
  

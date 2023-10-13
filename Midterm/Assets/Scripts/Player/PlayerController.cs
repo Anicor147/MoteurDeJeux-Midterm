@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         UnlockIceWeapon = true;
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
         
-        Debug.Log($"ice {UnlockIceWeapon}  lightning {UnlockLightningWeapon}");
         AddToDictionary();
         DefaultEquipedWeapon();
     }
@@ -148,7 +147,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         else
         {
           WeaponController.CanAttack = true;
-          Debug.Log($"can attack {WeaponController.CanAttack}");
         }
     }
     public void OnDeath()

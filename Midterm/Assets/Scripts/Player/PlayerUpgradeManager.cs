@@ -37,8 +37,6 @@ public class PlayerUpgradeManager : MonoBehaviour
                 Debug.Log($"Mana upgrade is {index}");
             }
         }
-        Debug.Log($"Current Character Max Health is = {playerController.MaxHealth}");
-        Debug.Log($"Current Character Max Mana is = {playerController.MaxMana}");
     }
 
     // Not official

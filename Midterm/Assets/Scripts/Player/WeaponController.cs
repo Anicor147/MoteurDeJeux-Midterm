@@ -48,8 +48,6 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
         if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.CurrentMana > 0 && !PlayerController.isLightning )
         {
             _playerController.CurrentMana -= 5;   
-            Debug.Log($"Remaining mana { _playerController.CurrentMana}");
-            Debug.Log($"Max mana { _playerController.MaxMana}");
              attackStartTime = Time.time;
              _playerAnimationController.PlayerIsAttackingIcePicks();
              _playerAnimationController.PlayerIsAttackingFireMelee();
@@ -57,7 +55,6 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
         }
         else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.CurrentMana > 0 && PlayerController.isLightning )
         {
-            Debug.Log($"Can attack from Weapon Controller {CanAttack}");
             if (CanAttack)
             {
                 StartCoroutine(LightningWeaponWithDelay());  
