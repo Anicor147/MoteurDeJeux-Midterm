@@ -11,6 +11,7 @@ public class SlimeMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
     [SerializeField] private EnemySO _slimeStats;
     [SerializeField] private SlimeAnimationControler slimeAnimation;
     [SerializeField] private SlimeController _slimeChecController;
+    private WeaponStatus _weaponStatus;
     private GameObject player;
     private Vector3 distance;
     private Rigidbody2D _rb;
@@ -19,6 +20,7 @@ public class SlimeMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
 
     private void Start()
     {
+        _weaponStatus = GetComponent<WeaponStatus>();
         player = GameObject.FindGameObjectWithTag("Player");
         _rb = GetComponent<Rigidbody2D>();
         layerMaskPlayer = LayerMask.GetMask("Player");
@@ -56,7 +58,10 @@ public class SlimeMovement : MonoBehaviour , IFlipSprite , IMoveEnemy
 
     public void MoveTowardPlayer(Vector3 distance)
     {
-        _rb.velocity = distance.normalized * (_slimeStats.speed * Time.deltaTime);
+        if (!_weaponStatus.Isfreezed)
+        {
+            _rb.velocity = distance.normalized * (_slimeStats.speed * Time.deltaTime);    
+        }
     }
 
     public void FlipSprite()

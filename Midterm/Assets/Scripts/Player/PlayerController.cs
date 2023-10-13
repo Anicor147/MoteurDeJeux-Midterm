@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
         UnlockLightningWeapon = true;
-      //UnlockIceWeapon = true;
+        UnlockIceWeapon = true;
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
         
         Debug.Log($"ice {UnlockIceWeapon}  lightning {UnlockLightningWeapon}");
@@ -77,9 +77,9 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         WeaponsDictionnary();
     }
 
-    public void TakeDamage(float damageReceived)
+    public void TakeDamage(float damageReceived , GameObject gameObject)
     {
-        maxHealth -= damageReceived;
+        MaxHealth -= damageReceived;
         if (MaxHealth <= 0) OnDeath();
     }
 

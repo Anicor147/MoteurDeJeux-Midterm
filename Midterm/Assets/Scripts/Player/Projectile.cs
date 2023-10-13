@@ -9,11 +9,16 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     public float projectileSpeed = 10f;
     [SerializeField] private EnemySO _hunterStats;
+    public bool IsPiercing { get; set; }
+  
+
     private void Start()
     {
-        
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        Invoke("DestroyProjectile",5f);
+        if (IsPiercing)
+        {
+            Invoke("DestroyProjectile",5f);
+        }
     }
 
     public void FixedUpdate()
@@ -35,7 +40,8 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Player") && gameObject.CompareTag("HunterArrow"))
         {
-            other.gameObject.GetComponent<PlayerController>().TakeDamage(_hunterStats.attackDamage);
+            other.gameObject.GetComponent<PlayerController>().TakeDamage(_hunterStats.attackDamage, null);
         }
+        if(!IsPiercing){Destroy(gameObject);}
     }
 }

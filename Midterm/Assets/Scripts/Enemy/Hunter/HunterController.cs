@@ -16,7 +16,7 @@ public class HunterController : MonoBehaviour , IBaseCharacter
       maxHealth = _hunterStats.lifePoint;
    }
    
-   public void TakeDamage(float damage)
+   public void TakeDamage(float damage , GameObject gameObject)
    {
       maxHealth -= damage;
       Debug.Log($"Current Hunter health {maxHealth}");

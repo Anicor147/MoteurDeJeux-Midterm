@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3553693975461336344}
   - component: {fileID: 8285633642546718700}
   - component: {fileID: 6049736861077976550}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HunterArrow
   m_TagString: HunterArrow
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 146475910, guid: 0b1a60267b25ce142a4696692bdfe446, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -127,7 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 600
-  _hunterStats: {fileID: 11400000, guid: 83bac2004f48e2d499d51200ab12ccc4, type: 2}
+  _hunterStats: {fileID: 11400000, guid: 2f2938ddca67ae744b562c440e4fe715, type: 2}
+  isHunter: 1
 --- !u!61 &6049736861077976550
 BoxCollider2D:
   m_ObjectHideFlags: 0
