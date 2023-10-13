@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: ManaUpgrade
   m_EditorClassIdentifier: 
   lifePointUpgrade: 0
-  manaPointUpgrade: 200
+  manaPointUpgrade: 100
   weaponDamageUpgrade: 0
+  index: 1

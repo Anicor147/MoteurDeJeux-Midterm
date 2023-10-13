@@ -45,16 +45,17 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     public void PlayerAttack()
     {
         
-        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.MaxMana > 0 && !PlayerController.isLightning )
+        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.CurrentMana > 0 && !PlayerController.isLightning )
         {
-            _playerController.MaxMana -= 5;   
-            Debug.Log($"Remaining mana { _playerController.MaxMana}");
+            _playerController.CurrentMana -= 5;   
+            Debug.Log($"Remaining mana { _playerController.CurrentMana}");
+            Debug.Log($"Max mana { _playerController.MaxMana}");
              attackStartTime = Time.time;
              _playerAnimationController.PlayerIsAttackingIcePicks();
              _playerAnimationController.PlayerIsAttackingFireMelee();
              
         }
-        else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.MaxMana > 0 && PlayerController.isLightning )
+        else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.CurrentMana > 0 && PlayerController.isLightning )
         {
             Debug.Log($"Can attack from Weapon Controller {CanAttack}");
             if (CanAttack)
@@ -67,7 +68,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     { 
         CanAttack = false;
         Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, angle)); 
-        _playerController.MaxMana -= 5; 
+        _playerController.CurrentMana -= 5; 
         yield return new WaitForSeconds(1f);
         CanAttack = true;
     }

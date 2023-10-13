@@ -9,7 +9,8 @@ public class PlayerUpgradeManager : MonoBehaviour
 {
     public UpgradeListSO listOfUpgrade;
     public PlayerController playerController;
-    private int _currentUpgradeLevel = 1;
+    private int _currentHealthUpgradeLevel = 1;
+    private int _currentManaUpgradeLevel = 1;
     [SerializeField] private TMP_Text _healthPriceText;
     [SerializeField] private TMP_Text _manaPriceText;
     [SerializeField] private TMP_Text _iceWeaponPriceText;
@@ -32,6 +33,8 @@ public class PlayerUpgradeManager : MonoBehaviour
             {
                 playerController.MaxHealth += upgrade.lifePointUpgrade;
                 playerController.MaxMana += upgrade.manaPointUpgrade;
+                playerController.CurrentMana = playerController.MaxMana;
+                Debug.Log($"Mana upgrade is {index}");
             }
         }
         Debug.Log($"Current Character Max Health is = {playerController.MaxHealth}");
@@ -41,15 +44,15 @@ public class PlayerUpgradeManager : MonoBehaviour
     // Not official
     public void UpgradeHealthButtonPressed()
     {
-        switch (_currentUpgradeLevel)
+        switch (_currentHealthUpgradeLevel)
         {
             case 1:
                 FirstUpgradeHealth();
-                _healthPriceText.text = "300";
+                _currentHealthUpgradeLevel++;
                 break;
             case 2:
                 SecondUpgradeHealth();
-                _healthPriceText.text = "600";
+                _currentHealthUpgradeLevel++;
                 break;
             case 3 :
                 ThirdUpgradeHealth();
@@ -59,15 +62,15 @@ public class PlayerUpgradeManager : MonoBehaviour
     
     public void UpgradeManaButtonPressed()
     {
-        switch (_currentUpgradeLevel)
+        switch (_currentManaUpgradeLevel)
         {
             case 1:
                 FirstUpgradeMana();
-                _manaPriceText.text = "300";
+                _currentManaUpgradeLevel++;
                 break;
             case 2:
                 SecondUpgradeMana();
-                _manaPriceText.text = "600";
+                _currentManaUpgradeLevel++;
                 break;
             case 3 :
                 ThirdUpgradeMana();
@@ -80,7 +83,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         if (playerController.Currency >= 100)
         {
             playerController.Currency -= 100;    
-            UpgradeStats(1);
+            UpgradeStats(0);
+            _healthPriceText.text = "300";
         }
     }
 
@@ -89,7 +93,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         if (playerController.Currency >= 300)
         {
             playerController.Currency -= 300;    
-            UpgradeStats(2);
+            UpgradeStats(0);
+            _healthPriceText.text = "600";
         }   
     }
 
@@ -98,7 +103,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         if (playerController.Currency >= 600)
         {
             playerController.Currency -= 600;    
-            UpgradeStats(3);
+            UpgradeStats(0);
         }
     }
 
@@ -107,7 +112,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         if (playerController.Currency >= 100)
         {
             playerController.Currency -= 100;    
-            UpgradeStats(4);
+            UpgradeStats(1);
+            _manaPriceText.text = "300";
         }
     }
 
@@ -116,7 +122,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         if (playerController.Currency >= 300)
         {
             playerController.Currency -= 300;    
-            UpgradeStats(5);
+            UpgradeStats(1);
+            _manaPriceText.text = "600";
         }
     }
 
@@ -125,7 +132,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         if (playerController.Currency >= 600)
         {
             playerController.Currency -= 600;    
-            UpgradeStats(6);
+            UpgradeStats(1);
         }
     }
 

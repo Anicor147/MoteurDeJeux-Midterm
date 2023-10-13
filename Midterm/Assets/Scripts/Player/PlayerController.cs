@@ -18,7 +18,14 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     private int currency;
     private float maxHealth;
     private float maxMana;
+    private float currentMana;
 
+
+    public float CurrentMana
+    {
+        get => currentMana;
+        set => currentMana = value;
+    }
 
     public float MaxMana
     {
@@ -46,6 +53,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     {
         MaxHealth = playerStat.lifePoint;
         MaxMana = playerStat.manaPoint;
+        currentMana = MaxMana;
         
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
         UnlockLightningWeapon = true;
@@ -77,13 +85,13 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
 
     public void PlayerIsCharging()
     {
-        if (MaxMana <= playerStat.manaPoint)
+        if (CurrentMana <= MaxMana)
         {
             if (Input.GetKey(KeyCode.Q))
             {
                 _playerAnimationController.PlayerIsCharging(true);
-                MaxMana += (20 * Time.deltaTime);
-                Debug.Log(MaxMana);
+                CurrentMana += (20 * Time.deltaTime);
+                Debug.Log(CurrentMana);
             }
             else if (!Input.GetKey(KeyCode.Q)) 
             {

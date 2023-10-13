@@ -42,7 +42,8 @@ public class UIScript : MonoBehaviour
 
     public void PlayerBars()
     {
-        manaSlider.value = _playerController.MaxMana;
+        manaSlider.maxValue = _playerController.MaxMana;
+        manaSlider.value = _playerController.CurrentMana;
         healthSlider.value = _playerController.MaxHealth;
     }
 
