@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8867640110819565693}
   - component: {fileID: 1494811176304916162}
   - component: {fileID: 3163759984874719224}
+  - component: {fileID: 3710694019579093306}
   m_Layer: 9
   m_Name: Hunter
   m_TagString: Hunter
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28689570929bb6d448c8807fc69787cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hunterStats: {fileID: 11400000, guid: 83bac2004f48e2d499d51200ab12ccc4, type: 2}
+  _hunterStats: {fileID: 11400000, guid: 2f2938ddca67ae744b562c440e4fe715, type: 2}
   hunterAnimation: {fileID: 7816314505715195152}
   hunterArrows: {fileID: 6366043846496434787, guid: a529be64c978fdf439cbc81e26d738f7, type: 3}
   _hunterController: {fileID: 1494811176304916162}
@@ -225,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4717d887a893471428e7ecda7fdcc6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hunterStats: {fileID: 11400000, guid: 83bac2004f48e2d499d51200ab12ccc4, type: 2}
+  _hunterStats: {fileID: 11400000, guid: 2f2938ddca67ae744b562c440e4fe715, type: 2}
   _hunterAnimationController: {fileID: 7816314505715195152}
   hunterIsDead: 0
 --- !u!114 &3163759984874719224
@@ -247,3 +248,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9eb8eb8b332df0d478b94747e5c86014, type: 2}
   - {fileID: 11400000, guid: d87be8e2716278e469c0a35db6a182c8, type: 2}
   - {fileID: 11400000, guid: cf521b5a751ee3f4cbd460aa4292dc00, type: 2}
+--- !u!114 &3710694019579093306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8331985675756544261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892b2e3e4675caf438d79b566dfb9f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

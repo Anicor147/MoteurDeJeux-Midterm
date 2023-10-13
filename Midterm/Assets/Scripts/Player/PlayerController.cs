@@ -18,7 +18,14 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     private int currency;
     private float maxHealth;
     private float maxMana;
+    private float currentMana;
 
+
+    public float CurrentMana
+    {
+        get => currentMana;
+        set => currentMana = value;
+    }
 
     public float MaxMana
     {
@@ -46,13 +53,13 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     {
         MaxHealth = playerStat.lifePoint;
         MaxMana = playerStat.manaPoint;
+        currentMana = MaxMana;
         
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
         UnlockLightningWeapon = true;
-      //UnlockIceWeapon = true;
+        UnlockIceWeapon = true;
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
         
-        Debug.Log($"ice {UnlockIceWeapon}  lightning {UnlockLightningWeapon}");
         AddToDictionary();
         DefaultEquipedWeapon();
     }
@@ -69,21 +76,21 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         WeaponsDictionnary();
     }
 
-    public void TakeDamage(float damageReceived)
+    public void TakeDamage(float damageReceived , GameObject gameObject)
     {
-        maxHealth -= damageReceived;
+        MaxHealth -= damageReceived;
         if (MaxHealth <= 0) OnDeath();
     }
 
     public void PlayerIsCharging()
     {
-        if (MaxMana <= playerStat.manaPoint)
+        if (CurrentMana <= MaxMana)
         {
             if (Input.GetKey(KeyCode.Q))
             {
                 _playerAnimationController.PlayerIsCharging(true);
-                MaxMana += (20 * Time.deltaTime);
-                Debug.Log(MaxMana);
+                CurrentMana += (20 * Time.deltaTime);
+                Debug.Log(CurrentMana);
             }
             else if (!Input.GetKey(KeyCode.Q)) 
             {
@@ -140,7 +147,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         else
         {
           WeaponController.CanAttack = true;
-          Debug.Log($"can attack {WeaponController.CanAttack}");
         }
     }
     public void OnDeath()

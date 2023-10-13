@@ -10,6 +10,6 @@ public class WeaponsStatsController : MonoBehaviour
   private void OnTriggerEnter2D(Collider2D other)
   {
     if(other.gameObject.layer ==9) 
-      other.gameObject.GetComponent<IBaseCharacter>().TakeDamage(_weaponsSo.WeaponDamage);
+      other.gameObject.GetComponent<IBaseCharacter>().TakeDamage(_weaponsSo.WeaponDamage, gameObject);
   }
 }

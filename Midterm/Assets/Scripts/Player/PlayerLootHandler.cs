@@ -14,7 +14,7 @@ public class PlayerLootHandler : MonoBehaviour
         switch (other.gameObject.name)
         {
             case "Money":
-                _playerController.Currency += 5;
+                _playerController.Currency += 10000;
                 Debug.Log($"How much money : {_playerController.Currency}");
                 Destroy(other.gameObject);
                 break;
@@ -31,7 +31,6 @@ public class PlayerLootHandler : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
             case "MoneyCase":
-                Debug.Log($"This is MoneyCase");
                 getmoney = true;
                 Destroy(other.gameObject);
                 break;
@@ -65,8 +64,8 @@ public class PlayerLootHandler : MonoBehaviour
 
     public void ManaPotionLogic()
     {
-        if (_playerController.MaxMana >= 100) _playerController.MaxMana = 100;
-        else _playerController.MaxMana += 20;    
+        if (_playerController.CurrentMana >= 100) _playerController.CurrentMana = 100;
+        else _playerController.CurrentMana += 20;    
     }
 
     public void HealthPotionLogic()
@@ -78,8 +77,8 @@ public class PlayerLootHandler : MonoBehaviour
     public void FullRecoveryPotionLogic()
     {
         _playerController.MaxHealth = 1000;
-        _playerController.MaxMana = 1000;
+        _playerController.CurrentMana = 1000;
         if (_playerController.MaxHealth >= 100 )_playerController.MaxHealth = 100;
-        if (_playerController.MaxMana >= 100) _playerController.MaxMana = 100;
+        if (_playerController.CurrentMana >= 100) _playerController.CurrentMana = 100;
     }
 }

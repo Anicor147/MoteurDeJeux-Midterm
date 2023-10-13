@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb59afe81c50bf848945225ac2e9e858, type: 3}
   m_Name: HealthUpgrade
   m_EditorClassIdentifier: 
-  lifePointUpgrade: 200
+  lifePointUpgrade: 100
   manaPointUpgrade: 0
   weaponDamageUpgrade: 0
-  index: 1
+  index: 0

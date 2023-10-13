@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SO;
 using Unity.Mathematics;
 using UnityEngine;
 using Vector3 = System.Numerics.Vector3;
@@ -9,23 +10,40 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
 {
     [SerializeField] private EnemySO _slimeStats;
     [SerializeField] private SlimeAnimationControler slimeAnimation;
+    private WeaponStatus weaponEffect;
     private float maxHealth;
+    public float MaxHealth { get; set; }
     public bool isDead;
   
     private void Start()
     {
-        maxHealth = _slimeStats.lifePoint;
+        MaxHealth = _slimeStats.lifePoint;
+        weaponEffect = GetComponent<WeaponStatus>();
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage , GameObject gameObject)
     {
-        maxHealth -= damage;
-        Debug.Log($"Slime current health: {maxHealth}");
+        MaxHealth -= damage;
+        Debug.Log($"Slime current health: {MaxHealth}");
         slimeAnimation.SlimeIsHurted();
-        if (maxHealth <= 0)
+        if (MaxHealth <= 0)
         {
             isDead = true;
             StartCoroutine(SlimeDeathDelay());
+        }
+        Debug.Log($"the tag of the gameobject is {gameObject.tag}");
+        if (gameObject.tag == "IceAttack")
+        {
+            Debug.Log($"should freeze");
+           weaponEffect.FreezeOnTouch(this.gameObject);
+        }
+        else if (gameObject.tag == "FireAttack")
+        {
+            Debug.Log($"burned? {weaponEffect.IsBurned}");
+            if (!weaponEffect.IsBurned)
+            {
+                weaponEffect.FireDamageOverTime(this.gameObject);
+            }
         }
     }
     
@@ -33,7 +51,7 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerController>().TakeDamage(_slimeStats.attackDamage);
+            other.gameObject.GetComponent<PlayerController>().TakeDamage(_slimeStats.attackDamage, null);
         }
     }
     public void OnDeath()
