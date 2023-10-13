@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8867640110819565693}
   - component: {fileID: 1494811176304916162}
   - component: {fileID: 3163759984874719224}
-  - component: {fileID: 3018343665930839137}
+  - component: {fileID: 3710694019579093306}
   m_Layer: 9
   m_Name: Hunter
   m_TagString: Hunter
@@ -248,7 +248,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9eb8eb8b332df0d478b94747e5c86014, type: 2}
   - {fileID: 11400000, guid: d87be8e2716278e469c0a35db6a182c8, type: 2}
   - {fileID: 11400000, guid: cf521b5a751ee3f4cbd460aa4292dc00, type: 2}
---- !u!114 &3018343665930839137
+--- !u!114 &3710694019579093306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
