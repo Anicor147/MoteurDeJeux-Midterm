@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d808ac29be79b7645a4b5eab6b871f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slimeStats: {fileID: 11400000, guid: 6f497de6ca40c474baa1705702f0682d, type: 2}
+  _slimeStats: {fileID: 11400000, guid: c72452d650f8a1c4a94caed7928494bb, type: 2}
   slimeAnimation: {fileID: 3745776186500456118}
   isDead: 0
 --- !u!114 &3745776186500456118
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452adc0f7e1d5544588147824e83e289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slimeStats: {fileID: 11400000, guid: 6f497de6ca40c474baa1705702f0682d, type: 2}
+  _slimeStats: {fileID: 11400000, guid: c72452d650f8a1c4a94caed7928494bb, type: 2}
   slimeAnimation: {fileID: 3745776186500456118}
   _slimeChecController: {fileID: 3337094510582336569}
 --- !u!114 &425447480256771892

@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28689570929bb6d448c8807fc69787cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hunterStats: {fileID: 11400000, guid: 83bac2004f48e2d499d51200ab12ccc4, type: 2}
+  _hunterStats: {fileID: 11400000, guid: 2f2938ddca67ae744b562c440e4fe715, type: 2}
   hunterAnimation: {fileID: 7816314505715195152}
   hunterArrows: {fileID: 6366043846496434787, guid: a529be64c978fdf439cbc81e26d738f7, type: 3}
   _hunterController: {fileID: 1494811176304916162}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4717d887a893471428e7ecda7fdcc6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hunterStats: {fileID: 11400000, guid: 83bac2004f48e2d499d51200ab12ccc4, type: 2}
+  _hunterStats: {fileID: 11400000, guid: 2f2938ddca67ae744b562c440e4fe715, type: 2}
   _hunterAnimationController: {fileID: 7816314505715195152}
   hunterIsDead: 0
 --- !u!114 &3163759984874719224

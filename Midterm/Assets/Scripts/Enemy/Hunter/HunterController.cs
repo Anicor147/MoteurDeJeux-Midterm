@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SO;
 using UnityEngine;
 
 public class HunterController : MonoBehaviour , IBaseCharacter

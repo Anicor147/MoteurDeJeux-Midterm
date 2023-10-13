@@ -55,3 +55,5 @@ R
 "Assets/Scripts/SO/UpgradeListSO.cs,1\5\159f020d8634c40d97d25695aa65cc96757218f4
 [
 +Assets/Scripts/Npc/NpcInteractionsScript.cs,8\b\8b5b35e6ba94b191548930efbaebcd2d2f6e0aeb
+M
+Assets/Scripts/GameManager.cs,c\f\cf1d1156c85841abda524f1e26a86c4c3bc30473
