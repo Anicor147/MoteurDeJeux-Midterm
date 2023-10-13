@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using SO;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using Vector3 = System.Numerics.Vector3;
 
@@ -54,6 +55,9 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
             other.gameObject.GetComponent<PlayerController>().TakeDamage(_slimeStats.attackDamage, null);
         }
     }
+
+ 
+
     public void OnDeath()
     {
       GetComponent<LootTable>().InstantiateLoot(transform.position);
