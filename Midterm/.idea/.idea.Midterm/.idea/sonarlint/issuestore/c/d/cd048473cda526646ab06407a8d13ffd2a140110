@@ -2,4 +2,7 @@
 Ocsharpsquid:S3903"3Move 'PlayerUpgradeManager' into a named namespace.(šŠï|
 gcsharpsquid:S1104
 "DMake this field 'private' and encapsulate it in a 'public' property.(çøÚo8Ú ¡÷±1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(®¬Ÿ¨8›Ôÿä±1
+mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(öÕËˆýÿÿÿÿ8íˆ³ù²1
+~csharpsquid:S1450"URemove the field 'player' and declare it as a local variable in the relevant methods.(ë»³ãûÿÿÿÿ8íˆ³ù²1
+ncsharpsquid:S2223"EChange the visibility of 'instance' or make it 'const' or 'readonly'.(öÕËˆýÿÿÿÿ8îˆ³ù²1
+~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ñõîÙþÿÿÿÿ8îˆ³ù²1
