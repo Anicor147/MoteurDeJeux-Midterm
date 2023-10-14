@@ -11,7 +11,15 @@ public class TeleporterScript : MonoBehaviour
 
   private void Update()
   {
-    LoadNextScene();
+    if (Input.GetKeyDown(KeyCode.E) && isCollided)
+    {
+      Debug.Log($"E is pressed");
+      GameManager.LoadLevel1();
+    }
+    else
+    {
+      isCollided = false;
+    }
   }
 
   private void OnTriggerStay2D(Collider2D other)
@@ -20,11 +28,5 @@ public class TeleporterScript : MonoBehaviour
   }
 
 
-  public void LoadNextScene()
-  {
-    if (Input.GetKeyDown(KeyCode.E) && isCollided)
-    {
-      GameManager.LoadLevel1();
-    }
-  }
+  
 }
