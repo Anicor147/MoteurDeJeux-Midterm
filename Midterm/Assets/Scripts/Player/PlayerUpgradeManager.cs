@@ -8,7 +8,8 @@ using UnityEngine.Serialization;
 public class PlayerUpgradeManager : MonoBehaviour
 {
     public UpgradeListSO listOfUpgrade;
-    public PlayerController playerController;
+    private GameObject player;
+    private PlayerController playerController;
     private int _currentHealthUpgradeLevel = 1;
     private int _currentManaUpgradeLevel = 1;
     [SerializeField] private TMP_Text _healthPriceText;
@@ -19,6 +20,9 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+        
         _healthPriceText.text = "100";
         _manaPriceText.text = "100";
         _iceWeaponPriceText.text = "200";
