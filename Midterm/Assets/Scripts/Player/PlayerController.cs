@@ -19,13 +19,33 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     private float maxHealth;
     private float maxMana;
     private float currentMana;
+    private float currentHealth;
     public bool PlayerIsDead { get; set; }
+    public static PlayerController instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
 
     public float CurrentMana
     {
         get => currentMana;
         set => currentMana = value;
+    } 
+    public float CurrentHealth
+    {
+        get => currentHealth;
+        set => currentHealth = value;
     }
 
     public float MaxMana
@@ -54,7 +74,8 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     {
         MaxHealth = playerStat.lifePoint;
         MaxMana = playerStat.manaPoint;
-        currentMana = MaxMana;
+        CurrentMana = MaxMana;
+        CurrentHealth = MaxHealth;
         
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
         UnlockLightningWeapon = true;
@@ -79,8 +100,8 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
 
     public void TakeDamage(float damageReceived , GameObject gameObject)
     {
-        MaxHealth -= damageReceived;
-        if (MaxHealth <= 0) OnDeath();
+        CurrentHealth -= damageReceived;
+        if (CurrentHealth <= 0) OnDeath();
     }
 
     public void PlayerIsCharging()

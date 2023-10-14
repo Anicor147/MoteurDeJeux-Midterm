@@ -57,3 +57,7 @@ R
 +Assets/Scripts/Npc/NpcInteractionsScript.cs,8\b\8b5b35e6ba94b191548930efbaebcd2d2f6e0aeb
 M
 Assets/Scripts/GameManager.cs,c\f\cf1d1156c85841abda524f1e26a86c4c3bc30473
+P
+ Assets/Scripts/MainMenuScript.cs,6\7\677861dacf1ad3a7365515e18d2490488b56f943
+S
+#Assets/Scripts/DontDestroyOnLoad.cs,4\5\45aa95d7ba3e59c4b0b471c67909bf3c79c1d73e

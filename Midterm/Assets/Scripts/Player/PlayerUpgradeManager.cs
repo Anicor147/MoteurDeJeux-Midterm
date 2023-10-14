@@ -34,6 +34,7 @@ public class PlayerUpgradeManager : MonoBehaviour
                 playerController.MaxHealth += upgrade.lifePointUpgrade;
                 playerController.MaxMana += upgrade.manaPointUpgrade;
                 playerController.CurrentMana = playerController.MaxMana;
+                playerController.CurrentHealth = playerController.MaxHealth;
                 Debug.Log($"Mana upgrade is {index}");
             }
         }

@@ -32,11 +32,9 @@ public class GameManager : MonoBehaviour
     public void LoadLevel1()
     {
         SceneManager.LoadScene(2);
-        
     } 
     public void LoadLevelShop()
     {
         SceneManager.LoadScene(1);
-        
     }
 }

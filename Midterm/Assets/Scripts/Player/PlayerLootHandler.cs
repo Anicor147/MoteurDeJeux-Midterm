@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerLootHandler : MonoBehaviour
 {
     private int money;
-    private bool getmoney = false;
+    private bool getmoney;
   
    [SerializeField] private PlayerController _playerController;
     private void OnTriggerEnter2D(Collider2D other)
@@ -14,7 +14,7 @@ public class PlayerLootHandler : MonoBehaviour
         switch (other.gameObject.name)
         {
             case "Money":
-                _playerController.Currency += 10000;
+                _playerController.Currency += 10;
                 Debug.Log($"How much money : {_playerController.Currency}");
                 Destroy(other.gameObject);
                 break;

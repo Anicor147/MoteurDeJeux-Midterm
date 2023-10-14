@@ -7,16 +7,24 @@ using UnityEngine;
 public class TeleporterScript : MonoBehaviour
 {
   [SerializeField]  public GameManager GameManager;
+  private bool isCollided;
 
-
-  private void OnTriggerEnter2D(Collider2D other)
+  private void Update()
   {
-    Invoke("LoadNextScene" , 2f);
+    LoadNextScene();
+  }
+
+  private void OnTriggerStay2D(Collider2D other)
+  {
+    isCollided = true;
   }
 
 
   public void LoadNextScene()
   {
-    GameManager.LoadLevel1();
+    if (Input.GetKeyDown(KeyCode.E) && isCollided)
+    {
+      GameManager.LoadLevel1();
+    }
   }
 }
