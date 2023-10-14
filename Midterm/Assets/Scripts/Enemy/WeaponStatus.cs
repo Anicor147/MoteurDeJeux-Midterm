@@ -30,7 +30,38 @@ public class WeaponStatus : MonoBehaviour
       }
       IsBurned = false;
    }
+ 
+   
+   public void FireDamageOverTimeH(GameObject gameObject)
+   {
+      IsBurned = true;
+      StartCoroutine(FireBurnDelayH(gameObject));
+   }
+   
+   public IEnumerator FireBurnDelayH(GameObject gameObject)
+   {
+      var hunterController = gameObject.GetComponent<HunterController>();
+      var color = gameObject.GetComponent<SpriteRenderer>();
 
+      for (int counter = 0; counter < 3; counter++)
+      {
+         color.color = Color.red;
+         hunterController.MaxHealth -= 5;
+         yield return new WaitForSeconds(0.5f);
+         color.color = Color.white;   
+         yield return new WaitForSeconds(0.5f);
+      }
+      IsBurned = false;
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
    public void FreezeOnTouch(GameObject gameObject)
    {
       IsFreezed = true;

@@ -11,23 +11,40 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     { 
+        
         _player = GameObject.FindWithTag("Player");
-        PlayerController playerController = _player.GetComponent<PlayerController>();
     }
 
     private void Update()
     {
-        test();
+        LoadOnDead();
+        CheckEnemy();
+        
     }
 
-
-    public void test()
+    public void LoadOnDead()
     {
-        PlayerController playerController = _player.GetComponent<PlayerController>();
-       if(playerController.PlayerIsDead) Invoke("LoadLevelShop" ,2);
-       playerController.PlayerIsDead = false;
+        var playerController = _player.GetComponent<PlayerController>();
+        
+        if(playerController.PlayerIsDead) Invoke("LoadLevelShop" ,2);
+        playerController.PlayerIsDead = false;
     }
 
+    public void CheckEnemy()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+       
+            if (enemies.Length > 0)
+            {
+               Debug.Log("still have enemy");
+            }
+            else
+            {
+                Invoke("LoadLevelShop" , 2f );
+            }
+        
+    }
 
     public void LoadLevel1()
     {

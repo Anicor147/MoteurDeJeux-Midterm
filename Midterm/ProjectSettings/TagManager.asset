@@ -13,6 +13,8 @@ TagManager:
   - Hunter
   - HunterArrow
   - Item
+  - Shop
+  - Enemy
   layers:
   - Default
   - TransparentFX
