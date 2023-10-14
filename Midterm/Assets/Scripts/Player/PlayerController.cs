@@ -174,9 +174,14 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     public void OnDeath()
     {
         PlayerIsDead = true;
-        _playerAnimationController.PlayerIsDead();
-        
+        _playerAnimationController.PlayerIsDead(true);
     }
-    
-    
+
+    public void Revive()
+    {
+        PlayerIsDead = false;
+        _playerAnimationController.PlayerIsDead(false);
+    }
+
+
 }
