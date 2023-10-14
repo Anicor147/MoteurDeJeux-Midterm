@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     private float maxHealth;
     private float maxMana;
     private float currentMana;
+    public bool PlayerIsDead { get; set; }
 
 
     public float CurrentMana
@@ -151,8 +152,9 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     }
     public void OnDeath()
     {
+        PlayerIsDead = true;
         _playerAnimationController.PlayerIsDead();
-        //Destroy(gameObject);
+        
     }
     
     

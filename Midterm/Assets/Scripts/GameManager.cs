@@ -5,7 +5,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
-{
+{ 
+    private GameObject _player;
+
+
+    private void Start()
+    { 
+        _player = GameObject.FindWithTag("Player");
+        PlayerController playerController = _player.GetComponent<PlayerController>();
+    }
+
     private void Update()
     {
         test();
@@ -14,10 +23,9 @@ public class GameManager : MonoBehaviour
 
     public void test()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            LoadLevel1();
-        }
+        PlayerController playerController = _player.GetComponent<PlayerController>();
+       if(playerController.PlayerIsDead) Invoke("LoadLevelShop" ,2);
+       playerController.PlayerIsDead = false;
     }
 
 
