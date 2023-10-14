@@ -70,13 +70,8 @@ public class PlayerLootHandler : MonoBehaviour
 
     public void HealthPotionLogic()
     {
-<<<<<<< HEAD
         if (_playerController.CurrentHealth >= _playerController.MaxHealth) _playerController.CurrentHealth = _playerController.MaxHealth;
         else _playerController.CurrentHealth += 15;    
-=======
-        if (_playerController.MaxHealth >= _playerController.CurrentHealth) _playerController.CurrentHealth = _playerController.MaxHealth;
-        else _playerController.MaxHealth += 15;    
->>>>>>> 76f9120cbf1338b3467894720fbb507d2bfe2b7a
     }
 
     public void FullRecoveryPotionLogic()
