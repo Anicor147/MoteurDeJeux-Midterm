@@ -64,21 +64,24 @@ public class PlayerLootHandler : MonoBehaviour
 
     public void ManaPotionLogic()
     {
-        if (_playerController.CurrentMana >= 100) _playerController.CurrentMana = 100;
+        if (_playerController.CurrentMana >= _playerController.MaxMana) _playerController.CurrentMana = _playerController.MaxMana;
         else _playerController.CurrentMana += 20;    
     }
 
     public void HealthPotionLogic()
     {
-        if (_playerController.MaxHealth >= 100) _playerController.MaxHealth = 100;
+<<<<<<< HEAD
+        if (_playerController.CurrentHealth >= _playerController.MaxHealth) _playerController.CurrentHealth = _playerController.MaxHealth;
+        else _playerController.CurrentHealth += 15;    
+=======
+        if (_playerController.MaxHealth >= _playerController.CurrentHealth) _playerController.CurrentHealth = _playerController.MaxHealth;
         else _playerController.MaxHealth += 15;    
+>>>>>>> 76f9120cbf1338b3467894720fbb507d2bfe2b7a
     }
 
     public void FullRecoveryPotionLogic()
     {
-        _playerController.MaxHealth = 1000;
-        _playerController.CurrentMana = 1000;
-        if (_playerController.MaxHealth >= 100 )_playerController.MaxHealth = 100;
-        if (_playerController.CurrentMana >= 100) _playerController.CurrentMana = 100;
+        _playerController.CurrentHealth = _playerController.MaxHealth;
+        _playerController.CurrentMana = _playerController.MaxMana;
     }
 }

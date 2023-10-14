@@ -16,8 +16,21 @@ public class PlayerUpgradeManager : MonoBehaviour
     [SerializeField] private TMP_Text _manaPriceText;
     [SerializeField] private TMP_Text _iceWeaponPriceText;
     [SerializeField] private TMP_Text _lightningWeaponPriceText;
-    
+    public static PlayerUpgradeManager instance;    
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");

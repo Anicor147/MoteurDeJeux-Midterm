@@ -10,10 +10,11 @@ public class NpcInteractionsScript : MonoBehaviour
     private float npcRange =1f;
     private bool menuIsOpen;
     [SerializeField] public GameObject levelingScreen;
-
+    private GameObject childObject;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        childObject = levelingScreen.transform.Find("Leveling Border").gameObject;
     }
 
     private void Update()
@@ -37,12 +38,15 @@ public class NpcInteractionsScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)&&!menuIsOpen)
         {
-            levelingScreen.gameObject.SetActive(true);
-            menuIsOpen = true;
-        }else if (Input.GetKeyDown(KeyCode.E) && menuIsOpen)
+           // levelingScreen.gameObject.SetActive(true);
+           menuIsOpen = true; 
+           childObject.SetActive(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && menuIsOpen)
         {
-            levelingScreen.gameObject.SetActive(false);
-            menuIsOpen = false;
+          //  levelingScreen.gameObject.SetActive(false);
+          menuIsOpen = false;  
+          childObject.SetActive(false);
         }
     }
     

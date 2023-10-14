@@ -55,7 +55,7 @@ public class WeaponStatus : MonoBehaviour
    
    public void LightningPierceEffect()
    {
-      _projectile.IsPiercing = true;
+     // _projectile.IsPiercing = true;
    }
 
 }

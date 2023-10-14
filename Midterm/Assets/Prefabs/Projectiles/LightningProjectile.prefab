@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 500
   _hunterStats: {fileID: 0}
+  isPiercing: 1
 --- !u!50 &5369112306386458263
 Rigidbody2D:
   serializedVersion: 4
