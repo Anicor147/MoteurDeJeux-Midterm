@@ -67,3 +67,5 @@ $Assets/Scripts/Enemy/WeaponStatus.cs,9\3\93d8d4a8cbac054f918a05a9609d71315c4c8
 -Assets/Scripts/Teleporter/TeleporterScript.cs,0\9\0968ff94ddf591fbe755c3e8f553abac29a78479
 Q
 !Assets/Scripts/SceneController.cs,8\6\86402abbd76aefb161bcaf46f1a8631ab2a1aeb5
+N
+Assets/Scripts/SoundManager.cs,8\e\8ea0e564ec06d1bb820376f3b80a9ae256d8b7c9
