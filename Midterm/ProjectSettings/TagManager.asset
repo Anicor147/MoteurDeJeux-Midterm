@@ -15,6 +15,7 @@ TagManager:
   - Item
   - Shop
   - Enemy
+  - Spawn
   layers:
   - Default
   - TransparentFX
