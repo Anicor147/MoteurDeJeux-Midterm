@@ -277,14 +277,13 @@ GameObject:
   m_Component:
   - component: {fileID: 146286507}
   - component: {fileID: 146286506}
-  - component: {fileID: 146286508}
   m_Layer: 0
   m_Name: AudioSource
   m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &146286506
 AudioSource:
   m_ObjectHideFlags: 0
@@ -396,22 +395,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &146286508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146286505}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f9ba441ad2011746ae98b88ec99e43d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSlider: {fileID: 0}
-  audioSourceFireWeapon: {fileID: 0}
-  audioSourceIceWeapon: {fileID: 0}
-  audioSourceLightningWeapon: {fileID: 0}
 --- !u!1 &271003205
 GameObject:
   m_ObjectHideFlags: 0

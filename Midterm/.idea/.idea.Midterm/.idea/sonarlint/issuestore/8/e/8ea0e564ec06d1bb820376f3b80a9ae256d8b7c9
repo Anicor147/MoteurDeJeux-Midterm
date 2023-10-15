@@ -3,4 +3,4 @@ Hcsharpsquid:S3903"+Move 'SoundManager' into a named namespace.(¹Œ„‘
 mcsharpsquid:S1104	"DMake this field 'private' and encapsulate it in a 'public' property.(ë‚û¼þÿÿÿÿ8Àï˜¦³1
 ncsharpsquid:S2223	"EChange the visibility of 'instance' or make it 'const' or 'readonly'.(ë‚û¼þÿÿÿÿ8Àï˜¦³1
 ~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ñõîÙþÿÿÿÿ8–à™¦³1
-Gcsharpsquid:S125'"Remove this commented out code.(ÒÌâ–øÿÿÿÿ8øª¬¨³1
+Gcsharpsquid:S125("Remove this commented out code.(ÒÌâ–øÿÿÿÿ8øª¬¨³1

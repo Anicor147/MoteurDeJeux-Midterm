@@ -11,7 +11,6 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private GameObject setting;
     private GameObject audio;
     private AudioSource audioSource;
-    [SerializeField] private Slider musicSlider;
     private bool pressed;
     
     public void LoadLevelShop()
@@ -23,6 +22,13 @@ public class MainMenuScript : MonoBehaviour
     {
         setting.SetActive(true);
     }
+    
+    
+    public void CloseSetting()
+    {
+        setting.SetActive(false);
+    }
+    
 
     
 }

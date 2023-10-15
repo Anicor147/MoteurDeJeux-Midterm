@@ -33,19 +33,20 @@ public class SoundManager : MonoBehaviour
         audioSourceIceWeapon.PlayOneShot(audioClip);
         audioSourceLightningWeapon.PlayOneShot(audioClip);
     }
-
-
-    /*
+    
     private void Start()
     {
         audio = GameObject.FindGameObjectWithTag("Sound");
-        audioSource = audio.GetComponent<AudioSource>(); 
-        
-        musicSlider.value = audioSource.volume;
+
+        if (audio != null)
+        {
+            audioSource = audio.GetComponent<AudioSource>();
+           musicSlider.value = audioSource.volume;
+        }
     }
     private void Update()
     {
-        audioSource.volume = musicSlider.value;
+       audioSource.volume = musicSlider.value;
     }
 
     public void MuteMusic()
@@ -63,6 +64,6 @@ public class SoundManager : MonoBehaviour
             pressed = false;
         }
     }
-    */
+    
     
 }
