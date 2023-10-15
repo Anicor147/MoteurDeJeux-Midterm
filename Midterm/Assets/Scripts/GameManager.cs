@@ -6,13 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 { 
-    private GameObject _player;
+     private GameObject _player;
+     private GameObject _spawnPoint;
+     private PlayerController _playerController;
 
 
     private void Start()
     { 
-        
+        _spawnPoint = GameObject.FindGameObjectWithTag("Spawn"); 
         _player = GameObject.FindWithTag("Player");
+        _playerController = _player.GetComponent<PlayerController>();
+        
+        _playerController.transform.position = _spawnPoint.transform.position;
     }
 
     private void Update()
@@ -26,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         var playerController = _player.GetComponent<PlayerController>();
         
-        if(playerController.PlayerIsDead) Invoke("LoadLevelShop" ,2);
+        if(playerController.PlayerIsDead) LoadLevel(1);
         playerController.PlayerIsDead = false;
     }
 
@@ -41,17 +46,46 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Invoke("LoadLevelShop" , 2f );
+                int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                int nextSceneIndex = currentSceneIndex + 1;
+
+                if (nextSceneIndex <= SceneManager.sceneCountInBuildSettings - 1)
+                {
+                    LoadLevel(nextSceneIndex);
+                }
+                else
+                {
+                    Debug.Log("No more scenes to load.");
+                    
+                }
+                
+                
             }
         
     }
 
-    public void LoadLevel1()
+    public void LoadLevel(int sceneIndex)
     {
-        SceneManager.LoadScene(2);
-    } 
-    public void LoadLevelShop()
-    {
-        SceneManager.LoadScene(1);
+
+        switch (sceneIndex)
+        {
+            case 1:
+                SceneManager.LoadScene(1);
+                break;
+            case 2:
+                SceneManager.LoadScene(2);
+                break;
+            case 3 :
+                SceneManager.LoadScene(3);
+                break;
+            case 4:
+                SceneManager.LoadScene(4);
+                break;
+            case 5:
+                SceneManager.LoadScene(5);
+                break;
+        }
     }
+
+   
 }

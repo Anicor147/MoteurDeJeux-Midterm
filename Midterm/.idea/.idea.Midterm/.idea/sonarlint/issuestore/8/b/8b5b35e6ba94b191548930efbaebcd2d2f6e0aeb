@@ -1,6 +1,5 @@
 
-Vcsharpsquid:S3903"4Move 'NpcInteractionsScript' into a named namespace.(ÅÜ×Úıÿÿÿÿ
-?csharpsquid:S2933
-"Make 'npcRange' 'readonly'.(Â¬÷8‚ÿÕ¢²1
-mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Úùã®øÿÿÿÿ8İÓ¢²1
-€csharpsquid:S1450"WRemove the field 'distance' and declare it as a local variable in the relevant methods.(¤®€úÿÿÿÿ8¾ı…²²1
+Vcsharpsquid:S3903"4Move 'NpcInteractionsScript' into a named namespace.(ÅÜ×Úıÿÿÿÿ
+?csharpsquid:S2933"Make 'npcRange' 'readonly'.(Â¬÷8‚ÿÕ¢²1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Ø‡²ƒ8ïÅŞ€³1
+€csharpsquid:S1450	"WRemove the field 'distance' and declare it as a local variable in the relevant methods.(¤®€úÿÿÿÿ8¾ı…²²1

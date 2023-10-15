@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
@@ -8,9 +9,19 @@ public class WeaponStatus : MonoBehaviour
    private Projectile _projectile;
    public bool IsFreezed { get; set; }
    public bool IsBurned { get; set; }
+   public bool BurnEffectUnlocked { get; set;}
+   private GameObject _shop;
+   
+   private void Start()
+   {
+      _shop = GameObject.Find("Canvas");
+   }
 
    public void FireDamageOverTime(GameObject gameObject)
    {
+      Transform childTransform = _shop.transform.Find("LevelingBorder");
+      PlayerUpgradeManager playerUpgradeManager = childTransform.GetComponent<PlayerUpgradeManager>();
+      if (!playerUpgradeManager.BurnedUnlock) return;
       IsBurned = true;
      StartCoroutine(FireBurnDelay(gameObject));
    }
@@ -34,6 +45,9 @@ public class WeaponStatus : MonoBehaviour
    
    public void FireDamageOverTimeH(GameObject gameObject)
    {
+      Transform childTransform = _shop.transform.Find("LevelingBorder");
+      PlayerUpgradeManager playerUpgradeManager = childTransform.GetComponent<PlayerUpgradeManager>();
+      if (!playerUpgradeManager.BurnedUnlock) return;
       IsBurned = true;
       StartCoroutine(FireBurnDelayH(gameObject));
    }
@@ -53,14 +67,6 @@ public class WeaponStatus : MonoBehaviour
       }
       IsBurned = false;
    }
-   
-   
-   
-   
-   
-   
-   
-   
    
    public void FreezeOnTouch(GameObject gameObject)
    {
@@ -83,10 +89,9 @@ public class WeaponStatus : MonoBehaviour
    }
    
    
-   
    public void LightningPierceEffect()
    {
-     // _projectile.IsPiercing = true;
+      _projectile.isPiercing = true;
    }
 
 }

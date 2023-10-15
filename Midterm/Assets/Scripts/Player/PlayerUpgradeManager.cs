@@ -12,10 +12,12 @@ public class PlayerUpgradeManager : MonoBehaviour
     private PlayerController playerController;
     private int _currentHealthUpgradeLevel = 1;
     private int _currentManaUpgradeLevel = 1;
+    public bool BurnedUnlock { get; set; }
     [SerializeField] private TMP_Text _healthPriceText;
     [SerializeField] private TMP_Text _manaPriceText;
     [SerializeField] private TMP_Text _iceWeaponPriceText;
     [SerializeField] private TMP_Text _lightningWeaponPriceText;
+    [SerializeField] private TMP_Text _burnEffectText;
     public static PlayerUpgradeManager instance;    
 
     private void Awake()
@@ -35,11 +37,16 @@ public class PlayerUpgradeManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
+     
+
+        playerController.Currency = 1000;
         
         _healthPriceText.text = "100";
         _manaPriceText.text = "100";
         _iceWeaponPriceText.text = "200";
         _lightningWeaponPriceText.text = "400";
+        _burnEffectText.text = "200";
+
     }
 
     public void UpgradeStats(int index)
@@ -169,4 +176,16 @@ public class PlayerUpgradeManager : MonoBehaviour
             playerController.Currency -= 400;
         }
     }
+
+    public void UnlockBurnEffect()
+    {
+        if (playerController.Currency >= 200)
+        {
+            BurnedUnlock = true;    
+            playerController.Currency -= 200;
+        }
+
+        
+    }
+
 }
