@@ -2,14 +2,16 @@
 Kcsharpsquid:S3903"/Move 'PlayerController' into a named namespace.(Š§§
 
 gcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(é‰‡x8×­‡ä±1
-Vcsharpsquid:S3267r"2Loops should be simplified with "LINQ" expressions(±ð¿©8¥’‘Œ²1
-tcsharpsquid:S927H"QRename parameter 'damageReceived' to 'damage' to match the interface declaration.(©ÍïŠ8¥’‘Œ²1
-gcsharpsquid:S2292"DMake this an auto-implemented property and remove its backing field.(ÇŠ±z8œø‡ä±1
-hcsharpsquid:S2292"DMake this an auto-implemented property and remove its backing field.(žÔ×‰8œø‡ä±1
-mcsharpsquid:S2292""DMake this an auto-implemented property and remove its backing field.(Ç½³Ûþÿÿÿÿ8Âú‘Œ²1
-mcsharpsquid:S2292'"DMake this an auto-implemented property and remove its backing field.(é‚ÚÔÿÿÿÿÿ8ì…“Œ²1
-hcsharpsquid:S2292<"DMake this an auto-implemented property and remove its backing field.(ó¹ÿö8¥’‘Œ²1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(™üþ‰8û­¬ó²1
+Wcsharpsquid:S3267ˆ"2Loops should be simplified with "LINQ" expressions(±ð¿©8¥’‘Œ²1
+ycsharpsquid:S927^"QRename parameter 'damageReceived' to 'damage' to match the interface declaration.(èƒú§þÿÿÿÿ8îÔ«ñ²1
+mcsharpsquid:S2292'"DMake this an auto-implemented property and remove its backing field.(Ê×ôŠøÿÿÿÿ8ü­¬ó²1
+gcsharpsquid:S2292-"DMake this an auto-implemented property and remove its backing field.(ÇŠ±z8œø‡ä±1
+hcsharpsquid:S22922"DMake this an auto-implemented property and remove its backing field.(žÔ×‰8œø‡ä±1
+mcsharpsquid:S22928"DMake this an auto-implemented property and remove its backing field.(Ç½³Ûþÿÿÿÿ8Âú‘Œ²1
+mcsharpsquid:S2292="DMake this an auto-implemented property and remove its backing field.(é‚ÚÔÿÿÿÿÿ8ì…“Œ²1
+hcsharpsquid:S2292R"DMake this an auto-implemented property and remove its backing field.(ó¹ÿö8¥’‘Œ²1
 kcsharpsquid:S2223"HChange the visibility of 'isLightning' or make it 'const' or 'readonly'.(é‰‡x8Ø­‡ä±1
-csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(Œ±Åçÿÿÿÿÿ8¥’‘Œ²1
-Gcsharpsquid:S1254"Remove this commented out code.(žÕ¯Êùÿÿÿÿ8º”ù¡²1
-Ccsharpsquid:S125•"Remove this commented out code.(”ŸðÔ8¥’‘Œ²1
+icsharpsquid:S2223"EChange the visibility of 'instance' or make it 'const' or 'readonly'.(™üþ‰8 Ì¬ó²1
+~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ñõîÙþÿÿÿÿ8¸Ç®ó²1
+csharpsquid:S2696—"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(Œ±Åçÿÿÿÿÿ8¥’‘Œ²1

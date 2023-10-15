@@ -8,17 +8,34 @@ using UnityEngine.Serialization;
 public class PlayerUpgradeManager : MonoBehaviour
 {
     public UpgradeListSO listOfUpgrade;
-    public PlayerController playerController;
+    private GameObject player;
+    private PlayerController playerController;
     private int _currentHealthUpgradeLevel = 1;
     private int _currentManaUpgradeLevel = 1;
     [SerializeField] private TMP_Text _healthPriceText;
     [SerializeField] private TMP_Text _manaPriceText;
     [SerializeField] private TMP_Text _iceWeaponPriceText;
     [SerializeField] private TMP_Text _lightningWeaponPriceText;
-    
+    public static PlayerUpgradeManager instance;    
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+        
         _healthPriceText.text = "100";
         _manaPriceText.text = "100";
         _iceWeaponPriceText.text = "200";
@@ -34,6 +51,7 @@ public class PlayerUpgradeManager : MonoBehaviour
                 playerController.MaxHealth += upgrade.lifePointUpgrade;
                 playerController.MaxMana += upgrade.manaPointUpgrade;
                 playerController.CurrentMana = playerController.MaxMana;
+                playerController.CurrentHealth = playerController.MaxHealth;
                 Debug.Log($"Mana upgrade is {index}");
             }
         }

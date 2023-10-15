@@ -18,7 +18,24 @@ public class UIScript : MonoBehaviour
     [SerializeField] private GameObject lightningBorder; 
     [SerializeField] private GameObject iceBorder; 
     [SerializeField] private GameObject fireBorder;
+    [SerializeField] private TMP_Text manaValue;
+    [SerializeField] private TMP_Text healthValue;
     private Dictionary<GameObject, GameObject> weaponBorders = new Dictionary<GameObject, GameObject>();
+
+    public static UIScript instance;
+    private void Awake()
+    {
+        Debug.Log("CanvasManager Awake");
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void Update()
     {
@@ -44,7 +61,9 @@ public class UIScript : MonoBehaviour
     {
         manaSlider.maxValue = _playerController.MaxMana;
         manaSlider.value = _playerController.CurrentMana;
-        healthSlider.value = _playerController.MaxHealth;
+        manaValue.text = _playerController.CurrentMana.ToString();
+        healthSlider.value = _playerController.CurrentHealth;
+        healthValue.text = _playerController.CurrentHealth.ToString();
     }
 
     public void PlayerCurrency()
@@ -56,7 +75,10 @@ public class UIScript : MonoBehaviour
     {
         foreach (var border in weaponBorders)
         {
-          border.Value.SetActive(border.Key.activeSelf);
+            if (border.Key != null && border.Value != null)
+            {
+                border.Value.SetActive(border.Key.activeSelf);
+            }
         }
     }
 

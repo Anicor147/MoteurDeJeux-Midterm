@@ -38,7 +38,7 @@ public class HunterController : MonoBehaviour , IBaseCharacter
       {
          if (!_weaponStatus.IsBurned)
          {
-            _weaponStatus.FireDamageOverTime(gameObject);
+            _weaponStatus.FireDamageOverTimeH(gameObject);
          }
       }
    }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NpcInteractionsScript : MonoBehaviour
@@ -9,11 +10,11 @@ public class NpcInteractionsScript : MonoBehaviour
     private GameObject player;
     private float npcRange =1f;
     private bool menuIsOpen;
-    [SerializeField] public GameObject levelingScreen;
-
+    public GameObject canvas;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        canvas = GameObject.Find("Canvas");
     }
 
     private void Update()
@@ -35,14 +36,20 @@ public class NpcInteractionsScript : MonoBehaviour
 
     private void OpenLevelingScreen()
     {
+        Transform childTransform = canvas.transform.Find("LevelingBorder");
+        GameObject screenLeveling = childTransform.gameObject;
+        
         if (Input.GetKeyDown(KeyCode.E)&&!menuIsOpen)
         {
-            levelingScreen.gameObject.SetActive(true);
-            menuIsOpen = true;
-        }else if (Input.GetKeyDown(KeyCode.E) && menuIsOpen)
-        {
-            levelingScreen.gameObject.SetActive(false);
-            menuIsOpen = false;
+            screenLeveling.SetActive(true);
+            menuIsOpen = true; 
+            Debug.Log($"Can be closed now");
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && menuIsOpen)
+        { 
+            Debug.Log($"Should Close now");
+            screenLeveling.SetActive(false);
+            menuIsOpen = false;  
         }
     }
     

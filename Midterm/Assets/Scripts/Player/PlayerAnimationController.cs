@@ -15,6 +15,7 @@ public class PlayerAnimationController : MonoBehaviour
     private int _isCharging;
     private int _isAttacking;
     private int _isDead;
+  
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class PlayerAnimationController : MonoBehaviour
         _isCharging = Animator.StringToHash("isCharging");
         _isAttacking = Animator.StringToHash("isAttacking");
         _isDead = Animator.StringToHash("isDead");
+        
     }
 
     public void PlayerIsMoving(bool value)
@@ -46,8 +48,10 @@ public class PlayerAnimationController : MonoBehaviour
         playerAnimator.SetBool(_isCharging, value);
     }
     
-    public void PlayerIsDead()
+    public void PlayerIsDead(bool value)
     {
-        playerAnimator.SetTrigger(_isDead);
+        playerAnimator.SetBool(_isDead , value);
     }
+
+   
 }

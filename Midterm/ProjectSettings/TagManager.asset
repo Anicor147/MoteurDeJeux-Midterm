@@ -13,6 +13,9 @@ TagManager:
   - Hunter
   - HunterArrow
   - Item
+  - Shop
+  - Enemy
+  - Spawn
   layers:
   - Default
   - TransparentFX

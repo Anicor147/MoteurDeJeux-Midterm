@@ -44,7 +44,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     }
     public void PlayerAttack()
     {
-        
+        if(_playerController.PlayerIsDead) return;
         if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.CurrentMana > 0 && !PlayerController.isLightning )
         {
             _playerController.CurrentMana -= 5;   

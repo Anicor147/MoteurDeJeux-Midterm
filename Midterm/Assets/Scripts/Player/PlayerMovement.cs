@@ -14,11 +14,12 @@ public class PlayerMovement : MonoBehaviour, IFlipSprite
     private float _vx , _vy;
     private float moveSpeed;
     [SerializeField] private SpriteRenderer _spriteRenderer;
-
+    private PlayerController _playerController;
     private Vector3 mousePosition;
    
     void Start()
     {
+        _playerController = GetComponent<PlayerController>();
         _rb = GetComponent<Rigidbody2D>();
         _animationController = FindObjectOfType<PlayerAnimationController>();
     }
@@ -40,7 +41,8 @@ public class PlayerMovement : MonoBehaviour, IFlipSprite
 
     private void CharacterMovement()
     {
-        if (!Input.GetKey(KeyCode.Q))
+        if(_playerController.PlayerIsDead) return;
+        if (!Input.GetKey(KeyCode.Q)   )
         {
             _rb.velocity = new Vector3(_vx, _vy, 0).normalized * (playerStat.speed * Time.deltaTime);
 

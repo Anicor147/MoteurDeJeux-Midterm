@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 602735939199605076}
   - component: {fileID: 6153009463591103657}
   m_Layer: 7
-  m_Name: IcePicks
-  m_TagString: Weapons
+  m_Name: IceAttack
+  m_TagString: IceAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 1857743589190107207}
   m_Layer: 7
   m_Name: FireAttack
-  m_TagString: Weapons
+  m_TagString: FireAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
