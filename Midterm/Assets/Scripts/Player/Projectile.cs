@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     public float projectileSpeed = 10f;
     [SerializeField] private EnemySO _hunterStats;
-
+    [SerializeField] private AudioClip _clip;
     public bool isPiercing;
 
 
@@ -28,6 +28,10 @@ public class Projectile : MonoBehaviour
         ProjectileMovement();
     }
 
+    public void PlayWeaponSoundClip()
+    {
+        SoundManager.instance.PlaySound(_clip);
+    }
     public void ProjectileMovement()
     {
         _rigidbody2D.velocity = transform.right * (projectileSpeed * Time.deltaTime) ;

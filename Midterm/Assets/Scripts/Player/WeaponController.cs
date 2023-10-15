@@ -9,6 +9,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerAnimationController _playerAnimationController;
     [SerializeField] private PlayerController _playerController;
+    [SerializeField] private AudioClip _clip;
     private Vector3 mousePosition;
     private float attackStartTime;
     public float attackCooldown = 0.5f;
@@ -22,14 +23,19 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
         get => canAttack;
         set => canAttack = value;
     }
-
-
+    
     private void LateUpdate()
     {
         PlayerAttack();
         LineOfActionPosition();
         FlipSprite();
     }
+
+    public void PlayWeaponSoundClip()
+    {
+        SoundManager.instance.PlaySound(_clip);
+    }
+
     void LineOfActionPosition()
     {
         if (Time.time - attackStartTime >= attackCooldown)
@@ -58,7 +64,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
             if (CanAttack)
             {
                 StartCoroutine(LightningWeaponWithDelay());  
-            }
+            } 
         }
     }
     public IEnumerator LightningWeaponWithDelay()
