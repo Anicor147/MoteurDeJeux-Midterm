@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 600
   _hunterStats: {fileID: 11400000, guid: 2f2938ddca67ae744b562c440e4fe715, type: 2}
-  isHunter: 1
+  isPiercing: 0
 --- !u!61 &6049736861077976550
 BoxCollider2D:
   m_ObjectHideFlags: 0

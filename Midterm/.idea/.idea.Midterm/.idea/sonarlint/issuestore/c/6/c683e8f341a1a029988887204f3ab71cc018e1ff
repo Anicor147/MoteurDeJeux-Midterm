@@ -1,3 +1,5 @@
 
-Kcsharpsquid:S3903	".Move 'SlimeController' into a named namespace.(ÅÇœª
-acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ÌÀßè
+Kcsharpsquid:S3903
+".Move 'SlimeController' into a named namespace.(ÅÇœª
+acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ÌÀßè
+Gcsharpsquid:S1256"Remove this commented out code.(ÒÌâ–øÿÿÿÿ8Şª„³1

@@ -61,3 +61,9 @@ P
  Assets/Scripts/MainMenuScript.cs,6\7\677861dacf1ad3a7365515e18d2490488b56f943
 S
 #Assets/Scripts/DontDestroyOnLoad.cs,4\5\45aa95d7ba3e59c4b0b471c67909bf3c79c1d73e
+T
+$Assets/Scripts/Enemy/WeaponStatus.cs,9\3\93d8d4a8cbac054f918a05a9609d71315c4c8ad0
+]
+-Assets/Scripts/Teleporter/TeleporterScript.cs,0\9\0968ff94ddf591fbe755c3e8f553abac29a78479
+Q
+!Assets/Scripts/SceneController.cs,8\6\86402abbd76aefb161bcaf46f1a8631ab2a1aeb5

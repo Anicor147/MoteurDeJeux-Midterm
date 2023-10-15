@@ -1,4 +1,6 @@
 
-Jcsharpsquid:S3903	"-Move 'HunterMovement' into a named namespace.(á–Òë
-?csharpsquid:S2933"Make 'cooldown' 'readonly'.(ôœƒ8Ğµ¶¢²1
-€csharpsquid:S1450"WRemove the field 'distance' and declare it as a local variable in the relevant methods.(¤®€úÿÿÿÿ8Ğµ¶¢²1
+Jcsharpsquid:S3903
+"-Move 'HunterMovement' into a named namespace.(á–Òë
+?csharpsquid:S2933"Make 'cooldown' 'readonly'.(ôœƒ8Ğµ¶¢²1
+°csharpsquid:S26812"†This line will not be executed conditionally; only the first line of this 2-line block will be. The rest will execute unconditionally.(õÍ¨ıøÿÿÿÿ8ğø‘„³1
+€csharpsquid:S1450"WRemove the field 'distance' and declare it as a local variable in the relevant methods.(¤®€úÿÿÿÿ8Ğµ¶¢²1

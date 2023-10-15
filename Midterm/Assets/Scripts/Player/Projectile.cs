@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using SO;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Projectile : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     public float projectileSpeed = 10f;
     [SerializeField] private EnemySO _hunterStats;
+
     public bool isPiercing;
-  
+
 
     private void Start()
     {
