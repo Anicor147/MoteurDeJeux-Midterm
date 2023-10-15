@@ -48,15 +48,25 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
         }
     }
     
-    private void OnTriggerStay2D(Collider2D other)
+    
+    
+    /*private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerController>().TakeDamage(_slimeStats.attackDamage, null);
         }
+    }*/
+
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            other.gameObject.GetComponent<PlayerController>().TakeDamage(_slimeStats.attackDamage, null);
+        }
     }
 
- 
 
     public void OnDeath()
     {
