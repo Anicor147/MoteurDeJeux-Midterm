@@ -25,22 +25,18 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
     public void TakeDamage(float damage , GameObject gameObject)
     {
         MaxHealth -= damage;
-        Debug.Log($"Slime current health: {MaxHealth}");
         slimeAnimation.SlimeIsHurted();
         if (MaxHealth <= 0)
         {
             isDead = true;
             StartCoroutine(SlimeDeathDelay());
         }
-        Debug.Log($"the tag of the gameobject is {gameObject.tag}");
         if (gameObject.tag == "IceAttack")
         {
-            Debug.Log($"should freeze");
            weaponEffect.FreezeOnTouch(this.gameObject);
         }
         else if (gameObject.tag == "FireAttack")
         {
-            Debug.Log($"burned? {weaponEffect.IsBurned}");
             if (!weaponEffect.IsBurned)
             {
                 weaponEffect.FireDamageOverTime(this.gameObject);
@@ -48,17 +44,6 @@ public class SlimeController : MonoBehaviour ,IBaseCharacter
         }
     }
     
-    
-    
-    /*private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            other.gameObject.GetComponent<PlayerController>().TakeDamage(_slimeStats.attackDamage, null);
-        }
-    }*/
-
-
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))

@@ -36,12 +36,12 @@ public class MainMenuScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !pressed)
         {
             pressed = true;
-            setting.SetActive(true);
+            OpenSetting();
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && pressed)
         {
             pressed = false;
-            setting.SetActive(false);
+            CloseSetting();
         }
     }
 
@@ -49,12 +49,14 @@ public class MainMenuScript : MonoBehaviour
     public void OpenSetting()
     {
         setting.SetActive(true);
+        Time.timeScale = 0f;
     }
     
     
     public void CloseSetting()
     {
         setting.SetActive(false);
+        Time.timeScale = 1f;
     }
     
 

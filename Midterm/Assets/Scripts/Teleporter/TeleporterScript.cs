@@ -20,7 +20,7 @@ public class TeleporterScript : MonoBehaviour
   }
   private void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.CompareTag("Player")) // Replace "YourTag" with the appropriate tag
+    if (other.CompareTag("Player")) 
     {
       isCollided = true;
     }
@@ -28,7 +28,7 @@ public class TeleporterScript : MonoBehaviour
 
   private void OnTriggerExit2D(Collider2D other)
   {
-    if (other.CompareTag("Player")) // Replace "YourTag" with the appropriate tag
+    if (other.CompareTag("Player")) 
     {
       isCollided = false;
     }

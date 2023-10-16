@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     [SerializeField] private GameObject fireWeaponObject;
     [SerializeField] private GameObject lightingWeaponObject;
     private Dictionary<KeyCode, GameObject> weaponDictionary;
-    [SerializeField]  private WeaponController WeaponController;
+    [SerializeField] private WeaponController WeaponController;
+    private bool isCharging;
     public static bool isLightning;
     private bool unlockIceWeapon;
     private bool unlockLightningWeapon ;
@@ -86,6 +87,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         DefaultEquipedWeapon();
     }
 
+    
     public int Currency
     {
         get => currency;
@@ -98,6 +100,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         WeaponsDictionnary();
     }
 
+   
     public void TakeDamage(float damageReceived , GameObject gameObject)
     {
         CurrentHealth -= damageReceived;
@@ -114,8 +117,9 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
                 CurrentMana += (20 * Time.deltaTime);
                 Debug.Log(CurrentMana);
             }
-            else if (!Input.GetKey(KeyCode.Q)) 
+            else if (!Input.GetKey(KeyCode.Q))
             {
+                
                 _playerAnimationController.PlayerIsCharging(false);
             }
         }
@@ -151,7 +155,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
 
     private void ActiveWeapon(GameObject gameObject)
     {
-       
         iceWeaponObject.SetActive(false);
         fireWeaponObject.SetActive(false);
         lightingWeaponObject.SetActive(false);

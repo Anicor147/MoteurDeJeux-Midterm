@@ -69,3 +69,5 @@ Q
 !Assets/Scripts/SceneController.cs,8\6\86402abbd76aefb161bcaf46f1a8631ab2a1aeb5
 N
 Assets/Scripts/SoundManager.cs,8\e\8ea0e564ec06d1bb820376f3b80a9ae256d8b7c9
+Q
+!Assets/Scripts/InitializeStart.cs,a\0\a04eac9d85eedef0810061ef637efe290951ba0e

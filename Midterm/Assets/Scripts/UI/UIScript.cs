@@ -25,7 +25,7 @@ public class UIScript : MonoBehaviour
     public static UIScript instance;
     private void Awake()
     {
-        Debug.Log("CanvasManager Awake");
+     
         if (instance == null)
         {
             instance = this;

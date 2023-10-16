@@ -40,11 +40,7 @@ public class GameManager : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
        
-            if (enemies.Length > 0)
-            {
-               Debug.Log("still have enemy");
-            }
-            else
+            if (enemies.Length <= 0)
             {
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
                 int nextSceneIndex = currentSceneIndex + 1;
@@ -53,15 +49,7 @@ public class GameManager : MonoBehaviour
                 {
                     LoadLevel(nextSceneIndex);
                 }
-                else
-                {
-                    Debug.Log("No more scenes to load.");
-                    
-                }
-                
-                
             }
-        
     }
 
     public void LoadLevel(int sceneIndex)

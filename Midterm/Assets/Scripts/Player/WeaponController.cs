@@ -10,6 +10,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     [SerializeField] private PlayerAnimationController _playerAnimationController;
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private AudioClip _clip;
+    [SerializeField] private AudioClip _Chargingclip;
     private Vector3 mousePosition;
     private float attackStartTime;
     public float attackCooldown = 0.5f;
