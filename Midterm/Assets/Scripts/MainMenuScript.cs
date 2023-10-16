@@ -26,7 +26,6 @@ public class MainMenuScript : MonoBehaviour
         }
     }
     
-    
     public void LoadLevelShop()
     {
         SceneManager.LoadScene(1);

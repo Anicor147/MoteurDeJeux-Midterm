@@ -242,7 +242,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 428315559}
+      - m_Target: {fileID: 404701218}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: CloseSetting
         m_Mode: 1
@@ -961,51 +961,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405435875}
   m_CullTransparentMesh: 1
---- !u!1 &428315558
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 428315560}
-  - component: {fileID: 428315559}
-  m_Layer: 0
-  m_Name: MainMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &428315559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428315558}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c3990b477540e54d9fbadae40a2174d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 1288884518}
---- !u!4 &428315560
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428315558}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.378072, y: -1.1931547, z: 0.118796}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &523130039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2382,6 +2337,10 @@ PrefabInstance:
       propertyPath: musicSlider
       value: 
       objectReference: {fileID: 387372203}
+    - target: {fileID: 3333162795536994900, guid: 08b0cd25e4ff47d4cb91bd944c1e2f0d, type: 3}
+      propertyPath: effectSlider
+      value: 
+      objectReference: {fileID: 1192165761}
     - target: {fileID: 6994307947114741755, guid: 08b0cd25e4ff47d4cb91bd944c1e2f0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.78391325
@@ -3164,7 +3123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 428315559}
+      - m_Target: {fileID: 404701218}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: LoadLevelShop
         m_Mode: 1
@@ -3814,7 +3773,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 428315559}
+      - m_Target: {fileID: 404701218}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: OpenSetting
         m_Mode: 1
@@ -4273,7 +4232,6 @@ SceneRoots:
   - {fileID: 670696480}
   - {fileID: 1562496178}
   - {fileID: 357501734}
-  - {fileID: 428315560}
   - {fileID: 679362399}
   - {fileID: 404701217}
   - {fileID: 1525823200}
