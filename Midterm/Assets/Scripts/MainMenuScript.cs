@@ -8,16 +8,45 @@ using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public static MainMenuScript instance;
     [SerializeField] private GameObject setting;
-    private GameObject audio;
-    private AudioSource audioSource;
+
     private bool pressed;
+    
+    private void Awake()
+    {
+        if (instance== null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
     
     public void LoadLevelShop()
     {
         SceneManager.LoadScene(1);
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !pressed)
+        {
+            pressed = true;
+            setting.SetActive(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && pressed)
+        {
+            pressed = false;
+            setting.SetActive(false);
+        }
+    }
+
+
     public void OpenSetting()
     {
         setting.SetActive(true);

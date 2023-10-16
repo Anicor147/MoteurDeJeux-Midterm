@@ -723,6 +723,7 @@ GameObject:
   - component: {fileID: 404701216}
   - component: {fileID: 404701215}
   - component: {fileID: 404701214}
+  - component: {fileID: 404701218}
   m_Layer: 5
   m_Name: CavasSetting
   m_TagString: Untagged
@@ -813,6 +814,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &404701218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404701213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3990b477540e54d9fbadae40a2174d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setting: {fileID: 1288884518}
 --- !u!1 &405435875
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &428315559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,7 +985,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428315558}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c3990b477540e54d9fbadae40a2174d, type: 3}
   m_Name: 

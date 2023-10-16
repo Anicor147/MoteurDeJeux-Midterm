@@ -39,11 +39,23 @@ public class SoundManager : MonoBehaviour
         audio = GameObject.FindGameObjectWithTag("Sound");
 
         if (audio != null)
-        {
+        { 
             audioSource = audio.GetComponent<AudioSource>();
-           musicSlider.value = audioSource.volume;
+            musicSlider.value = audioSource.volume;
         }
     }
+
+    public void InitializeScene()
+    {
+        audio = GameObject.FindGameObjectWithTag("Sound");
+
+        if (audio != null)
+        { 
+            audioSource = audio.GetComponent<AudioSource>();
+            musicSlider.value = audioSource.volume;
+        }
+    }
+
     private void Update()
     {
        audioSource.volume = musicSlider.value;
