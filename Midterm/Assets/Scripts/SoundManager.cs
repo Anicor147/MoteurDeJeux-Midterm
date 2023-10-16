@@ -41,7 +41,6 @@ public class SoundManager : MonoBehaviour
         { 
             audioSource = audio.GetComponent<AudioSource>();
             musicSlider.value = audioSource.volume;
-            
         }
     }
 
@@ -53,7 +52,6 @@ public class SoundManager : MonoBehaviour
         { 
             audioSource = audio.GetComponent<AudioSource>();
             musicSlider.value = audioSource.volume;
-            
         }
     }
 
