@@ -919,6 +919,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5477743056524377185, guid: 52468bba899edb6469eeb6debb319664, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5556407760749567810, guid: 52468bba899edb6469eeb6debb319664, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 242
@@ -1119,6 +1123,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6901873999237542510, guid: 52468bba899edb6469eeb6debb319664, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 423750434}
+    - target: {fileID: 6901873999237542510, guid: 52468bba899edb6469eeb6debb319664, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockLightning
+      objectReference: {fileID: 0}
     - target: {fileID: 7884135262972884943, guid: 52468bba899edb6469eeb6debb319664, type: 3}
       propertyPath: m_fontSize
       value: 50
@@ -1162,6 +1174,14 @@ PrefabInstance:
     - target: {fileID: 7884135262972884943, guid: 52468bba899edb6469eeb6debb319664, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916089056988437638, guid: 52468bba899edb6469eeb6debb319664, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 423750434}
+    - target: {fileID: 7916089056988437638, guid: 52468bba899edb6469eeb6debb319664, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockIce
       objectReference: {fileID: 0}
     - target: {fileID: 8361399694501905210, guid: 52468bba899edb6469eeb6debb319664, type: 3}
       propertyPath: m_fontSize
@@ -1299,6 +1319,17 @@ PrefabInstance:
       addedObject: {fileID: 1819939541}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52468bba899edb6469eeb6debb319664, type: 3}
+--- !u!114 &423750434 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8590554267198585290, guid: 52468bba899edb6469eeb6debb319664, type: 3}
+  m_PrefabInstance: {fileID: 423750433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987774846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7969b118910345b4297971b16a23c964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &435348385
 PrefabInstance:
   m_ObjectHideFlags: 0
