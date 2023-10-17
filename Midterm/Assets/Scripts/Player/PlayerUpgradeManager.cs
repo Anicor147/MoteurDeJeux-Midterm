@@ -33,15 +33,12 @@ public class PlayerUpgradeManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-        player = GameObject.Find("Player");
-        playerController = player.GetComponent<PlayerController>();
     }
 
-    
     private void Start()
     {
-  
+        playerController = PlayerController.instance;
+        
         _healthPriceText.text = "100";
         _manaPriceText.text = "100";
         _iceWeaponPriceText.text = "200";

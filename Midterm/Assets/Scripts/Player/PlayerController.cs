@@ -114,7 +114,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
             }
             else if (!Input.GetKey(KeyCode.Q))
             {
-                
                 _playerAnimationController.PlayerIsCharging(false);
             }
         }

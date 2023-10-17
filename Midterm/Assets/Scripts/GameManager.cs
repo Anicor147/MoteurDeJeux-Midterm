@@ -8,16 +8,13 @@ public class GameManager : MonoBehaviour
 { 
      private GameObject _player;
      private GameObject _spawnPoint;
-     private PlayerController _playerController;
+    
 
 
-    private void Awake()
-    { 
-        _spawnPoint = GameObject.FindGameObjectWithTag("Spawn"); 
-        _player = GameObject.Find("Player");
-        _playerController = _player.GetComponent<PlayerController>();
-        
-        _playerController.transform.position = _spawnPoint.transform.position;
+    private void Start()
+    {
+        _spawnPoint = GameObject.FindGameObjectWithTag("Spawn");
+        PlayerController.instance.transform.position = _spawnPoint.transform.position;
     }
 
     private void Update()
