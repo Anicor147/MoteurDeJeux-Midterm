@@ -12,7 +12,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private Slider effectSlider;
     private bool musicMutePressed;
     private bool soundMutePressed;
-    private GameObject audio;
+    private GameObject audioGameObject;
     private AudioSource audioSource;
 
     [SerializeField] private AudioSource audioSourceWeapon;
@@ -37,11 +37,11 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        audio = GameObject.FindGameObjectWithTag("Sound");
+        audioGameObject = GameObject.FindGameObjectWithTag("Sound");
         
-        if (audio != null)
+        if (audioGameObject != null)
         { 
-            audioSource = audio.GetComponent<AudioSource>();
+            audioSource = audioGameObject.GetComponent<AudioSource>();
             musicSlider.value = audioSource.volume;
         }
         musicSlider.value = 0.1f;
@@ -51,12 +51,12 @@ public class SoundManager : MonoBehaviour
     public void InitializeScene()
     {
         Debug.Log($"should be initalize Againg");
-        audio = GameObject.FindGameObjectWithTag("Sound");
+        audioGameObject = GameObject.FindGameObjectWithTag("Sound");
         effectSlider.value = audioSourceWeapon.volume;
         Debug.Log(effectSlider.value);
-        if (audio != null)
+        if (audioGameObject != null)
         { 
-            audioSource = audio.GetComponent<AudioSource>();
+            audioSource = audioGameObject.GetComponent<AudioSource>();
             musicSlider.value = audioSource.volume;
             Debug.Log($"audio is not null");
         }

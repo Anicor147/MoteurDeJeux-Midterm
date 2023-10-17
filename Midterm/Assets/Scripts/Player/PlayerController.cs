@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour , IBaseCharacter
 { 
@@ -172,8 +173,14 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     {
         PlayerIsDead = true;
         _playerAnimationController.PlayerIsDead(true);
+        
+        Invoke("Delaydead" , 2f);
     }
-
+    public void Delaydead()
+    {
+        SceneManager.LoadScene(1);
+    }
+    
     public void Revive()
     {
         PlayerIsDead = false;

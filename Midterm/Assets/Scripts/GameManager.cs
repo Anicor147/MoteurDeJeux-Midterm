@@ -22,11 +22,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        LoadOnDead();
+        //LoadOnDead();
         CheckEnemy();
         
     }
 
+    /*
     public void LoadOnDead()
     {
         var playerController = _player.GetComponent<PlayerController>();
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     {
         LoadLevel(1);
     }
+    */
 
     public void CheckEnemy()
     {
