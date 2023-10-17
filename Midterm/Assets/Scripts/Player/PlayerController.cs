@@ -185,7 +185,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     
     public void Revive()
     {
-        Debug.Log($"Revive is Called");
         PlayerIsDead = false;
         _playerAnimationController.PlayerIsDead(false);
     }

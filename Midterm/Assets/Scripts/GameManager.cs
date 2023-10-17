@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
      private PlayerController _playerController;
 
 
-    private void Start()
+    private void Awake()
     { 
         _spawnPoint = GameObject.FindGameObjectWithTag("Spawn"); 
-        _player = GameObject.FindWithTag("Player");
+        _player = GameObject.Find("Player");
         _playerController = _player.GetComponent<PlayerController>();
         
         _playerController.transform.position = _spawnPoint.transform.position;
