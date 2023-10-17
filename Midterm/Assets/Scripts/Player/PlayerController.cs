@@ -78,8 +78,8 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         CurrentHealth = MaxHealth;
         
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
-        UnlockLightningWeapon = true;
-        UnlockIceWeapon = true;
+        //UnlockLightningWeapon = true;
+        //UnlockIceWeapon = true;
         //DONT FORGER TO DELETE. THIS LINE IS FOR TEST !!!!!
         
         AddToDictionary();

@@ -37,9 +37,6 @@ public class PlayerUpgradeManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
-     
-
-        playerController.Currency = 1000;
         
         _healthPriceText.text = "100";
         _manaPriceText.text = "100";
@@ -63,7 +60,6 @@ public class PlayerUpgradeManager : MonoBehaviour
         }
     }
 
-    // Not official
     public void UpgradeHealthButtonPressed()
     {
         switch (_currentHealthUpgradeLevel)

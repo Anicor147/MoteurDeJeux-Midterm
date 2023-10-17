@@ -14,6 +14,7 @@ public class MainMenuScript : MonoBehaviour
     private string playerName;
     public string PlayerName { get; set; }
     [SerializeField] private GameObject setting;
+    [SerializeField] private GameObject credits;
 
     private bool pressed;
     
@@ -62,7 +63,23 @@ public class MainMenuScript : MonoBehaviour
         setting.SetActive(false);
         Time.timeScale = 1f;
     }
-    
 
+    public void OpenCredits()
+    {
+        credits.SetActive(true);
+        Time.timeScale = 0f;
+    }
     
+    
+    public void CloseCredits()
+    {
+        credits.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void CloseApplication()
+    {
+        Application.Quit();
+    }
+
 }
