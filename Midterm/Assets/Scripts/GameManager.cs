@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     public void CheckEnemy()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
+        Debug.Log(enemies.Length);
        
             if (enemies.Length <= 0)
             {
@@ -61,7 +61,6 @@ public class GameManager : MonoBehaviour
 
         if (nextSceneIndex <= SceneManager.sceneCountInBuildSettings - 1)
         {
-            Invoke("LoadLevel(nextSceneIndex)" , 2f);
             LoadLevel(nextSceneIndex);
         }
     }

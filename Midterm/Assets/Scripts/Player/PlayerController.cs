@@ -171,10 +171,12 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     }
     public void OnDeath()
     {
-        PlayerIsDead = true;
-        _playerAnimationController.PlayerIsDead(true);
-        
-        Invoke("Delaydead" , 2f);
+        if (!PlayerIsDead)
+        {
+            PlayerIsDead = true;
+            _playerAnimationController.PlayerIsDead(true);
+            Invoke("Delaydead" , 2f);    
+        }
     }
     public void Delaydead()
     {
@@ -183,6 +185,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     
     public void Revive()
     {
+        Debug.Log($"Revive is Called");
         PlayerIsDead = false;
         _playerAnimationController.PlayerIsDead(false);
     }
