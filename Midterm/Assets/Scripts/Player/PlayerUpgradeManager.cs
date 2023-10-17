@@ -12,6 +12,9 @@ public class PlayerUpgradeManager : MonoBehaviour
     private PlayerController playerController;
     private int _currentHealthUpgradeLevel = 1;
     private int _currentManaUpgradeLevel = 1;
+    private bool _burnIsBought;
+    private bool _iceIsBought;
+    private bool _lightningIsBought;
     public bool BurnedUnlock { get; set; }
     [SerializeField] private TMP_Text _healthPriceText;
     [SerializeField] private TMP_Text _manaPriceText;
@@ -156,28 +159,34 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     public void UnlockIce()
     {
-        if (playerController.Currency >=200)
+        if (playerController.Currency >=200 && !_iceIsBought)
         {
             playerController.UnlockIceWeapon = true;
             playerController.Currency -= 200;
+            _iceWeaponPriceText.text = "Bought";
+            _iceIsBought = true;
         }
     }
     
     public void UnlockLightning()
     {
-        if (playerController.Currency >= 400)
+        if (playerController.Currency >= 400 && !_lightningIsBought)
         {
             playerController.UnlockLightningWeapon = true;
             playerController.Currency -= 400;
+            _lightningWeaponPriceText.text = "Bought";
+            _lightningIsBought = true;
         }
     }
 
     public void UnlockBurnEffect()
     {
-        if (playerController.Currency >= 200)
+        if (playerController.Currency >= 200 && !_burnIsBought)
         {
             BurnedUnlock = true;    
             playerController.Currency -= 200;
+            _burnEffectText.text = "Bought";
+            _burnIsBought = true;
         }
 
         

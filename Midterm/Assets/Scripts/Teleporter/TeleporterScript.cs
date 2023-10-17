@@ -36,7 +36,7 @@ public class TeleporterScript : MonoBehaviour
 
   public void LoadLevel1()
   {
-    SceneManager.LoadScene(5);
+    SceneManager.LoadScene(2);
   }
   
   

@@ -31,8 +31,13 @@ public class GameManager : MonoBehaviour
     {
         var playerController = _player.GetComponent<PlayerController>();
         
-        if(playerController.PlayerIsDead) LoadLevel(1);
+        if(playerController.PlayerIsDead) Invoke("Delaydead" , 2f);
         playerController.PlayerIsDead = false;
+    }
+
+    public void Delaydead()
+    {
+        LoadLevel(1);
     }
 
     public void CheckEnemy()
@@ -42,15 +47,23 @@ public class GameManager : MonoBehaviour
        
             if (enemies.Length <= 0)
             {
-                int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-                int nextSceneIndex = currentSceneIndex + 1;
-
-                if (nextSceneIndex <= SceneManager.sceneCountInBuildSettings - 1)
-                {
-                    LoadLevel(nextSceneIndex);
-                }
+                Invoke("CallForDelay" , 2f);
             }
     }
+
+
+   public  void CallForDelay()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        if (nextSceneIndex <= SceneManager.sceneCountInBuildSettings - 1)
+        {
+            Invoke("LoadLevel(nextSceneIndex)" , 2f);
+            LoadLevel(nextSceneIndex);
+        }
+    }
+
 
     public void LoadLevel(int sceneIndex)
     {
