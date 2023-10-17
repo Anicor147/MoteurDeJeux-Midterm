@@ -19,31 +19,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //LoadOnDead();
         CheckEnemy();
-        
     }
-
-    /*
-    public void LoadOnDead()
-    {
-        var playerController = _player.GetComponent<PlayerController>();
-        
-        if(playerController.PlayerIsDead) Invoke("Delaydead" , 2f);
-        playerController.PlayerIsDead = false;
-    }
-
-    public void Delaydead()
-    {
-        LoadLevel(1);
-    }
-    */
-
+    
     public void CheckEnemy()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        Debug.Log(enemies.Length);
-       
+        
             if (enemies.Length <= 0)
             {
                 Invoke("CallForDelay" , 2f);

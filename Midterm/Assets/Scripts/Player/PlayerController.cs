@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     private Dictionary<KeyCode, GameObject> weaponDictionary;
     [SerializeField] private WeaponController WeaponController;
     private bool isCharging;
-    public static bool isLightning;
+    public bool isLightning;
     private bool unlockIceWeapon;
     private bool unlockLightningWeapon ;
     private int currency;
@@ -110,7 +110,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
             {
                 _playerAnimationController.PlayerIsCharging(true);
                 CurrentMana += (20 * Time.deltaTime);
-                Debug.Log(CurrentMana);
             }
             else if (!Input.GetKey(KeyCode.Q))
             {

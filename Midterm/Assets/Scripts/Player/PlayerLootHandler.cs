@@ -9,8 +9,15 @@ public class PlayerLootHandler : MonoBehaviour
     private bool getmoney;
     [SerializeField] private AudioClip _clip;
   
-   [SerializeField] private PlayerController _playerController;
-    private void OnTriggerEnter2D(Collider2D other)
+   private PlayerController _playerController;
+
+   private void Start()
+   {
+       _playerController = PlayerController.instance;
+   }
+
+
+   private void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.gameObject.name)
         {
