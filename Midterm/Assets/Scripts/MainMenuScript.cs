@@ -13,7 +13,9 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private TMP_InputField playerNameField;
     private string playerName;
     public string PlayerName { get; set; }
+    private bool inMainMenu = true; 
     [SerializeField] private GameObject setting;
+    [SerializeField] private GameObject backToMenuButton;
     [SerializeField] private GameObject credits;
 
     private bool pressed;
@@ -32,6 +34,7 @@ public class MainMenuScript : MonoBehaviour
     
     public void LoadLevelShop()
     {
+        inMainMenu = false;
         PlayerName = playerNameField.text;
         SceneManager.LoadScene(1);
     }
@@ -53,7 +56,17 @@ public class MainMenuScript : MonoBehaviour
 
     public void OpenSetting()
     {
-        setting.SetActive(true);
+        if (inMainMenu)
+        {
+            setting.SetActive(true);
+            backToMenuButton.SetActive(false);
+        }
+        else if (!inMainMenu)
+        {
+            setting.SetActive(true);
+            backToMenuButton.SetActive(true);
+            Time.timeScale = 0f;
+        }
         Time.timeScale = 0f;
     }
     
@@ -82,4 +95,18 @@ public class MainMenuScript : MonoBehaviour
         Application.Quit();
     }
 
+    public void BackToMenu()
+    {
+        DestroyDontDestroyOnLoadObjects();
+        SceneManager.LoadScene(0);
+    }
+    public void DestroyDontDestroyOnLoadObjects()
+    {
+        DontDestroyOnLoad[] objectsWithScript = FindObjectsOfType<DontDestroyOnLoad>();
+
+        foreach (DontDestroyOnLoad obj in objectsWithScript)
+        {
+            Destroy(obj.gameObject);
+        }
+    }
 }

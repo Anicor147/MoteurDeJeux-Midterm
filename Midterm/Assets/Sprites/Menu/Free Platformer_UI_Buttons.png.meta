@@ -837,7 +837,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu13
+      name: Menu3
       rect:
         serializedVersion: 2
         x: 528
@@ -1118,7 +1118,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1179,7 +1179,7 @@ TextureImporter:
       Free Platformer_UI_Buttons_8: 1973837117
       Menu: 1248120236
       Menu1: -2037581912
-      Menu13: 530666653
+      Menu3: 530666653
       Music: -794108631
       Music Pressed: 462107614
       Pause: -1578992952
