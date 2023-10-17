@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 500
   _hunterStats: {fileID: 0}
+  _clip: {fileID: 8300000, guid: ddb6f08ed81336e4eaea28725d7d9936, type: 3}
   isPiercing: 1
 --- !u!50 &5369112306386458263
 Rigidbody2D:

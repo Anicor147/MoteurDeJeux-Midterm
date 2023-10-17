@@ -76,7 +76,6 @@ public class WeaponStatus : MonoBehaviour
       color.color = Color.blue;
       rb.velocity = Vector2.zero;
       
-      Debug.Log($"velocity should be zero");
       StartCoroutine(UnFreezedDelay(gameObject));
    }
 
@@ -86,12 +85,6 @@ public class WeaponStatus : MonoBehaviour
       var color = gameObject.GetComponent<SpriteRenderer>();
       color.color = Color.white;
       IsFreezed = false;
-   }
-   
-   
-   public void LightningPierceEffect()
-   {
-      _projectile.isPiercing = true;
    }
 
 }

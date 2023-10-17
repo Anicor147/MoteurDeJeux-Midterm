@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootSprite: {fileID: -401703779, guid: 158033accefe0c440b5a56afe0a13816, type: 3}
   lootName: HealthPotion
-  dropRate: 20
+  dropRate: 15

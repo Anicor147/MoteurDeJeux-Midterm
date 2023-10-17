@@ -25,11 +25,10 @@ public class UIScript : MonoBehaviour
     public static UIScript instance;
     private void Awake()
     {
-        Debug.Log("CanvasManager Awake");
+     
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -58,10 +57,12 @@ public class UIScript : MonoBehaviour
     }
 
     public void PlayerBars()
+
     {
         manaSlider.maxValue = _playerController.MaxMana;
         manaSlider.value = _playerController.CurrentMana;
         manaValue.text = _playerController.CurrentMana.ToString();
+        healthSlider.maxValue = _playerController.MaxHealth;
         healthSlider.value = _playerController.CurrentHealth;
         healthValue.text = _playerController.CurrentHealth.ToString();
     }

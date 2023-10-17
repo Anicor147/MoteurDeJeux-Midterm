@@ -21,7 +21,6 @@ public class HunterController : MonoBehaviour , IBaseCharacter
    public void TakeDamage(float damage , GameObject gameObjectH)
    {
       MaxHealth -= damage;
-      Debug.Log($"Current Hunter health {MaxHealth}");
       if (MaxHealth <= 0)
       {
          hunterIsDead = true;
@@ -30,9 +29,7 @@ public class HunterController : MonoBehaviour , IBaseCharacter
       }
       if (gameObjectH.CompareTag("IceAttack"))
       {
-         Debug.Log($"Before");
          _weaponStatus.FreezeOnTouch(gameObject);
-         Debug.Log($"After");
       }
       else if (gameObjectH.CompareTag("FireAttack"))
       {

@@ -1,5 +1,5 @@
 
 Rcsharpsquid:S3903"0Move 'DontDestroyOnLoad' into a named namespace.(¤¸¯‰şÿÿÿÿ
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ÛÙØå8±£†š³1
-icsharpsquid:S2223"EChange the visibility of 'instance' or make it 'const' or 'readonly'.(ÛÙØå8±£†š³1
-~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ñõîÙşÿÿÿÿ8²£†š³1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ÛÙØå8òÚ¤¯³1
+icsharpsquid:S2223"EChange the visibility of 'instance' or make it 'const' or 'readonly'.(ÛÙØå8óÚ¤¯³1
+~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ñõîÙşÿÿÿÿ8óÚ¤¯³1

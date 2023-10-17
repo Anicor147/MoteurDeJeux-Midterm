@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemySlime
   m_EditorClassIdentifier: 
   lifePoint: 100
-  attackDamage: 0.1
+  attackDamage: 0.5
   speed: 100
   range: 10

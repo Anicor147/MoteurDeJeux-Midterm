@@ -7,6 +7,7 @@ public class PlayerLootHandler : MonoBehaviour
 {
     private int money;
     private bool getmoney;
+    [SerializeField] private AudioClip _clip;
   
    [SerializeField] private PlayerController _playerController;
     private void OnTriggerEnter2D(Collider2D other)
@@ -16,22 +17,27 @@ public class PlayerLootHandler : MonoBehaviour
             case "Money":
                 _playerController.Currency += 10;
                 Debug.Log($"How much money : {_playerController.Currency}");
+                PlayPickUpSoundClip();
                 Destroy(other.gameObject);
                 break;
             case "HealthPotion":
                 HealthPotionLogic();
+                PlayPickUpSoundClip();
                 Destroy(other.gameObject);
                 break;
             case "ManaPotion":
                 ManaPotionLogic();
+                PlayPickUpSoundClip();
                 Destroy(other.gameObject);
                 break;
             case "FullRecoveryPotion":
                 FullRecoveryPotionLogic();
+                PlayPickUpSoundClip();
                 Destroy(other.gameObject);
                 break;
             case "MoneyCase":
                 getmoney = true;
+                PlayPickUpSoundClip();
                 Destroy(other.gameObject);
                 break;
         }
@@ -40,6 +46,11 @@ public class PlayerLootHandler : MonoBehaviour
     private void FixedUpdate()
     {
         MoneyCaseEffect();
+    }
+    
+    public void PlayPickUpSoundClip()
+    {
+        SoundManager.instance.PlaySound(_clip);
     }
     public void MoneyCaseEffect()
     {

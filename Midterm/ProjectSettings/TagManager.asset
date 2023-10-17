@@ -16,6 +16,7 @@ TagManager:
   - Shop
   - Enemy
   - Spawn
+  - Sound
   layers:
   - Default
   - TransparentFX

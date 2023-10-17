@@ -29,7 +29,6 @@ public class NpcInteractionsScript : MonoBehaviour
         RaycastHit2D hit2D = Physics2D.Raycast(transform.position, distance, npcRange);
         if (hit2D.collider != null && hit2D.collider.CompareTag("Player"))
         {
-            Debug.Log($"player hit");
             OpenLevelingScreen();
         }
     }
@@ -41,13 +40,13 @@ public class NpcInteractionsScript : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.E)&&!menuIsOpen)
         {
+            Time.timeScale = 0f;
             screenLeveling.SetActive(true);
             menuIsOpen = true; 
-            Debug.Log($"Can be closed now");
         }
         else if (Input.GetKeyDown(KeyCode.E) && menuIsOpen)
         { 
-            Debug.Log($"Should Close now");
+            Time.timeScale = 1f;
             screenLeveling.SetActive(false);
             menuIsOpen = false;  
         }

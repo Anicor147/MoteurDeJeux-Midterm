@@ -270,16 +270,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI books & more_7
+      name: SettingMenu
       rect:
         serializedVersion: 2
         x: 608
         y: 400
-        width: 96
+        width: 48
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 7, y: 7, z: 7, w: 7}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -5110,6 +5110,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      SettingMenu: -273853706
       UI books & more_0: 1211602509
       UI books & more_1: -1664429079
       UI books & more_10: -1242341633
@@ -5312,7 +5313,6 @@ TextureImporter:
       UI books & more_67: -910486207
       UI books & more_68: 431003668
       UI books & more_69: -1882654962
-      UI books & more_7: -273853706
       UI books & more_70: 1119396982
       UI books & more_71: 35667452
       UI books & more_72: -638799074
