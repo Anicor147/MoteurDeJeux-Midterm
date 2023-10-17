@@ -22,7 +22,6 @@ public class SoundManager : MonoBehaviour
         if (instance== null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -45,8 +44,8 @@ public class SoundManager : MonoBehaviour
             audioSource = audio.GetComponent<AudioSource>();
             musicSlider.value = audioSource.volume;
         }
-        musicSlider.value = 0.5f;
-        effectSlider.value = 0.5f;
+        musicSlider.value = 0.1f;
+        effectSlider.value = 0.1f;
     }
 
     public void InitializeScene()
@@ -61,7 +60,7 @@ public class SoundManager : MonoBehaviour
             musicSlider.value = audioSource.volume;
             Debug.Log($"audio is not null");
         }
-        musicSlider.value = 0.5f;
+        musicSlider.value = 0.1f;
         effectSlider.value = 0.1f;
     }
 

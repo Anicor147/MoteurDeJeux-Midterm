@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -9,6 +10,9 @@ using UnityEngine.UI;
 public class MainMenuScript : MonoBehaviour
 {
     public static MainMenuScript instance;
+    [SerializeField] private TMP_InputField playerNameField;
+    private string playerName;
+    public string PlayerName { get; set; }
     [SerializeField] private GameObject setting;
 
     private bool pressed;
@@ -18,7 +22,6 @@ public class MainMenuScript : MonoBehaviour
         if (instance== null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -28,6 +31,7 @@ public class MainMenuScript : MonoBehaviour
     
     public void LoadLevelShop()
     {
+        PlayerName = playerNameField.text;
         SceneManager.LoadScene(1);
     }
 

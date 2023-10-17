@@ -14,7 +14,7 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         _spawnPoint = GameObject.FindGameObjectWithTag("Spawn"); 
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindWithTag("Player");
         _playerController = player.GetComponent<PlayerController>();
         
         _playerController.CurrentHealth = _playerController.MaxHealth;

@@ -31,9 +31,18 @@ public class EndingTeleporter : MonoBehaviour
             isCollided = false;
         }
     }
+    public void DestroyDontDestroyOnLoadObjects()
+    {
+        DontDestroyOnLoad[] objectsWithScript = FindObjectsOfType<DontDestroyOnLoad>();
 
+        foreach (DontDestroyOnLoad obj in objectsWithScript)
+        {
+            Destroy(obj.gameObject);
+        }
+    }
     public void MainMenuScene()
     {
+        DestroyDontDestroyOnLoadObjects();
         SceneManager.LoadScene(0);
     }
 }

@@ -6,7 +6,20 @@ public class CameraMovement : MonoBehaviour
 {
     private GameObject playerPosition;
     [SerializeField] private float zoomOut = -10f;
-
+    public static CameraMovement instance;
+    private void Awake()
+    {
+     
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
     private void Start()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player");

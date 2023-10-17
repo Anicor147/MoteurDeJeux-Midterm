@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
