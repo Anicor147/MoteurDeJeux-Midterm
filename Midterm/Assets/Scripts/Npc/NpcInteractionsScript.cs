@@ -40,11 +40,13 @@ public class NpcInteractionsScript : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.E)&&!menuIsOpen)
         {
+            Time.timeScale = 0f;
             screenLeveling.SetActive(true);
             menuIsOpen = true; 
         }
         else if (Input.GetKeyDown(KeyCode.E) && menuIsOpen)
         { 
+            Time.timeScale = 1f;
             screenLeveling.SetActive(false);
             menuIsOpen = false;  
         }
