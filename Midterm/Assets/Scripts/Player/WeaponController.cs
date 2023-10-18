@@ -9,6 +9,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerAnimationController _playerAnimationController;
      private PlayerController _playerController;
+     public static WeaponController instance;
     [SerializeField] private AudioClip _clip;
     private Vector3 mousePosition;
     private float attackStartTime;
@@ -16,13 +17,23 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     private float angle;
     private Vector3 direction;
     private bool canAttack;
-
     public bool CanAttack
     {
         get => canAttack;
         set => canAttack = value;
     }
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         _playerController = PlayerController.instance;
@@ -68,10 +79,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
             {
                 StartCoroutine(LightningWeaponWithDelay());  
             }
-            else
-            {
-                return;
-            }    
+               
         }
     }
     public IEnumerator LightningWeaponWithDelay()

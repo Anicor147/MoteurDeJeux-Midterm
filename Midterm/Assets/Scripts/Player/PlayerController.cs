@@ -13,15 +13,10 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     [SerializeField] private GameObject lightingWeaponObject;
     private Dictionary<KeyCode, GameObject> weaponDictionary;
     [SerializeField] private WeaponController WeaponController;
-    private bool isCharging;
+    private bool isCharging, unlockIceWeapon,unlockLightningWeapon ;
     public bool isLightning;
-    private bool unlockIceWeapon;
-    private bool unlockLightningWeapon ;
     private int currency;
-    private float maxHealth;
-    private float maxMana;
-    private float currentMana;
-    private float currentHealth;
+    private float maxHealth,maxMana,currentMana,currentHealth;
     public bool PlayerIsDead { get; set; }
     public static PlayerController instance;
 
