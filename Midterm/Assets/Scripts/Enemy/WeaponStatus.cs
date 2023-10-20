@@ -19,9 +19,11 @@ public class WeaponStatus : MonoBehaviour
 
    public void FireDamageOverTime(GameObject gameObject)
    {
-      Transform childTransform = _shop.transform.Find("LevelingBorder");
-      PlayerUpgradeManager playerUpgradeManager = childTransform.GetComponent<PlayerUpgradeManager>();
-      if (!playerUpgradeManager.BurnedUnlock) return;
+      //Transform childTransform = _shop.transform.Find("LevelingBorder");
+      //PlayerUpgradeManager playerUpgradeManager = childTransform.GetComponent<PlayerUpgradeManager>();
+      Debug.Log(PlayerController.instance.BurnedUnlock);
+      if (!PlayerController.instance.BurnedUnlock) return;
+      Debug.Log(PlayerController.instance.BurnedUnlock);
       IsBurned = true;
      StartCoroutine(FireBurnDelay(gameObject));
    }
@@ -45,9 +47,9 @@ public class WeaponStatus : MonoBehaviour
    
    public void FireDamageOverTimeH(GameObject gameObject)
    {
-      Transform childTransform = _shop.transform.Find("LevelingBorder");
-      PlayerUpgradeManager playerUpgradeManager = childTransform.GetComponent<PlayerUpgradeManager>();
-      if (!playerUpgradeManager.BurnedUnlock) return;
+      //Transform childTransform = _shop.transform.Find("LevelingBorder");
+      //PlayerUpgradeManager playerUpgradeManager = childTransform.GetComponent<PlayerUpgradeManager>();
+      if (!PlayerController.instance.BurnedUnlock) return;
       IsBurned = true;
       StartCoroutine(FireBurnDelayH(gameObject));
    }

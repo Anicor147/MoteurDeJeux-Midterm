@@ -9,11 +9,13 @@ public class PlayerUpgradeManager : MonoBehaviour
 {
     public UpgradeListSO listOfUpgrade;
     private GameObject player;
-    private PlayerController playerController;
-    private int _currentHealthUpgradeLevel = 1;
-    private int _currentManaUpgradeLevel = 1;
-    private bool _burnIsBought , _iceIsBought , _lightningIsBought;
-    public bool BurnedUnlock { get; set; }
+    private PlayerController _playerController;
+    /*public int _currentHealthUpgradeLevel = 1;
+    public int _currentManaUpgradeLevel = 1;
+    public bool _burnIsBought;
+    public bool _iceIsBought;
+    public bool _lightningIsBought;*/
+    //public bool BurnedUnlock { get; set; }
     [SerializeField] private TMP_Text _healthPriceText;
     [SerializeField] private TMP_Text _manaPriceText;
     [SerializeField] private TMP_Text _iceWeaponPriceText;
@@ -21,7 +23,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     [SerializeField] private TMP_Text _burnEffectText;
     public static PlayerUpgradeManager instance;    
 
-    private void Awake()
+    public void Awake()
     {
         if (instance == null)
         {
@@ -31,11 +33,12 @@ public class PlayerUpgradeManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        Debug.Log("PlayerUpgradeManager Awake");
     }
 
     private void Start()
     {
-        playerController = PlayerController.instance;
+        _playerController = PlayerController.instance;
         _healthPriceText.text = "100";
         _manaPriceText.text = "100";
         _iceWeaponPriceText.text = "200";
@@ -49,25 +52,25 @@ public class PlayerUpgradeManager : MonoBehaviour
         {
             if (index == upgrade.index)
             {
-                playerController.MaxHealth += upgrade.lifePointUpgrade;
-                playerController.MaxMana += upgrade.manaPointUpgrade;
-                playerController.CurrentMana = playerController.MaxMana;
-                playerController.CurrentHealth = playerController.MaxHealth;
+                _playerController.MaxHealth += upgrade.lifePointUpgrade;
+                _playerController.MaxMana += upgrade.manaPointUpgrade;
+                _playerController.CurrentMana = _playerController.MaxMana;
+                _playerController.CurrentHealth = _playerController.MaxHealth;
             }
         }
     }
 
     public void UpgradeHealthButtonPressed()
     {
-        switch (_currentHealthUpgradeLevel)
+        switch (_playerController._currentHealthUpgradeLevel)
         {
             case 1:
                 FirstUpgradeHealth();
-                _currentHealthUpgradeLevel++;
+                _playerController._currentHealthUpgradeLevel++;
                 break;
             case 2:
                 SecondUpgradeHealth();
-                _currentHealthUpgradeLevel++;
+                _playerController._currentHealthUpgradeLevel++;
                 break;
             case 3 :
                 ThirdUpgradeHealth();
@@ -77,15 +80,15 @@ public class PlayerUpgradeManager : MonoBehaviour
     
     public void UpgradeManaButtonPressed()
     {
-        switch (_currentManaUpgradeLevel)
+        switch (_playerController._currentManaUpgradeLevel)
         {
             case 1:
                 FirstUpgradeMana();
-                _currentManaUpgradeLevel++;
+                _playerController._currentManaUpgradeLevel++;
                 break;
             case 2:
                 SecondUpgradeMana();
-                _currentManaUpgradeLevel++;
+                _playerController._currentManaUpgradeLevel++;
                 break;
             case 3 :
                 ThirdUpgradeMana();
@@ -95,9 +98,9 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     public void FirstUpgradeHealth()
     {
-        if (playerController.Currency >= 100)
+        if (_playerController.Currency >= 100)
         {
-            playerController.Currency -= 100;    
+            _playerController.Currency -= 100;    
             UpgradeStats(0);
             _healthPriceText.text = "300";
         }
@@ -105,9 +108,9 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     public void SecondUpgradeHealth()
     {
-        if (playerController.Currency >= 300)
+        if (_playerController.Currency >= 300)
         {
-            playerController.Currency -= 300;    
+            _playerController.Currency -= 300;    
             UpgradeStats(0);
             _healthPriceText.text = "600";
         }   
@@ -115,18 +118,18 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     public void ThirdUpgradeHealth()
     {
-        if (playerController.Currency >= 600)
+        if (_playerController.Currency >= 600)
         {
-            playerController.Currency -= 600;    
+            _playerController.Currency -= 600;    
             UpgradeStats(0);
         }
     }
 
     private void FirstUpgradeMana()
     {
-        if (playerController.Currency >= 100)
+        if (_playerController.Currency >= 100)
         {
-            playerController.Currency -= 100;    
+            _playerController.Currency -= 100;    
             UpgradeStats(1);
             _manaPriceText.text = "300";
         }
@@ -134,9 +137,9 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     private void SecondUpgradeMana()
     {
-        if (playerController.Currency >= 300)
+        if (_playerController.Currency >= 300)
         {
-            playerController.Currency -= 300;    
+            _playerController.Currency -= 300;    
             UpgradeStats(1);
             _manaPriceText.text = "600";
         }
@@ -144,43 +147,47 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     private void ThirdUpgradeMana()
     {
-        if (playerController.Currency >= 600)
+        if (_playerController.Currency >= 600)
         {
-            playerController.Currency -= 600;    
+            _playerController.Currency -= 600;    
             UpgradeStats(1);
         }
     }
 
     public void UnlockIce()
     {
-        if (playerController.Currency >=200 && !_iceIsBought)
+        if (_playerController.Currency >=200 && !_playerController._iceIsBought)
         {
-            playerController.UnlockIceWeapon = true;
-            playerController.Currency -= 200;
+            _playerController.UnlockIceWeapon = true;
+            _playerController.Currency -= 200;
             _iceWeaponPriceText.text = "Bought";
-            _iceIsBought = true;
+            _playerController._iceIsBought = true;
         }
     }
     
     public void UnlockLightning()
     {
-        if (playerController.Currency >= 400 && !_lightningIsBought)
+        if (_playerController.Currency >= 400 && !_playerController._lightningIsBought)
         {
-            playerController.UnlockLightningWeapon = true;
-            playerController.Currency -= 400;
+            _playerController.UnlockLightningWeapon = true;
+            _playerController.Currency -= 400;
             _lightningWeaponPriceText.text = "Bought";
-            _lightningIsBought = true;
+            _playerController._lightningIsBought = true;
         }
     }
 
     public void UnlockBurnEffect()
     {
-        if (playerController.Currency >= 200 && !_burnIsBought)
+        if (_playerController.Currency >= 200 && !_playerController._burnIsBought)
         {
-            BurnedUnlock = true;    
-            playerController.Currency -= 200;
+            _playerController.BurnedUnlock = true;    
+            _playerController.Currency -= 200;
             _burnEffectText.text = "Bought";
-            _burnIsBought = true;
+            _playerController._burnIsBought = true;
+        }
+        else if (_playerController._burnIsBought)
+        {
+            _burnEffectText.text = "Bought";
         }
     }
 
