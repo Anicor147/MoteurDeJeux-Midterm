@@ -9,7 +9,6 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerAnimationController _playerAnimationController;
      private PlayerController _playerController;
-     public static WeaponController instance;
     [SerializeField] private AudioClip _clip;
     private Vector3 mousePosition;
     private float attackStartTime;
@@ -23,17 +22,6 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
         set => canAttack = value;
     }
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
     private void Start()
     {
         _playerController = PlayerController.instance;
@@ -72,8 +60,13 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
             {
                 _playerController.CurrentMana -= 5;   
                 attackStartTime = Time.time;
+                
+                _playerAnimationController.PlayerIsAttacking();
+                 if(gameObject.tag == "FireAttack")
+                    _playerAnimationController.PlayerIsAttackingFireMelee();
+                if(gameObject.tag == "IceAttack")
                 _playerAnimationController.PlayerIsAttackingIcePicks();
-                _playerAnimationController.PlayerIsAttackingFireMelee();
+                
             }
             else if (_playerController.CurrentMana > 0 && _playerController.isLightning && CanAttack)
             {

@@ -37,13 +37,16 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void PlayerIsAttackingIcePicks()
     {
-        playerAnimator.SetTrigger(_isAttacking);
         iceAnimator.SetTrigger(_isAttackingIce);
-    } 
-    
-    public void PlayerIsAttackingFireMelee()
+    }
+
+    public void PlayerIsAttacking()
     {
         playerAnimator.SetTrigger(_isAttacking);
+    }
+
+    public void PlayerIsAttackingFireMelee()
+    {
         fireAnimator.SetTrigger(_isAttackingFire);
     }
 
