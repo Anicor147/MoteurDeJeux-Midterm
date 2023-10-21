@@ -2,11 +2,8 @@
 Ocsharpsquid:S3903"3Move 'PlayerUpgradeManager' into a named namespace.(šŠï|
 gcsharpsquid:S1104
 "DMake this field 'private' and encapsulate it in a 'public' property.(çøÚo8Ú ¡÷±1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¾Şæ8ÊÕóÒ´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(øø«£8”ïóÒ´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(³ı»¾8¨¼ïÒ´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ıºÓü8®ÔïÒ´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(­‘Ëî8‘­ñÒ´1
-mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(öÕËˆıÿÿÿÿ8Õêÿ²1
-ncsharpsquid:S2223"EChange the visibility of 'instance' or make it 'const' or 'readonly'.(öÕËˆıÿÿÿÿ8Õêÿ²1
-~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ñõîÙşÿÿÿÿ8ŸÕêÿ²1
+mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(öÕËˆıÿÿÿÿ8’“äï´1
+ncsharpsquid:S2223"EChange the visibility of 'instance' or make it 'const' or 'readonly'.(öÕËˆıÿÿÿÿ8’“äï´1
+~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ñõîÙşÿÿÿÿ8’“äï´1
+Bcsharpsquid:S125"Remove this commented out code.(˜ÓÒŒ8’“äï´1
+Gcsharpsquid:S125"Remove this commented out code.(ÜÀÄ»ûÿÿÿÿ8’“äï´1

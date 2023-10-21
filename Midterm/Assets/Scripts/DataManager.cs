@@ -27,7 +27,7 @@ public class DataManager : MonoBehaviour
         _playerController = PlayerController.instance;
     }
     
-    private void SaveDataToJson()
+    public void SaveDataToJson()
     {
         _playerController = PlayerController.instance;
         
@@ -50,7 +50,7 @@ public class DataManager : MonoBehaviour
         Debug.Log("Save as been made");
     }
 
-    private void LoadDataFromJson()
+    public void LoadDataFromJson()
     {
         var filePath = Application.persistentDataPath + "/PlayerData.json";
         var dataFromoJson = System.IO.File.ReadAllText(filePath);

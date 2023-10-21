@@ -44,6 +44,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         _iceWeaponPriceText.text = "200";
         _lightningWeaponPriceText.text = "400";
         _burnEffectText.text = "200";
+        CheckIfBought();
     }
 
     public void UpgradeStats(int index)
@@ -185,10 +186,13 @@ public class PlayerUpgradeManager : MonoBehaviour
             _burnEffectText.text = "Bought";
             _playerController._burnIsBought = true;
         }
-        else if (_playerController._burnIsBought)
-        {
-            _burnEffectText.text = "Bought";
-        }
+    }
+
+    public void CheckIfBought()
+    {
+        if(_playerController._iceIsBought) _iceWeaponPriceText.text = "Bought";
+        if(_playerController._lightningIsBought)  _lightningWeaponPriceText.text = "Bought";
+        if(_playerController._burnIsBought) _burnEffectText.text = "Bought";
     }
 
 }

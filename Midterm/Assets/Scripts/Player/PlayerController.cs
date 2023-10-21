@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     [SerializeField] private GameObject lightingWeaponObject;
     private Dictionary<KeyCode, GameObject> weaponDictionary;
     [SerializeField] private WeaponController WeaponController;
+    [SerializeField] private DataManager _dataManager;
     private bool isCharging, unlockIceWeapon,unlockLightningWeapon ;
     public bool isLightning;
     private int currency;
@@ -73,28 +74,51 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         set => unlockLightningWeapon = value;
     }
 
-    private void Start()
-    {
-        MaxHealth = playerStat.lifePoint;
-        MaxMana = playerStat.manaPoint;
-        CurrentMana = MaxMana;
-        CurrentHealth = MaxHealth;
-        
-        AddToDictionary();
-        DefaultEquipedWeapon();
-    }
-
-    
     public int Currency
     {
         get => currency;
         set => currency = value;
     }
 
+    private void Start()
+    {
+        
+        
+        MaxHealth = playerStat.lifePoint;
+        MaxMana = playerStat.manaPoint;
+        CurrentMana = MaxMana;
+        CurrentHealth = MaxHealth;
+
+        AddToDictionary();
+        DefaultEquipedWeapon();
+        if (MainMenuScript.instance.LoadCheck)
+        {
+            LoadData();
+        }
+    }
+
+    public void LoadData()
+    {
+        _dataManager.LoadDataFromJson();
+    }
+
+    
+    public void SaveData()
+    {
+        if (MainMenuScript.instance.SaveCheck)
+        {
+            _dataManager.SaveDataToJson();
+        }
+
+        MainMenuScript.instance.SaveCheck = false;
+    }
+    
+
     private void Update()
     {
         PlayerIsCharging();
         WeaponsDictionnary();
+        SaveData();
     }
 
    

@@ -13,16 +13,19 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private TMP_InputField playerNameField;
     private string playerName;
     public string PlayerName { get; set; }
-    private bool inMainMenu = true; 
+    private bool inMainMenu = true;
+    public bool LoadCheck { get; set; }
+    public bool SaveCheck { get; set; }
     [SerializeField] private GameObject setting;
     [SerializeField] private GameObject backToMenuButton;
+    [SerializeField] private GameObject SaveButton;
     [SerializeField] private GameObject credits;
 
     private bool pressed;
-    
+
     private void Awake()
     {
-        if (instance== null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -65,17 +68,20 @@ public class MainMenuScript : MonoBehaviour
         {
             setting.SetActive(true);
             backToMenuButton.SetActive(false);
+            SaveButton.SetActive(false);
         }
         else if (!inMainMenu)
         {
             setting.SetActive(true);
             backToMenuButton.SetActive(true);
+            SaveButton.SetActive(true);
             Time.timeScale = 0f;
         }
+
         Time.timeScale = 0f;
     }
-    
-    
+
+
     public void CloseSetting()
     {
         setting.SetActive(false);
@@ -87,8 +93,18 @@ public class MainMenuScript : MonoBehaviour
         credits.SetActive(true);
         Time.timeScale = 0f;
     }
-    
-    
+
+    public void LoadIsPressed()
+    {
+        LoadCheck = true;
+        LoadLevelShop();
+    }
+
+    public void SaveDataButton()
+    {
+        SaveCheck= true;
+    }
+
     public void CloseCredits()
     {
         credits.SetActive(false);
