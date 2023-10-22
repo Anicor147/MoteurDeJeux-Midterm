@@ -71,3 +71,7 @@ N
 Assets/Scripts/SoundManager.cs,8\e\8ea0e564ec06d1bb820376f3b80a9ae256d8b7c9
 Q
 !Assets/Scripts/InitializeStart.cs,a\0\a04eac9d85eedef0810061ef637efe290951ba0e
+]
+-Assets/Scripts/Teleporter/EndingTeleporter.cs,c\4\c4192f461350414e77870cb3f505fad94ea24b71
+M
+Assets/Scripts/DataManager.cs,8\4\8409c11ca42d84176fa52ce9cd72474d46f87cd1

@@ -15,6 +15,8 @@ public class PlayerAnimationController : MonoBehaviour
     private int _isCharging;
     private int _isAttacking;
     private int _isDead;
+    private int _isAttackingIce;
+    private int _isAttackingFire;
   
 
     private void Awake()
@@ -22,6 +24,8 @@ public class PlayerAnimationController : MonoBehaviour
         _isWalking = Animator.StringToHash("isWalking");
         _isCharging = Animator.StringToHash("isCharging");
         _isAttacking = Animator.StringToHash("isAttacking");
+        _isAttackingIce = Animator.StringToHash("isAttackingIce");
+        _isAttackingFire = Animator.StringToHash("isAttackingFire");
         _isDead = Animator.StringToHash("isDead");
         
     }
@@ -33,14 +37,17 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void PlayerIsAttackingIcePicks()
     {
-        playerAnimator.SetTrigger(_isAttacking);
-        iceAnimator.SetTrigger(_isAttacking);
-    } 
-    
-    public void PlayerIsAttackingFireMelee()
+        iceAnimator.SetTrigger(_isAttackingIce);
+    }
+
+    public void PlayerIsAttacking()
     {
         playerAnimator.SetTrigger(_isAttacking);
-        fireAnimator.SetTrigger(_isAttacking);
+    }
+
+    public void PlayerIsAttackingFireMelee()
+    {
+        fireAnimator.SetTrigger(_isAttackingFire);
     }
 
     public void PlayerIsCharging(bool value)

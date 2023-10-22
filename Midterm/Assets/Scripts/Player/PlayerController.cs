@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour , IBaseCharacter
 { 
@@ -12,15 +13,17 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     [SerializeField] private GameObject lightingWeaponObject;
     private Dictionary<KeyCode, GameObject> weaponDictionary;
     [SerializeField] private WeaponController WeaponController;
-    private bool isCharging;
-    public static bool isLightning;
-    private bool unlockIceWeapon;
-    private bool unlockLightningWeapon ;
+    [SerializeField] private DataManager _dataManager;
+    private bool isCharging, unlockIceWeapon,unlockLightningWeapon ;
+    public bool isLightning;
     private int currency;
-    private float maxHealth;
-    private float maxMana;
-    private float currentMana;
-    private float currentHealth;
+    private float maxHealth,maxMana,currentMana,currentHealth;
+    public int _currentHealthUpgradeLevel = 1;
+    public int _currentManaUpgradeLevel = 1;
+    public bool _burnIsBought;
+    public bool _iceIsBought;
+    public bool _lightningIsBought;
+    public bool BurnedUnlock { get; set; }
     public bool PlayerIsDead { get; set; }
     public static PlayerController instance;
 
@@ -34,6 +37,7 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         {
             Destroy(gameObject);
         }
+        Debug.Log("PlayercontrollerManager Awake");
     }
 
 
@@ -70,28 +74,51 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
         set => unlockLightningWeapon = value;
     }
 
-    private void Start()
-    {
-        MaxHealth = playerStat.lifePoint;
-        MaxMana = playerStat.manaPoint;
-        CurrentMana = MaxMana;
-        CurrentHealth = MaxHealth;
-        
-        AddToDictionary();
-        DefaultEquipedWeapon();
-    }
-
-    
     public int Currency
     {
         get => currency;
         set => currency = value;
     }
 
+    private void Start()
+    {
+        
+        
+        MaxHealth = playerStat.lifePoint;
+        MaxMana = playerStat.manaPoint;
+        CurrentMana = MaxMana;
+        CurrentHealth = MaxHealth;
+
+        AddToDictionary();
+        DefaultEquipedWeapon();
+        if (MainMenuScript.instance.LoadCheck)
+        {
+            LoadData();
+        }
+    }
+
+    public void LoadData()
+    {
+        _dataManager.LoadDataFromJson();
+    }
+
+    
+    public void SaveData()
+    {
+        if (MainMenuScript.instance.SaveCheck)
+        {
+            _dataManager.SaveDataToJson();
+        }
+
+        MainMenuScript.instance.SaveCheck = false;
+    }
+    
+
     private void Update()
     {
         PlayerIsCharging();
         WeaponsDictionnary();
+        SaveData();
     }
 
    
@@ -109,11 +136,9 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
             {
                 _playerAnimationController.PlayerIsCharging(true);
                 CurrentMana += (20 * Time.deltaTime);
-                Debug.Log(CurrentMana);
             }
             else if (!Input.GetKey(KeyCode.Q))
             {
-                
                 _playerAnimationController.PlayerIsCharging(false);
             }
         }
@@ -170,10 +195,18 @@ public class PlayerController : MonoBehaviour , IBaseCharacter
     }
     public void OnDeath()
     {
-        PlayerIsDead = true;
-        _playerAnimationController.PlayerIsDead(true);
+        if (!PlayerIsDead)
+        {
+            PlayerIsDead = true;
+            _playerAnimationController.PlayerIsDead(true);
+            Invoke("Delaydead" , 2f);    
+        }
     }
-
+    public void Delaydead()
+    {
+        SceneManager.LoadScene(1);
+    }
+    
     public void Revive()
     {
         PlayerIsDead = false;

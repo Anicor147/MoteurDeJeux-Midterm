@@ -8,7 +8,7 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     [SerializeField] private GameObject projectile;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerAnimationController _playerAnimationController;
-    [SerializeField] private PlayerController _playerController;
+     private PlayerController _playerController;
     [SerializeField] private AudioClip _clip;
     private Vector3 mousePosition;
     private float attackStartTime;
@@ -16,13 +16,17 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     private float angle;
     private Vector3 direction;
     private bool canAttack;
-
     public bool CanAttack
     {
         get => canAttack;
         set => canAttack = value;
     }
-    
+
+    private void Start()
+    {
+        _playerController = PlayerController.instance;
+    }
+
     private void LateUpdate()
     {
         PlayerAttack();
@@ -50,20 +54,25 @@ public class WeaponController : MonoBehaviour ,IFlipSprite
     public void PlayerAttack()
     {
         if(_playerController.PlayerIsDead) return;
-        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.CurrentMana > 0 && !PlayerController.isLightning )
+        if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) )
         {
-            _playerController.CurrentMana -= 5;   
-             attackStartTime = Time.time;
-             _playerAnimationController.PlayerIsAttackingIcePicks();
-             _playerAnimationController.PlayerIsAttackingFireMelee();
-             
-        }
-        else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.Q) && _playerController.CurrentMana > 0 && PlayerController.isLightning )
-        {
-            if (CanAttack)
+            if (_playerController.CurrentMana > 0 && !_playerController.isLightning)
+            {
+                _playerController.CurrentMana -= 5;   
+                attackStartTime = Time.time;
+                
+                _playerAnimationController.PlayerIsAttacking();
+                 if(gameObject.tag == "FireAttack")
+                    _playerAnimationController.PlayerIsAttackingFireMelee();
+                if(gameObject.tag == "IceAttack")
+                _playerAnimationController.PlayerIsAttackingIcePicks();
+                
+            }
+            else if (_playerController.CurrentMana > 0 && _playerController.isLightning && CanAttack)
             {
                 StartCoroutine(LightningWeaponWithDelay());  
-            } 
+            }
+               
         }
     }
     public IEnumerator LightningWeaponWithDelay()

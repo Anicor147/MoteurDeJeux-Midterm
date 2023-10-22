@@ -10,7 +10,7 @@ public class UIScript : MonoBehaviour
 {
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider manaSlider;
-    [SerializeField] private PlayerController _playerController;
+     private PlayerController _playerController;
     [SerializeField] private TMP_Text moneyCounter;
     [SerializeField] private GameObject fireWeapon;
     [SerializeField] private GameObject iceWeapon;
@@ -25,7 +25,6 @@ public class UIScript : MonoBehaviour
     public static UIScript instance;
     private void Awake()
     {
-     
         if (instance == null)
         {
             instance = this;
@@ -46,6 +45,7 @@ public class UIScript : MonoBehaviour
     public void Start()
     {
         AddToWeaponBorders();
+        _playerController = PlayerController.instance;
     }
 
     public void AddToWeaponBorders()
