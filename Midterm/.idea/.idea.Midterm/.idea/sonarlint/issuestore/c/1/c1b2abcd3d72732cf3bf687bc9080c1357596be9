@@ -1,21 +1,21 @@
 
 Kcsharpsquid:S3903"/Move 'PlayerController' into a named namespace.(Š§§
 
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ş´•œ8Ø˜÷¦´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¾Şæ8ƒ‘´ï´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(øø«£8ƒ‘´ï´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(³ı»¾8ƒ‘´ï´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ıºÓü8ƒ‘´ï´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(­‘Ëî8„‘´ï´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(™üş‰8û­¬ó²1
-Wcsharpsquid:S3267"2Loops should be simplified with "LINQ" expressions(±ğ¿©8¥’‘Œ²1
-ycsharpsquid:S927e"QRename parameter 'damageReceived' to 'damage' to match the interface declaration.(èƒú§şÿÿÿÿ8îÔ«ñ²1
-mcsharpsquid:S2292+"DMake this an auto-implemented property and remove its backing field.(Ê×ôŠøÿÿÿÿ8ü­¬ó²1
-hcsharpsquid:S22920"DMake this an auto-implemented property and remove its backing field.(°Å‚ü8œø‡ä±1
-gcsharpsquid:S22926"DMake this an auto-implemented property and remove its backing field.(ÇŠ±z8¢ó”€³1
-hcsharpsquid:S2292;"DMake this an auto-implemented property and remove its backing field.(Ô×‰8Âú‘Œ²1
-mcsharpsquid:S2292A"DMake this an auto-implemented property and remove its backing field.(Ç½³Ûşÿÿÿÿ8£ó”€³1
-mcsharpsquid:S2292F"DMake this an auto-implemented property and remove its backing field.(é‚ÚÔÿÿÿÿÿ8ì…“Œ²1
-hcsharpsquid:S2292X"DMake this an auto-implemented property and remove its backing field.(ó¹ÿö8¥’‘Œ²1
-icsharpsquid:S2223"EChange the visibility of 'instance' or make it 'const' or 'readonly'.(™üş‰8 Ì¬ó²1
-~csharpsquid:S2696!"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ñõîÙşÿÿÿÿ8¸Ç®ó²1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ş´•œ8Ø˜÷¦´1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¾Şæ8ƒ‘´ï´1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(øø«£8ƒ‘´ï´1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(³ı»¾8ƒ‘´ï´1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ıºÓü8ƒ‘´ï´1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(­‘Ëî8„‘´ï´1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(™üş‰8û­¬ó²1
+Wcsharpsquid:S3267¦"2Loops should be simplified with "LINQ" expressions(±ğ¿©8º»²¢µ1
+ycsharpsquid:S927}"QRename parameter 'damageReceived' to 'damage' to match the interface declaration.(èƒú§şÿÿÿÿ8Œ¥¦£µ1
+mcsharpsquid:S2292,"DMake this an auto-implemented property and remove its backing field.(Ê×ôŠøÿÿÿÿ8ü­¬ó²1
+hcsharpsquid:S22921"DMake this an auto-implemented property and remove its backing field.(°Å‚ü8œø‡ä±1
+gcsharpsquid:S22927"DMake this an auto-implemented property and remove its backing field.(ÇŠ±z8¢ó”€³1
+hcsharpsquid:S2292<"DMake this an auto-implemented property and remove its backing field.(Ô×‰8Âú‘Œ²1
+mcsharpsquid:S2292B"DMake this an auto-implemented property and remove its backing field.(Ç½³Ûşÿÿÿÿ8íĞ±¢µ1
+mcsharpsquid:S2292G"DMake this an auto-implemented property and remove its backing field.(é‚ÚÔÿÿÿÿÿ8íĞ±¢µ1
+hcsharpsquid:S2292M"DMake this an auto-implemented property and remove its backing field.(ó¹ÿö8 İ£µ1
+icsharpsquid:S2223"EChange the visibility of 'instance' or make it 'const' or 'readonly'.(™üş‰8 Ì¬ó²1
+~csharpsquid:S2696""UMake the enclosing instance method 'static' or remove this set on the 'static' field.(ñõîÙşÿÿÿÿ8¸Ç®ó²1
