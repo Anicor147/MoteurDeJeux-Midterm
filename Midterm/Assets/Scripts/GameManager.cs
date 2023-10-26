@@ -54,7 +54,8 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene(1);
                 break;
             case 2:
-                SceneManager.LoadScene(2);
+                SceneManager.UnloadSceneAsync(1);
+                SceneManager.LoadScene(2, LoadSceneMode.Additive);
                 break;
             case 3 :
                 SceneManager.LoadScene(3);
