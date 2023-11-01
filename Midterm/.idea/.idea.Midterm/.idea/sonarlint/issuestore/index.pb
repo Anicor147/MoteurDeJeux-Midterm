@@ -75,3 +75,5 @@ Q
 -Assets/Scripts/Teleporter/EndingTeleporter.cs,c\4\c4192f461350414e77870cb3f505fad94ea24b71
 M
 Assets/Scripts/DataManager.cs,8\4\8409c11ca42d84176fa52ce9cd72474d46f87cd1
+Z
+*Assets/Scripts/Player/AudioChargingClip.cs,6\7\67a60346ffb294c432043467e9588f077db603f9

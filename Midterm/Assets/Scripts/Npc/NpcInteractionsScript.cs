@@ -27,8 +27,10 @@ public class NpcInteractionsScript : MonoBehaviour
         distance = player.transform.position - transform.position;
 
         RaycastHit2D hit2D = Physics2D.Raycast(transform.position, distance, npcRange);
+        Debug.DrawRay(transform.position, distance, Color.blue);
         if (hit2D.collider != null && hit2D.collider.CompareTag("Player"))
         {
+            Debug.DrawRay(transform.position, distance, Color.green);
             OpenLevelingScreen();
         }
     }

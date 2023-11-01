@@ -7,6 +7,7 @@ public class DataManager : MonoBehaviour
 {
     private PlayerController _playerController;
     private PlayerUpgradeManager _playerUpgradeManager;
+    private MainMenuScript _mainMenuScript;
     private PlayerData data = new PlayerData();
 
   
@@ -30,7 +31,9 @@ public class DataManager : MonoBehaviour
     public void SaveDataToJson()
     {
         _playerController = PlayerController.instance;
+        _mainMenuScript = MainMenuScript.instance;
         
+        data._savePlayerName = _mainMenuScript.PlayerName;
         data._saveMaxHealth = _playerController.MaxHealth;
         data._saveMaxMana = _playerController.MaxMana;
         data._saveCurrency = _playerController.Currency;
@@ -42,7 +45,7 @@ public class DataManager : MonoBehaviour
         data._saveBurnIsBought = _playerController._burnIsBought;
         data._saveIceIsBought = _playerController._iceIsBought;
         data._saveLightningIsBought = _playerController._lightningIsBought;
-
+        
         var dataToJson = JsonUtility.ToJson(data);
         var filePath = Application.persistentDataPath + "/PlayerData.json";
         Debug.Log(filePath);
@@ -58,7 +61,9 @@ public class DataManager : MonoBehaviour
         Debug.Log("data has been Loaded");
         
         _playerController = PlayerController.instance;
+        _mainMenuScript = MainMenuScript.instance;
         
+        _mainMenuScript.PlayerName = data._savePlayerName;
         _playerController.MaxHealth = data._saveMaxHealth;
         _playerController.MaxMana = data._saveMaxMana;
         _playerController.Currency = data._saveCurrency;
@@ -77,6 +82,7 @@ public class DataManager : MonoBehaviour
 [System.Serializable]
 public class PlayerData
 {
+    public string _savePlayerName;
     public float _saveMaxHealth;
     public float _saveMaxMana;
     public int _saveCurrency;
