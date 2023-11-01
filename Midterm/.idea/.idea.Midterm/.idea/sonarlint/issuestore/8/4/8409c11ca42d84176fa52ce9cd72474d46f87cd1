@@ -1,15 +1,18 @@
 
-Rcsharpsquid:S3903N")Move 'PlayerData' into a named namespace.(«‚Šûÿÿÿÿ8ïÏí´1
 Lcsharpsquid:S3903"*Move 'DataManager' into a named namespace.(ñ”•ûÿÿÿÿÿ
-hcsharpsquid:S1104P"DMake this field 'private' and encapsulate it in a 'public' property.(ÁÅ¦ƒ8ú‘ÛÓ´1
-mcsharpsquid:S1104Q"DMake this field 'private' and encapsulate it in a 'public' property.(ñ«æ¬üÿÿÿÿ8Ï¢ºì´1
-mcsharpsquid:S1104R"DMake this field 'private' and encapsulate it in a 'public' property.(ÀÇìÑúÿÿÿÿ8Ä¬ÛÓ´1
-mcsharpsquid:S1104S"DMake this field 'private' and encapsulate it in a 'public' property.(ï×ÿÿÿÿÿ8ôàºì´1
-mcsharpsquid:S1104T"DMake this field 'private' and encapsulate it in a 'public' property.(Éú–•ÿÿÿÿÿ8ÛØ»ì´1
-hcsharpsquid:S1104U"DMake this field 'private' and encapsulate it in a 'public' property.(€º¹å8ôÂÛÓ´1
-hcsharpsquid:S1104V"DMake this field 'private' and encapsulate it in a 'public' property.(Â¤ÄÈ8’É¼ì´1
-mcsharpsquid:S1104W"DMake this field 'private' and encapsulate it in a 'public' property.(¿š³ºøÿÿÿÿ8²’ğ´1
-mcsharpsquid:S1104X"DMake this field 'private' and encapsulate it in a 'public' property.(­÷™úÿÿÿÿ8úƒ½ì´1
-mcsharpsquid:S1104Y"DMake this field 'private' and encapsulate it in a 'public' property.(±ŠşŸşÿÿÿÿ8ùÒ½ì´1
-mcsharpsquid:S1104Z"DMake this field 'private' and encapsulate it in a 'public' property.(°©†€úÿÿÿÿ8ùÒ½ì´1
+Rcsharpsquid:S3903S")Move 'PlayerData' into a named namespace.(«‚Šûÿÿÿÿ8ïÏí´1
+mcsharpsquid:S1104U"DMake this field 'private' and encapsulate it in a 'public' property.(·–¶’şÿÿÿÿ8·áåğ¶1
+hcsharpsquid:S1104V"DMake this field 'private' and encapsulate it in a 'public' property.(ÁÅ¦ƒ8ú‘ÛÓ´1
+mcsharpsquid:S1104W"DMake this field 'private' and encapsulate it in a 'public' property.(ñ«æ¬üÿÿÿÿ8Ï¢ºì´1
+mcsharpsquid:S1104X"DMake this field 'private' and encapsulate it in a 'public' property.(ÀÇìÑúÿÿÿÿ8Ä¬ÛÓ´1
+mcsharpsquid:S1104Y"DMake this field 'private' and encapsulate it in a 'public' property.(ï×ÿÿÿÿÿ8ôàºì´1
+mcsharpsquid:S1104Z"DMake this field 'private' and encapsulate it in a 'public' property.(Éú–•ÿÿÿÿÿ8ÛØ»ì´1
+hcsharpsquid:S1104["DMake this field 'private' and encapsulate it in a 'public' property.(€º¹å8ôÂÛÓ´1
+hcsharpsquid:S1104\"DMake this field 'private' and encapsulate it in a 'public' property.(Â¤ÄÈ8’É¼ì´1
+mcsharpsquid:S1104]"DMake this field 'private' and encapsulate it in a 'public' property.(¿š³ºøÿÿÿÿ8²’ğ´1
+mcsharpsquid:S1104^"DMake this field 'private' and encapsulate it in a 'public' property.(­÷™úÿÿÿÿ8úƒ½ì´1
+mcsharpsquid:S1104_"DMake this field 'private' and encapsulate it in a 'public' property.(±ŠşŸşÿÿÿÿ8ùÒ½ì´1
+mcsharpsquid:S1104`"DMake this field 'private' and encapsulate it in a 'public' property.(°©†€úÿÿÿÿ8ùÒ½ì´1
 ‰csharpsquid:S1450"`Remove the field '_playerController' and declare it as a local variable in the relevant methods.(Ø­ĞÉşÿÿÿÿ8¸½ğ´1
+‡csharpsquid:S1450
+"^Remove the field '_mainMenuScript' and declare it as a local variable in the relevant methods.(»†ûğüÿÿÿÿ8ìãçğ¶1
