@@ -77,3 +77,9 @@ M
 Assets/Scripts/DataManager.cs,8\4\8409c11ca42d84176fa52ce9cd72474d46f87cd1
 Z
 *Assets/Scripts/Player/AudioChargingClip.cs,6\7\67a60346ffb294c432043467e9588f077db603f9
+X
+(Assets/Scripts/Enemy/Boss/BossBubbles.cs,a\4\a4b9f9e89368ec4f672651235f08413cfa74050d
+W
+'Assets/Scripts/Enemy/Boss/PoolObject.cs,8\c\8c07209acb4bdd29263eada4131443364581652e
+[
++Assets/Scripts/Enemy/Boss/BossObjectPool.cs,5\1\51ca10805453f3fea9b2131d07873b223d0fbc36
