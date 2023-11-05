@@ -18,7 +18,7 @@ namespace Enemy.Boss
         {
             while (true)
             {
-                Quaternion spawnRotation = Quaternion.identity;
+                var spawnRotation = Quaternion.identity;
                 for (int i = 0; i < 360; i++ )
                 {
                     var ball = bossObjectPool.GetObject();
@@ -27,8 +27,7 @@ namespace Enemy.Boss
                     spawnRotation *= Quaternion.Euler(0,0,angle);
                     angle += 2;
                 }
-
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(5f);
             }
         }
     }
