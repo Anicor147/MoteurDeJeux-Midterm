@@ -83,3 +83,7 @@ X
 +Assets/Scripts/Enemy/Boss/BossObjectPool.cs,5\1\51ca10805453f3fea9b2131d07873b223d0fbc36
 W
 'Assets/Scripts/Enemy/Boss/PoolObject.cs,8\c\8c07209acb4bdd29263eada4131443364581652e
+Z
+*Assets/Scripts/Enemy/Boss/BubbleSpawner.cs,d\3\d3fd69856942864c7c7b7fb99e69b4dfb858fb35
+]
+-Assets/Scripts/Enemy/Boss/BossLineRenderer.cs,c\8\c844ca843d0bbd5ba8d27e71c923857a5b7e256c

@@ -36,9 +36,9 @@ public class BossLineRenderer : MonoBehaviour
             float x = Mathf.Cos(Time.time * speed) * radius;
             float y = Mathf.Sin(Time.time * speed) * radius;
          
-            Vector3 controlPoint = new Vector3(x, height, 0);
+            Vector3 middlePoint = new Vector3(x, height, 0);
             Vector3 endPoint = new Vector3(x, y, 0);
-            Vector3 bezierPoint = Bezier(transform.position, controlPoint, endPoint, t);
+            Vector3 bezierPoint = Bezier(transform.position, middlePoint, endPoint, t);
             linePosition[i] = bezierPoint;
         }
 
